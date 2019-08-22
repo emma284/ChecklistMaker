@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * FormularioA
+ * Checklist
  *
- * @ORM\Table(name="formularioA")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\FormularioARepository")
+ * @ORM\Table(name="Checklist")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ChecklistRepository")
  */
-class FormularioA
+class Checklist
 {
     /**
      * @var int
@@ -22,6 +22,74 @@ class FormularioA
      */
     private $id;
 
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100)
+     * @Assert\NotBlank(message="No puede dejar el nombre del Checklist en blanco")
+     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre no puede dejarse en blanco.", maxMessage = "El nombre es demasiado largo.")
+     */
+    private $nombre;
+
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="iniciador", type="string", length=100)
+     * @Assert\NotBlank(message="No puede dejar el nombre de iniciador en blanco.")
+     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre de iniciador no puede dejarse en blanco.", maxMessage = "El nombre de iniciador es demasiado largo.")
+     */
+    private $iniciador;
+    
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="numeroExpediente", type="string", length=100)
+     * @Assert\NotBlank(message="El checklist debe estar vinculado a un expediente.")
+     * @Assert\Length(min = 1, max = 3000, minMessage = "El número de expediente no puede dejarse en blanco.", maxMessage = "El número de expediente es demasiado largo.")
+     */
+    private $numeroExpediente;
+    
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="evaluador", type="string", length=100)
+     * @Assert\NotBlank(message="No puede dejar el nombre de evaluador en blanco.")
+     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre de evaluador no puede dejarse en blanco.", maxMessage = "El nombre de evaluador es demasiado largo.")
+     */
+    private $evaluador;
+    
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="version", type="string", length=100)
+     * @Assert\NotBlank(message="No puede dejar el nombre de evaluador en blanco.")
+     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre de evaluador no puede dejarse en blanco.", maxMessage = "El nombre de evaluador es demasiado largo.")
+     */
+    private $version;
+    
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="fechaInicioEvaluacion", type="date")
+     * @Assert\NotBlank(message="Debe ingresar la fecha en que inició la evaluación.")
+     */
+    private $fechaInicioEvaluacion;
+    
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="fechaFinEvaluacion", type="date")
+     */
+    private $fechaFinEvaluacion;
+    
+        
     /**
      * @ORM\OneToOne(targetEntity="Domicilio", cascade={"persist"})
      * @ORM\JoinColumn(name="domicilio_id",referencedColumnName="id")
@@ -30,41 +98,4 @@ class FormularioA
      */
     private $domicilio;
 
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="resumenEjecutivo", type="string", length=3000)
-     * @Assert\NotBlank(message="No puede dejar el resumen ejecutivo en blanco")
-     * @Assert\Length(min = 1, max = 3000, minMessage = "El resumen ejecutivo no puede dejarse en blanco.", maxMessage = "El resumen ejecutivo no puede exceder los 3000 caracteres.")
-     */
-    private $resumenEjecutivo;
-
-
-/**
- * getters and setters
- */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    public function getResumenEjecutivo()
-    {
-        return $this->resumenEjecutivo;
-    }
-    
-    public function setResumenEjecutivo($resumenEjecutivo)
-    {
-        $this->resumenEjecutivo = $resumenEjecutivo;
-    }
-
-    public function getDomicilio() {
-        return $this->domicilio;
-    }
-
-    public function setDomicilio($domicilio) {
-        $this->domicilio = $domicilio;
-    }
 }
