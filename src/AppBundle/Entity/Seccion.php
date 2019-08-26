@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Checklist
+ * Seccion
  *
- * @ORM\Table(name="Checklist")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ChecklistRepository")
+ * @ORM\Table(name="Seccion")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SeccionRepository")
  */
-class Checklist
+class Seccion
 {
     /**
      * @var int
@@ -34,68 +34,42 @@ class Checklist
 
     
     /**
-     * @var string
-     *
-     * @ORM\Column(name="iniciador", type="string", length=100)
-     * @Assert\NotBlank(message="No puede dejar el nombre de iniciador en blanco.")
-     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre de iniciador no puede dejarse en blanco.", maxMessage = "El nombre de iniciador es demasiado largo.")
-     */
-    private $iniciador;
-    
-    
-     /**
-     * @var string
-     *
-     * @ORM\Column(name="numeroExpediente", type="string", length=100)
-     * @Assert\NotBlank(message="El checklist debe estar vinculado a un expediente.")
-     * @Assert\Length(min = 1, max = 3000, minMessage = "El número de expediente no puede dejarse en blanco.", maxMessage = "El número de expediente es demasiado largo.")
-     */
-    private $numeroExpediente;
-    
-    
-     /**
-     * @var string
-     *
-     * @ORM\Column(name="evaluador", type="string", length=100)
-     * @Assert\NotBlank(message="No puede dejar el nombre de evaluador en blanco.")
-     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre de evaluador no puede dejarse en blanco.", maxMessage = "El nombre de evaluador es demasiado largo.")
-     */
-    private $evaluador;
-    
-    
-     /**
-     * @var string
-     *
-     * @ORM\Column(name="version", type="string", length=100)
-     * @Assert\NotBlank(message="No puede dejar el nombre de evaluador en blanco.")
-     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre de evaluador no puede dejarse en blanco.", maxMessage = "El nombre de evaluador es demasiado largo.")
-     */
-    private $version;
-    
-    
-     /**
-     * @var string
-     *
-     * @ORM\Column(name="fechaInicioEvaluacion", type="date")
-     * @Assert\NotBlank(message="Debe ingresar la fecha en que inició la evaluación.")
-     */
-    private $fechaInicioEvaluacion;
-    
-    
-     /**
-     * @var string
-     *
-     * @ORM\Column(name="fechaFinEvaluacion", type="date")
-     */
-    private $fechaFinEvaluacion;
-    
-        
-    /**
-     * @ORM\OneToOne(targetEntity="Domicilio", cascade={"persist"})
-     * @ORM\JoinColumn(name="domicilio_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Domicilio")
+     * @ORM\OneToMany(targetEntity="Tarea", cascade={"persist"})
+     * @ORM\JoinColumn(name="tarea_id",referencedColumnName="id")
+     * @Assert\Type(type="AppBundle\Entity\Tarea")
      * @Assert\Valid
      */
-    private $domicilio;
+    private $tareas;
+    
+    
+    //Getters and setters
+    function getId() {
+        return $this->id;
+    }
 
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function getTareas() {
+        return $this->tareas;
+    }
+
+    function setTareas($tareas) {
+        $this->tareas = $tareas;
+    }
+    
+    public function __construct()
+    {
+        $this->tareas = new ArrayCollection();
+    }
+    
 }
