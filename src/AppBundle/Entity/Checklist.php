@@ -52,6 +52,12 @@ class Checklist
      */
     private $numeroExpediente;
     
+     /**
+     *
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $fechaInicioExpediente;
+    
     
      /**
      * @var string
@@ -100,7 +106,7 @@ class Checklist
     /**
      * @var string
      *
-     * @ORM\Column(name="comentarioDeEvaluador", type="date")
+     * @ORM\Column(name="comentarioDeEvaluador", type="string")
      */
     private $comentarioDeEvaluador;
     
@@ -190,6 +196,15 @@ class Checklist
     function setComentarioDeEvaluador($comentarioDeEvaluador) {
         $this->comentarioDeEvaluador = $comentarioDeEvaluador;
     }
+    
+    function getFechaInicioExpediente() {
+        return $this->fechaInicioExpediente;
+    }
+
+    function setFechaInicioExpediente($fechaInicioExpediente) {
+        $this->fechaInicioExpediente = $fechaInicioExpediente;
+    }
+
 
 
 }

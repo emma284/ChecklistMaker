@@ -20,7 +20,18 @@ class ChecklistType extends AbstractType
     {
         $builder
             ->add('nombre', TextType::class, ['label' => 'Nombre del checklist: '])
-            ->add('secciones', SeccionType::class, ['label' => 'Agregue las secciones: '])
+            ->add('iniciador', TextType::class, ['label' => 'Iniciador: '])
+            ->add('numeroExpediente', TextType::class, ['label' => 'Número de expediente: '])
+            ->add('fechaInicioExpediente', DateTimeType::class, ['label' => 'Fecha de inicio de expediente: '])
+            ->add('evaluador', TextType::class, ['label' => 'Evaluador: '])
+            ->add('version', TextType::class, ['label' => 'Versión: '])
+            ->add('fechaInicioEvaluacion', DateTimeType::class, ['label' => 'Fecha de inicio de evaluación: '])
+            ->add('fechaFinEvaluacion', DateTimeType::class, ['label' => 'Fecha de fin de evaluación: '])
+            ->add('secciones',CollectionType::class, [
+                'entry_type' => SeccionType::class,
+                'entry_options' => ['label' => 'Agregue las secciones: '],
+                ])
+            ->add('comentarioDeEvaluador', TextType::class, ['label' => 'Nombre del checklist: '])
             ->add('save', SubmitType::class, ['label' => 'Guardar'])
         ;
     }
@@ -28,7 +39,7 @@ class ChecklistType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => FormularioA::class,
+            'data_class' => Checklist::class,
         ]);
     }
 
