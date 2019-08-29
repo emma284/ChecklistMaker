@@ -5,7 +5,7 @@
 
 {% block content %}
 
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) } }
     <div class="card bg-light mb-12">
         <div class="card-header">Nuevo Domicilio</div>  
 
@@ -50,5 +50,5 @@
         </div>
 
     </div>
-    {{form_end(form)}}
+    {{ form_end(form) }}
 {% endblock %}

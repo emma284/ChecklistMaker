@@ -54,6 +54,7 @@ use Symfony\Component\HttpFoundation\Request;
      * @Route("/formulario/listado/", name="listar_formularios")
      */
     public function formularioAListarAction(Request $request){
+        
         $entityManager = $this->getDoctrine()->getManager();
 
         $formularios = $entityManager

@@ -1,0 +1,58 @@
+{% extends '@STGTheme/Default/base.html.twig' %}
+{# {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }} #}
+
+{% block content %}
+
+    
+    <div class="card bg-light mb-12">
+        <h1>Formulario A</h1>
+
+        <div class="card-body">
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        {{ form_label(form.categorizacion.rasonSocial) }}
+                        {{ form_widget(form.categorizacion.rasonSocial, {'attr': {'class': form_errors(form.categorizacion.rasonSocial) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.categorizacion.rasonSocial) }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form_label(form.categorizacion.categoria) }}
+                        {{ form_widget(form.categorizacion.categoria, {'attr': {'class': form_errors(form.categorizacion.categoria) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.categorizacion.categoria) }}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        {{ form_label(form.categorizacion.estado) }}
+                        {{ form_widget(form.categorizacion.estado, {'attr': {'class': form_errors(form.categorizacion.estado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.categorizacion.estado) }}
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        {{ form_label(form.categorizacion.evaluador) }}
+                        {{ form_widget(form.categorizacion.evaluador, {'attr': {'class': form_errors(form.categorizacion.evaluador) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.categorizacion.evaluador) }}
+                        </div>
+                    </div>
+                     <div class="form-group col-md-3">
+                        {{ form_label(form.categorizacion.notificacion) }}
+                        {{ form_widget(form.categorizacion.notificacion, {'attr': {'class': form_errors(form.categorizacion.notificacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.categorizacion.notificacion) }}
+                        </div>
+                    </div>
+                </div>
+                {{form_end(form)}}
+        </div>
+    </div>
+{% endblock %}
