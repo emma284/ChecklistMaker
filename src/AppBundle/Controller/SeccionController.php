@@ -9,13 +9,13 @@
 namespace AppBundle\Controller;
 
 /**
- * Description of DomicilioController
+ * Description of SeccionController
  *
  * @author Emma
  */
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Entity\Domicilio;
+use AppBundle\Entity\Seccion;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,36 +25,36 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Form\DomicilioType;
+use AppBundle\Form\SeccionType;
 
-class DomicilioController extends Controller{
+class SeccionController extends Controller{
     
     /**
-     * @Route("/domicilio/nuevo/")
+     * @Route("/seccion/nuevo/")
      */
-    public function createAction()
+   /* public function createAction()
     {
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to your action: createAction(EntityManagerInterface $entityManager)
         $entityManager = $this->getDoctrine()->getManager();
 
-        $domicilio = new Domicilio();
-        $domicilio->setCalle('San Lorenzo');
-        $domicilio->setNumero(16);
-        $domicilio->setPiso(0);
-        $domicilio->setDpto('b');
-        $domicilio->setTelefono('98765432124');
-        $domicilio->setEmail('mail@algo.com');
+        $seccion = new Seccion();
+        $seccion->setCalle('San Lorenzo');
+        $seccion->setNumero(16);
+        $seccion->setPiso(0);
+        $seccion->setDpto('b');
+        $seccion->setTelefono('98765432124');
+        $seccion->setEmail('mail@algo.com');
      
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
-        $entityManager->persist($domicilio);
+        $entityManager->persist($seccion);
 
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return new Response('Saved new product with id '.$domicilio->getId());
-    }
+        return new Response('Saved new product with id '.$seccion->getId());
+    }*/
 
     // if you have multiple entity managers, use the registry to fetch them
 //    public function editAction()
@@ -64,30 +64,30 @@ class DomicilioController extends Controller{
 //        $otherEntityManager = $doctrine->getManager('other_connection');
 //    }
     /**
-     * @Route("/domicilio/mostrar/{id}/")
+     * @Route("/seccion/mostrar/{id}/")
      */
-    public function showAction($id)
+   /* public function showAction($id)
     {
-        $domicilio = $this->getDoctrine()->getRepository(Domicilio::class)->find($id);
+        $seccion = $this->getDoctrine()->getRepository(Seccion::class)->find($id);
         
-        if (!$domicilio) {
-            throw $this->createNotFoundException('No se encontró domicilio que tiene este id '.$id);
+        if (!$seccion) {
+            throw $this->createNotFoundException('No se encontró seccion que tiene este id '.$id);
         }
         else{
-            return new Response('Se encontró el domicilio con id: '.$domicilio->getId().'. Está ubicado en calle: '.$domicilio->getCalle().' al '.$domicilio->getNumero());
+            return new Response('Se encontró el seccion con id: '.$seccion->getId().'. Está ubicado en calle: '.$seccion->getCalle().' al '.$seccion->getNumero());
         }
-    }
+    }*/
 
     /**
-     * @Route("/domicilio/form/", name="laRutaVieja")
+     * @Route("/seccion/form/", name="laRutaVieja")
      */
     //Formularios con seteo de datos por defecto
-    public function new2(Request $request)
+   /* public function new2(Request $request)
     {
 
-        // creates a domicilio and gives it some dummy data for this example
-        $domicilio = new Domicilio();
-        $form = $this->createForm(DomicilioType::class, $domicilio);
+        // creates a seccion and gives it some dummy data for this example
+        $seccion = new Seccion();
+        $form = $this->createForm(SeccionType::class, $seccion);
 
         // catch all data
         $form->handleRequest($request);
@@ -102,32 +102,32 @@ class DomicilioController extends Controller{
             return $this->redirectToRoute('laRuta');
         }
         
-        return $this->render('domicilio/new.html.twig', [
+        return $this->render('seccion/new.html.twig', [
             'form' => $form->createView(),
         ]);
 
     }
-
+*/
 
 
     /**
-     * @Route("/domicilio/nuevoDomicilio/" ,name="laRuta")
+     * @Route("/seccion/nuevoSeccion/" ,name="laRuta")
      */
     //Formularios con petición de datos por pantalla
-    public function new(Request $request)
+    /*public function new(Request $request)
     {
-        // creates a domicilio and gives it some dummy data for this example
-        $domicilio = new Domicilio();
+        // creates a seccion and gives it some dummy data for this example
+        $seccion = new Seccion();
 
         // creates the form 
-        $form = $this->createFormBuilder($domicilio)
+        $form = $this->createFormBuilder($seccion)
             ->add('calle', TextType::class, ['label' => 'Calle: '])
             ->add('numero', IntegerType::class, ['label' => 'Número: '])
             ->add('piso', IntegerType::class, ['label' => 'Piso: '])
             ->add('dpto', TextType::class, ['label' => 'Departamento: '])
             ->add('telefono', TextType::class, ['label' => 'Teléfono: '])
             ->add('email', EmailType::class, ['label' => 'Email: '])
-            ->add('save', SubmitType::class, ['label' => 'Create Domicilio'])
+            ->add('save', SubmitType::class, ['label' => 'Create Seccion'])
             ->getForm();
 
 
@@ -144,8 +144,8 @@ class DomicilioController extends Controller{
             return $this->redirectToRoute('laRutaVieja');
         }
         
-        return $this->render('domicilio/new.html.twig', [
+        return $this->render('seccion/new.html.twig', [
             'form' => $form->createView(),
         ]);
-    }
+    }*/
 }

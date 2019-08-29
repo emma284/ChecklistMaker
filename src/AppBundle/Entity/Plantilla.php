@@ -3,16 +3,16 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Seccion
+ * Plantilla
  *
- * @ORM\Table(name="Seccion")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\SeccionRepository")
+ * @ORM\Table(name="Plantilla")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PlantillaRepository")
  */
-class Seccion
+class Plantilla
 {
     /**
      * @var int
@@ -28,28 +28,31 @@ class Seccion
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=100)
-     * @Assert\NotBlank(message="No puede dejar el nombre del Checklist en blanco")
+     * @Assert\NotBlank(message="No puede dejar el nombre del Plantilla en blanco")
      * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre no puede dejarse en blanco.", maxMessage = "El nombre es demasiado largo.")
      */
     private $nombre;
 
     
     /**
-     * @ORM\OneToMany(targetEntity="Tarea", cascade={"persist"})
-     * @ORM\JoinColumn(name="tarea_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Tarea")
+     * @ORM\OneToMany(targetEntity="Seccion", cascade={"persist"})
+     * @ORM\JoinColumn(name="seccion_id",referencedColumnName="id")
+     * @Assert\Type(type="AppBundle\Entity\Seccion")
      * @Assert\Valid
      */
-    private $tareas;
+    private $secciones;
     
     
-    //Getters and setters
     function getId() {
         return $this->id;
     }
 
     function getNombre() {
         return $this->nombre;
+    }
+
+    function getSecciones() {
+        return $this->secciones;
     }
 
     function setId($id) {
@@ -60,17 +63,17 @@ class Seccion
         $this->nombre = $nombre;
     }
 
-    function getTareas() {
-        return $this->tareas;
+    function setSecciones($secciones) {
+        $this->secciones = $secciones;
     }
 
-    function setTareas($tareas) {
-        $this->tareas = $tareas;
-    }
     
+    //Constructor. It's sets seccion into an ArrayCollection
     public function __construct()
     {
-        $this->tareas = new ArrayCollection();
+        $this->seccion = new ArrayCollection();
     }
     
+
+
 }
