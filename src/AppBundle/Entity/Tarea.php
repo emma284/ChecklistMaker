@@ -64,13 +64,13 @@ class Tarea {
      */
     private $autoredaccion;
     
-    /**
-     * @ORM\ManyToOne(targetEntity="ValorTarea", cascade={"persist"})
-     * @ORM\JoinColumn(name="valorTarea_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\ValorTarea")
-     * @Assert\Valid
-     */
-    private $valorTarea;
+//    /**
+//     * @ORM\ManyToOne(targetEntity="ValorTarea", cascade={"persist"})
+//     * @ORM\JoinColumn(name="valorTarea_id",referencedColumnName="id")
+//     * @Assert\Type(type="AppBundle\Entity\ValorTarea")
+//     * @Assert\Valid
+//     */
+//    private $valorTarea;
     
     
 }
