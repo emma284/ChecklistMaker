@@ -19,32 +19,22 @@ use AppBundle\Entity\Seccion;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\SeccionType;
 
 class SeccionController extends Controller{
     
     /**
-     * @Route("/seccion/nuevo/")
+     * @Route("/seccion/new/")
      */
-   /* public function createAction()
+    public function createAction()
     {
         // you can fetch the EntityManager via $this->getDoctrine()
         // or you can add an argument to your action: createAction(EntityManagerInterface $entityManager)
         $entityManager = $this->getDoctrine()->getManager();
 
         $seccion = new Seccion();
-        $seccion->setCalle('San Lorenzo');
-        $seccion->setNumero(16);
-        $seccion->setPiso(0);
-        $seccion->setDpto('b');
-        $seccion->setTelefono('98765432124');
-        $seccion->setEmail('mail@algo.com');
+        
      
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
@@ -53,6 +43,7 @@ class SeccionController extends Controller{
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
+<<<<<<< refs/remotes/origin/devEmmanuel
 
     /**
      * @Route("/seccion/mostrar/{id}/")
@@ -97,46 +88,9 @@ class SeccionController extends Controller{
             'form' => $form->createView(),
         ]);
 
+=======
+        return new Response('Saved new product with id '.$seccion->getId());
+>>>>>>> agregado dc2type
     }
-*/
 
-
-    /**
-     * @Route("/seccion/nuevoSeccion/" ,name="laRuta")
-     */
-    //Formularios con petición de datos por pantalla
-    /*public function new(Request $request)
-    {
-        // creates a seccion and gives it some dummy data for this example
-        $seccion = new Seccion();
-
-        // creates the form 
-        $form = $this->createFormBuilder($seccion)
-            ->add('calle', TextType::class, ['label' => 'Calle: '])
-            ->add('numero', IntegerType::class, ['label' => 'Número: '])
-            ->add('piso', IntegerType::class, ['label' => 'Piso: '])
-            ->add('dpto', TextType::class, ['label' => 'Departamento: '])
-            ->add('telefono', TextType::class, ['label' => 'Teléfono: '])
-            ->add('email', EmailType::class, ['label' => 'Email: '])
-            ->add('save', SubmitType::class, ['label' => 'Create Seccion'])
-            ->getForm();
-
-
-        // catch all data
-        $form->handleRequest($request);
-
-        
-        // validate all data and if it success save them
-        if ($form->isSubmitted() && $form->isValid()) {
-            
-            $task = $form->getData();
-
-
-            return $this->redirectToRoute('laRutaVieja');
-        }
-        
-        return $this->render('seccion/new.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }*/
 }
