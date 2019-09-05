@@ -4,11 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/Seccion.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Controller/SeccionController.php</file>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/Tarea.php</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/ValorTarea.php</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Controller/ChecklistController.php</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/Checklist.php</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/ChecklistType.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/SeccionType.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/TareaType.php</file>
         </group>
     </open-files>
 </project-private>
