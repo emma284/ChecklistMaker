@@ -53,6 +53,7 @@ class SeccionController extends Controller{
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
+<<<<<<< HEAD:src/AppBundle/Controller/SeccionController.php
         return new Response('Saved new product with id '.$seccion->getId());
     }*/
 
@@ -63,6 +64,10 @@ class SeccionController extends Controller{
 //        $entityManager = $doctrine->getManager();
 //        $otherEntityManager = $doctrine->getManager('other_connection');
 //    }
+=======
+        return new Response('Saved new product with id '.$domicilio->getId());
+    }
+>>>>>>> 1ecbd5ae259cc2e19faac7b118e953cb9a4c95e2:src/AppBundle/Controller/DomicilioController.php
     /**
      * @Route("/seccion/mostrar/{id}/")
      */
