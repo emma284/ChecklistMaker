@@ -28,13 +28,13 @@ class Resumen
      * @Assert\Type(type="AppBundle\Entity\Categorizacion")
      * @Assert\Valid
      */
-    public $categorizacion;
+    private $categorizacion;
 
 
 
     /**
      * Get the value of id
-     *
+     * 
      * @return  int
      */ 
     public function getId()

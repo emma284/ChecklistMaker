@@ -14,7 +14,7 @@ class ResumenType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('categorizacion', CategorizacionType::class)
+            ->add('categorizacion', CategorizacionType::class, ['label' => 'Categorizacion: '])
             ->add('save', SubmitType::class, ['label' => 'Guardar'])
         ;
     }

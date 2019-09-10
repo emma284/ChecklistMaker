@@ -56,7 +56,7 @@ class FormularioA
      *
      * @param  string  $resumenEjecutivo
      *
-     * @return  self
+     * @return  self    
      */ 
     public function setResumenEjecutivo(string $resumenEjecutivo)
     {

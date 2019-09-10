@@ -19,17 +19,17 @@ class CategorizacionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('rasonSocial', TextType::class, ['label' => 'Rasón Social: '])
+            ->add('razonSocial', TextType::class, ['label' => 'Razón Social: '])
             ->add('categoria', IntegerType::class, ['label' => 'Categoria: '])
             ->add('evaluador', TextType::class, ['label' => 'Evaluador: '])
             ->add('estado', TextType::class, ['label' => 'Estado: '])
             ->add('notificacion', TextType::class, ['label' => 'Notificacion: '])
-            ->add('numeroExpediente', TextType::class, ['label' => 'Número Expediente: '])
-       //     ->add('fechaInicioExp', DateType::class, ['widget' => 'single_text', 'label' => 'Fecha Inicio Expediente: '])
-      //      ->add('avance', IntegerType::class, ['label' => 'Avance: '])
-      //      ->add('diasEv', TextType::class, ['label' => 'Días de Evaluación: '])
+        //    ->add('numeroExpediente', TextType::class, ['label' => 'Número Expediente: '])
+        //    ->add('fechaInicioExp', DateType::class, ['widget' => 'single_text', 'label' => 'Fecha Inicio Expediente: '])
+        //    ->add('avance', IntegerType::class, ['label' => 'Avance: '])
+        //    ->add('diasEv', TextType::class, ['label' => 'Días de Evaluación: '])
         //    ->add('comentario', TextType::class, ['label' => 'Comentarios: '])
-          //  ->add('observaciones', TextType::class, ['label' => 'Observaciones: '])
+        //    ->add('observaciones', TextType::class, ['label' => 'Observaciones: '])
         ;
     }
 

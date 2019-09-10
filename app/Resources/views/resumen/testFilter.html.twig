@@ -1,0 +1,8 @@
+{% extends '@LexikFormFilter/Form/form_div_layout.html.twig' %}
+
+{% block filter_collection_adapter_widget %}
+    <form method="get" action=".">
+        {{ form_rest(form) }}
+        <input type="submit" name="submit-filter" value="filter" />
+    </form>
+{% endblock filter_collection_adapter_widget %}

@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\Categorizacion;
 use AppBundle\Entity\Resumen;
 use AppBundle\Form\ResumenType;
+
 class ResumenController extends Controller
 {
     /**
@@ -18,7 +19,7 @@ class ResumenController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
 
         $resumenes = $entityManager
-                    ->getRepository(Categorizacion::class)
+                    ->getRepository(Resumen::class)
                     ->findAll();
         
         return $this->render('resumen/listado.html.twig', array(
@@ -67,6 +68,35 @@ class ResumenController extends Controller
         
         return $this->render('resumen/listado.html.twig', array(
             'resumenes' => $resumen));
+    }
+
+
+    
+    /**
+     * @Route("/resumen/ver/{id}", name="ver-hoja")
+     */
+    public function HojaAVerAction(Request $request, $id){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $formulario = $entityManager
+                    ->getRepository(Resumen::class)
+                    ->find($id);
+        
+        return $this->render('Resumen/ver.html.twig', array(
+            'formulario' => $formulario));
+    }
+    /**
+     * @Route("/resumen/modificar/{id}", name="modificar-hoja")
+     */
+    public function ModificarAVerAction(Request $request, $id){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $formulario = $entityManager
+                    ->getRepository(Resumen::class)
+                    ->find($id);
+        
+        return $this->render('Resumen/ver.html.twig', array(
+            'formulario' => $formulario));
     }
     
 }

@@ -24,9 +24,9 @@ class Categorizacion
     /**
      * @var string
      *
-     * @ORM\Column(name="Rason_social", type="string", length=255)
+     * @ORM\Column(name="Razon_social", type="string", length=255)
      */
-    private $rasonSocial;
+    private $razonSocial;
 
     /**
      * @var string
@@ -166,27 +166,27 @@ class Categorizacion
     }
 
     /**
-     * Set rasonSocial
+     * Set razonSocial
      *
-     * @param string $rasonSocial
+     * @param string $razonSocial
      *
      * @return Categorizacion
      */
-    public function setRasonSocial($rasonSocial)
+    public function setRazonSocial($razonSocial)
     {
-        $this->rasonSocial = $rasonSocial;
+        $this->razonSocial = $razonSocial;
 
         return $this;
     }
 
     /**
-     * Get rasonSocial
+     * Get razonSocial
      *
      * @return string
      */
-    public function getRasonSocial()
+    public function getRazonSocial()
     {
-        return $this->rasonSocial;
+        return $this->razonSocial;
     }
 
     /**
@@ -621,4 +621,3 @@ class Categorizacion
         return $this->link;
     }
 }
-
