@@ -32,7 +32,15 @@ class Plantilla
      * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre no puede dejarse en blanco.", maxMessage = "El nombre es demasiado largo.")
      */
     private $nombre;
-
+    
+    
+    /**
+     * 
+     * @ORM\Column(name="fechaBaja", type="date")
+     * @Assert\Date
+     */
+    private $fechaBaja;
+    
     
     /**
      * @ORM\OneToMany(targetEntity="Seccion", cascade={"persist"})

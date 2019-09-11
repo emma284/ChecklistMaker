@@ -36,16 +36,7 @@ class Tarea {
     /**
      * @var string
      *
-     * @ORM\Column(name="valor", type="string", length=100)
-     * @Assert\NotBlank
-     */
-    private $valor;
-    
-    /**
-     * @var string
-     *
      * @ORM\Column(name="avisos", type="string", length=100)
-     * @Assert\NotBlank
      */
     private $avisos;
     
@@ -63,14 +54,6 @@ class Tarea {
      * @Assert\NotBlank
      */
     private $autoredaccion;
-    
-//    /**
-//     * @ORM\ManyToOne(targetEntity="ValorTarea", cascade={"persist"})
-//     * @ORM\JoinColumn(name="valorTarea_id",referencedColumnName="id")
-//     * @Assert\Type(type="AppBundle\Entity\ValorTarea")
-//     * @Assert\Valid
-//     */
-//    private $valorTarea;
-    
+       
     
 }
