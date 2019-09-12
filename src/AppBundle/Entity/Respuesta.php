@@ -20,5 +20,21 @@ class Respuesta {
      */
     private $elegida;
     
+    /**
+     *
+     * @Assert\Type(type="AppBundle\Entity\Tarea")
+     * @Assert\Valid
+     *  
+     */
+    private $tarea;
+    
+    /**
+     *
+     * @Assert\Type(type="AppBundle\Entity\Checklist")
+     * @Assert\Valid
+     *  
+     */
+    private $checklist;
+    
     
 }

@@ -3,9 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< refs/remotes/origin/devEmmanuel
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/Tarea.php</file>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/Plantilla.php</file>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/Respuesta.php</file>
+=======
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/src/AppBundle/Controller/PlantillaController.php</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/src/AppBundle/Controller/SeccionController.php</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/src/AppBundle/Entity/ValorTarea.php</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/src/AppBundle/Entity/Seccion.php</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/app/Resources/views/plantilla/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/app/Resources/views/seccion/new.html.twig</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/src/AppBundle/Entity/Checklist.php</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/src/AppBundle/Entity/Tarea.php</file>
+            <file>file:/C:/xampp/htdocs/ChecklistMaker/src/AppBundle/Entity/Plantilla.php</file>
+>>>>>>> agregado dc2type
         </group>
     </open-files>
 </project-private>
