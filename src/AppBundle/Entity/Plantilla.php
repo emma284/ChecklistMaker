@@ -71,7 +71,7 @@ class Plantilla
     //Constructor. It's sets seccion into an ArrayCollection
     public function __construct()
     {
-        $this->seccion = new ArrayCollection();
+        $this->secciones = new ArrayCollection();
     }
     
 

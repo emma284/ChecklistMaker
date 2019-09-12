@@ -48,29 +48,49 @@ class Seccion
         return $this->id;
     }
 
-    function getNombre() {
+    
+
+    /**
+     * Get the value of nombre
+     *
+     * @return  string
+     */ 
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
-    function setId($id) {
-        $this->id = $id;
-    }
-
-    function setNombre($nombre) {
+    /**
+     * Set the value of nombre
+     *
+     * @param  string  $nombre
+     *
+     * @return  self
+     */ 
+    public function setNombre(string $nombre)
+    {
         $this->nombre = $nombre;
+
+        return $this;
     }
 
-    function getTareas() {
+    /**
+     * Get the value of tareas
+     */ 
+    public function getTareas()
+    {
         return $this->tareas;
     }
 
-    function setTareas($tareas) {
-        $this->tareas = $tareas;
-    }
-    
-    public function __construct()
+    /**
+     * Set the value of tareas
+     *
+     * @return  self
+     */ 
+    public function setTareas($tareas)
     {
-        $this->tareas = new ArrayCollection();
+        $this->tareas = $tareas;
+
+        return $this;
     }
-    
 }

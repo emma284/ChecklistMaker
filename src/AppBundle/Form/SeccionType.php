@@ -20,8 +20,7 @@ class SeccionType extends AbstractType
     {
         $builder
             ->add('nombre', TextType::class, ['label' => 'Nombre de sección: '])
-            ->add('tareas', ChoiceType::class,[
-                'choices' => tareas() ], ['label' => 'Tareas: '])
+            ->add('tareas', ChoiceType::class, ['label' => 'Tareas: '])
                         
         ;
     }
