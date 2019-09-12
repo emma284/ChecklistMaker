@@ -128,6 +128,10 @@ class Checklist
         return $this->numeroExpediente;
     }
 
+    function getFechaInicioExpediente() {
+        return $this->fechaInicioExpediente;
+    }
+
     function getEvaluador() {
         return $this->evaluador;
     }
@@ -148,6 +152,10 @@ class Checklist
         return $this->secciones;
     }
 
+    function getComentarioDeEvaluador() {
+        return $this->comentarioDeEvaluador;
+    }
+
     function setId($id) {
         $this->id = $id;
     }
@@ -162,6 +170,10 @@ class Checklist
 
     function setNumeroExpediente($numeroExpediente) {
         $this->numeroExpediente = $numeroExpediente;
+    }
+
+    function setFechaInicioExpediente($fechaInicioExpediente) {
+        $this->fechaInicioExpediente = $fechaInicioExpediente;
     }
 
     function setEvaluador($evaluador) {
@@ -182,30 +194,15 @@ class Checklist
 
     function setSecciones($secciones) {
         $this->secciones = $secciones;
-    }    
-    
-    
-    public function __construct()
-    {
-        $this->seccion = new ArrayCollection();
-    }
-    
-    function getComentarioDeEvaluador() {
-        return $this->comentarioDeEvaluador;
     }
 
     function setComentarioDeEvaluador($comentarioDeEvaluador) {
         $this->comentarioDeEvaluador = $comentarioDeEvaluador;
     }
-    
-    function getFechaInicioExpediente() {
-        return $this->fechaInicioExpediente;
+
+        
+    public function __construct()
+    {
+        $this->seccion = new ArrayCollection();
     }
-
-    function setFechaInicioExpediente($fechaInicioExpediente) {
-        $this->fechaInicioExpediente = $fechaInicioExpediente;
-    }
-
-
-
 }

@@ -54,6 +54,9 @@ class Tarea {
      * @Assert\NotBlank
      */
     private $autoredaccion;
+    
+    
+    
        
     
 }
