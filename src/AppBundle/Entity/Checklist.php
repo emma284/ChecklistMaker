@@ -95,21 +95,19 @@ class Checklist
      */
     private $fechaFinEvaluacion;
     
-        
-    /**
-     * @ORM\OneToMany(targetEntity="Seccion", cascade={"persist"})
-     * @ORM\JoinColumn(name="seccion_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Seccion")
-     * @Assert\Valid
-     */
-    private $secciones;
-    
     /**
      * @var string
      *
      * @ORM\Column(name="comentarioDeEvaluador", type="string")
      */
     private $comentarioDeEvaluador;
+    
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plantilla", inversedBy="checklists")
+     */
+    private $plantilla;
+    
     
     //Getters and setters
     function getId() {
@@ -146,10 +144,6 @@ class Checklist
 
     function getFechaFinEvaluacion() {
         return $this->fechaFinEvaluacion;
-    }
-
-    function getSecciones() {
-        return $this->secciones;
     }
 
     function getComentarioDeEvaluador() {
@@ -191,18 +185,20 @@ class Checklist
     function setFechaFinEvaluacion($fechaFinEvaluacion) {
         $this->fechaFinEvaluacion = $fechaFinEvaluacion;
     }
-
-    function setSecciones($secciones) {
-        $this->secciones = $secciones;
-    }
-
+    
     function setComentarioDeEvaluador($comentarioDeEvaluador) {
         $this->comentarioDeEvaluador = $comentarioDeEvaluador;
     }
-
-        
-    public function __construct()
-    {
-        $this->seccion = new ArrayCollection();
+    
+    function getPlantilla(): ?Plantilla {
+        return $this->plantilla;
     }
+    
+    function setPlantilla(?Plantilla $plantilla): self {
+        $this->plantilla = $plantilla;
+        
+        return $this;
+    }
+    
+    
 }

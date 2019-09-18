@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -15,21 +16,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Plantilla
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(name="id", type="integer")
      */
     private $id;
 
     
     /**
-     * @var string
-     *
      * @ORM\Column(name="nombre", type="string", length=100)
-     * @Assert\NotBlank(message="No puede dejar el nombre del Plantilla en blanco")
-     * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre no puede dejarse en blanco.", maxMessage = "El nombre es demasiado largo.")
+     * 
      */
     private $nombre;
     
@@ -40,6 +36,12 @@ class Plantilla
      * @Assert\Date
      */
     private $fechaBaja;
+    
+    
+    /**
+     *  @ORM\OneToMany(targetEntity="AppBundle\Entity\Checklist", mappedBy="plantilla")
+     */
+    private $checklists;
     
     
     /**
@@ -76,9 +78,28 @@ class Plantilla
     }
 
     
+    function getFechaBaja() {
+        return $this->fechaBaja;
+    }
+
+    function setFechaBaja($fechaBaja) {
+        $this->fechaBaja = $fechaBaja;
+    }
+
+    
+    /**
+     * 
+     * @return Collection|Checklist[]
+     */
+    function getChecklists(): Collection {//: Collection se refiere una interface de collection
+        return $this->checklists;
+    }
+
+        
     //Constructor. It's sets seccion into an ArrayCollection
     public function __construct()
     {
+        $this->checklists = new ArrayCollection();
         $this->seccion = new ArrayCollection();
     }
     
