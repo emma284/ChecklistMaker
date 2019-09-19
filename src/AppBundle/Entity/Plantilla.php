@@ -39,10 +39,16 @@ class Plantilla
     
     
     /**
+     *  @ORM\Column(name"version", type="integer")
+     */
+    private $version;
+    
+    
+    /**
      *  @ORM\OneToMany(targetEntity="AppBundle\Entity\Checklist", mappedBy="plantilla")
      */
     private $checklists;
-    
+        
     
     /**
      * @ORM\OneToMany(targetEntity="Seccion", cascade={"persist"})
@@ -77,6 +83,14 @@ class Plantilla
         $this->secciones = $secciones;
     }
 
+    function getVersion() {
+        return $this->version;
+    }
+
+    function setVersion($version) {
+        $this->version = $version;
+    }
+    
     
     function getFechaBaja() {
         return $this->fechaBaja;

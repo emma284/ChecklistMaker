@@ -33,11 +33,29 @@ use Symfony\Component\HttpFoundation\Response;
     /**
      * @Route("/checklist/new/", name="new_checklist")
      */
-    public function checklistNewAction(Request $request)
+    public function checklistNewAction(Request $request, $id_plantilla)
     {
-        $plantilla= new Plantilla();
+        
+        //La plantilla se busca por su ID pero podría buscarse por su nombre
+        $plantilla= $this->getDoctrine()->getRepository(Plantilla::class)
+                ->findOneBy([
+                    'id' => $id_plantilla,
+                    'fechaBaja' => NULL
+                        ]);
+        
+        if(!$plantilla){
+            throw $this->createNotFoundException(
+                    'No se ha encontrado la plantilla para este checklist'
+                    //Se debería mostrar el nombre de la plantilla
+                    );
+        }
         $checklist= new Checklist();
-
+        //Asocio al checklist la información ya conocida
+        $checklist->setPlantilla($plantilla);
+        $checklist->setNombre($plantilla->getNombre());
+        $checklist->setVersion($plantilla->getVersion());
+        
+        
         $entityManager = $this->getDoctrine()->getManager();
 
         $form = $this->createForm(ChecklistType::class, $checklist);
