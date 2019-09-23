@@ -42,6 +42,11 @@ class Seccion
      */
     private $tareas;
     
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plantilla", mappedBy="secciones")
+     * @ORM\JoinColumn(name="plantilla_id", referencedColumnName="id")
+     */
+    private $plantilla;
     
     //Getters and setters
     function getId() {
@@ -68,6 +73,15 @@ class Seccion
         $this->tareas = $tareas;
     }
     
+    function getPlantilla() {
+        return $this->plantilla;
+    }
+
+    function setPlantilla($plantilla) {
+        $this->plantilla = $plantilla;
+    }
+
+        
     public function __construct()
     {
         $this->tareas = new ArrayCollection();

@@ -51,10 +51,7 @@ class Plantilla
         
     
     /**
-     * @ORM\OneToMany(targetEntity="Seccion", cascade={"persist"})
-     * @ORM\JoinColumn(name="seccion_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Seccion")
-     * @Assert\Valid
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Seccion", inversedBy="plantilla")
      */
     private $secciones;
     

@@ -105,6 +105,7 @@ class Checklist
     
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plantilla", inversedBy="checklists")
+     * @ORM\JoinColumn(name="plantilla_id", referencedColumnName="id")
      */
     private $plantilla;
     
