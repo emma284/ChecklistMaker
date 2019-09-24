@@ -21,17 +21,15 @@ class Respuesta {
     private $elegida;
     
     /**
-     *
-     * @Assert\Type(type="AppBundle\Entity\Tarea")
-     * @Assert\Valid
-     *  
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Tarea", inversedBy="respuesta")
+     * @ORM\JoinColumn(name="tarea_id", referencedColumnName="id")
      */
     private $tarea;
     
     /**
      *
-     * @Assert\Type(type="AppBundle\Entity\Checklist")
-     * @Assert\Valid
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Checklist", inversedBy="respuesta")
+     * @ORM\JoinColumn(name="checklist_id", referencedColumnName="id")
      *  
      */
     private $checklist;

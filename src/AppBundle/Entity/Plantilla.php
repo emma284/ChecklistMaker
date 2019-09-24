@@ -51,7 +51,8 @@ class Plantilla
         
     
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Seccion", inversedBy="plantilla")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Seccion", mappedBy="plantilla")
+     * 
      */
     private $secciones;
     

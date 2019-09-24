@@ -56,7 +56,26 @@ class Tarea {
     private $autoredaccion;
     
     
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Seccion", inversedBy="tareas")
+     * @ORM\JoinColumn(name="seccion_id", referencedColumnName="id")
+     */
+    private $seccion;
     
-       
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Respuesta", mappedBy="checklist")
+     */
+    private $respuestas;
+    
+    
+    //Getters and setters
+    
+    
+    
+    //Constructor
+    public function __construct()
+    {
+        $this->respuestas = new ArrayCollection();
+    }
     
 }

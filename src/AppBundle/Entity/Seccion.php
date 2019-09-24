@@ -35,15 +35,12 @@ class Seccion
 
     
     /**
-     * @ORM\OneToMany(targetEntity="Tarea", cascade={"persist"})
-     * @ORM\JoinColumn(name="tarea_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Tarea")
-     * @Assert\Valid
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Tarea", mappedBy="seccion")
      */
     private $tareas;
     
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plantilla", mappedBy="secciones")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plantilla", inversedBy="secciones")
      * @ORM\JoinColumn(name="plantilla_id", referencedColumnName="id")
      */
     private $plantilla;

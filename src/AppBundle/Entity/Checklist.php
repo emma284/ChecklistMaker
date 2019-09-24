@@ -110,6 +110,13 @@ class Checklist
     private $plantilla;
     
     
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Respuesta", mappedBy="checklist")
+     */
+    private $respuestas;
+    
+    
+    
     //Getters and setters
     function getId() {
         return $this->id;
@@ -201,5 +208,9 @@ class Checklist
         return $this;
     }
     
-    
+    //Constructor
+    public function __construct()
+    {
+        $this->respuestas = new ArrayCollection();
+    }
 }
