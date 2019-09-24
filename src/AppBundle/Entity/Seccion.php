@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use AppBundle\Entity\Tarea;
 
 /**
  * Seccion
@@ -33,15 +34,19 @@ class Seccion
      */
     private $nombre;
 
-    
+
     /**
-     * @ORM\OneToMany(targetEntity="Tarea", cascade={"persist"})
-     * @ORM\JoinColumn(name="tarea_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Tarea")
-     * @Assert\Valid
+     * @ORM\OneToMany(targetEntity="Tarea", mappedBy="seccion")
      */
-    private $tareas;
-    
+    protected $tareas;
+  
+    /**
+     * @var \AppBundle\Entity\Plantilla
+     *
+     * @ORM\ManyToOne(targetEntity="Plantilla", inversedBy="seccion")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $idPlantilla;
     
     //Getters and setters
     function getId() {
@@ -75,6 +80,30 @@ class Seccion
     }
 
     /**
+     * Get the value of idPlantilla
+     *
+     * @return  \AppBundle\Entity\Plantilla
+     */ 
+    public function getIdPlantilla()
+    {
+        return $this->idPlantilla;
+    }
+
+    /**
+     * Set the value of idPlantilla
+     *
+     * @param  \AppBundle\Entity\Plantilla  $idPlantilla
+     *
+     * @return  self
+     */ 
+    public function setIdPlantilla(\AppBundle\Entity\Plantilla $idPlantilla)
+    {
+        $this->idPlantilla = $idPlantilla;
+
+        return $this;
+    }
+
+    /**
      * Get the value of tareas
      */ 
     public function getTareas()
@@ -92,5 +121,27 @@ class Seccion
         $this->tareas = $tareas;
 
         return $this;
+    }
+
+    public function addTareas(Tarea $tarea)
+    {
+        
+        $tareas->setIdSeccion($this);
+
+        $this->tareas->add($tarea);
+        
+    }
+
+    public function removeTareas(Tarea $tarea)
+    {
+        $this->tareas->removeElement($tarea);
+    }
+    
+    /**
+    * Constructor
+    */
+    public function __construct()
+    {
+        $this->tareas = new ArrayCollection();
     }
 }

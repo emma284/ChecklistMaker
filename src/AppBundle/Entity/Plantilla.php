@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="Plantilla")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PlantillaRepository")
  */
+
 class Plantilla
 {
     /**
@@ -35,12 +36,9 @@ class Plantilla
 
     
     /**
-     * @ORM\OneToMany(targetEntity="Seccion", cascade={"persist"})
-     * @ORM\JoinColumn(name="seccion_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Seccion")
-     * @Assert\Valid
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Seccion", mappedBy="plantilla")
      */
-    private $secciones;
+    protected $secciones;
     
     
     function getId() {
@@ -51,10 +49,7 @@ class Plantilla
         return $this->nombre;
     }
 
-    function getSecciones() {
-        return $this->secciones;
-    }
-
+   
     function setId($id) {
         $this->id = $id;
     }
@@ -63,12 +58,32 @@ class Plantilla
         $this->nombre = $nombre;
     }
 
+    function getSecciones() {
+        return $this->secciones;
+    }
+
     function setSecciones($secciones) {
         $this->secciones = $secciones;
     }
 
     
-    //Constructor. It's sets seccion into an ArrayCollection
+    public function addSecciones(Seccion $representante)
+    {
+        
+        $secciones->setIdPlantilla($this);
+
+        $this->secciones->add($secciones);
+        
+    }
+
+    public function removeRepresentante(Representante $representante)
+    {
+        $this->representantes->removeElement($representante);
+    }
+    
+    /**
+    * Constructor
+    */
     public function __construct()
     {
         $this->secciones = new ArrayCollection();

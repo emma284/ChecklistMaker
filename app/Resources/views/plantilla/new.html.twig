@@ -5,49 +5,255 @@
 
 {% block content %}
 
-    
-    <div class="card bg-light mb-12">
-        <h1>Creación de Checklist</h1>
+    <div class="card-body">
+        
+        <div class="form-inline col-md-12">
 
-
-        <div class="card-body">
-                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-           
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.nombre) }}
-                            {{ form_widget(form.nombre, {'attr': {'class': form_errors(form.nombre) ? 'form-control is-invalid' : 'form-control'}}) }}
-                            <div class="invalid-feedback">
-                                {{ form_errors(form.nombre) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            {{ form_label(form.secciones.nombre) }}
-                            {{ form_widget(form.secciones.nombre, {'attr': {'class': form_errors(form.secciones.nombre) ? 'form-control is-invalid' : 'form-control'}}) }}
-                            <div class="invalid-feedback">
-                                {{ form_errors(form.secciones.nombre) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            {{ form_label(form.secciones.tareas) }}
-                            {{ form_widget(form.secciones.tareas, {'attr': {'class': form_errors(form.secciones.tareas) ? 'form-control is-invalid' : 'form-control'}}) }}
-                            <div class="invalid-feedback">
-                                {{ form_errors(form.secciones.tareas) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div>
-                            {#{{ form_widget(form.save) }}#}
-                            <button type="button" class="btn btn-primary" onclick={{ form_widget(form.save) }}</button>
-                        </div>
-                        <div>&nbsp;</div>{# Espacio en blanco p/separar botones #}
-                    </div>
-                {{form_end(form)}}
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">Razón Social</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div>  
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">Expediente N°</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">FECHA INICIO EXPTE</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">EVALUADOR</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">VERSIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div>  
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">INICIO EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">FIN EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">DÍAS DE EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            
         </div>
+
+        <div class="card-header">SUB-RUTINA</div>
+     
+        <div clase="form-inline col-md-12">
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Investigar empresa: </label>
+                <select class="form-control col-md-2">
+                    <option value=""  selected="selected" ></option>
+                    <option value="a" data-choice="a" data-key="0">NO HECHO</option>
+                    <option value="b" data-choice="b" data-key="1">HECHO</option>
+
+                </select>
+                <div class="col-md-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si la empresa existe: </label>
+                <select class="form-control col-sm-2">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+        
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si respondió en plazo: </label>
+                <select class="form-control col-sm-2 ">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si se realizó: </label>
+                <select class="form-control col-sm-2">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Se desestima por otros motivos: </label>
+                <select class="form-control col-sm-2 ">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-header">ESTANDAR</div>
+        
+        <div clase="form-inline col-md-12">
+        
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">Forma de presentación: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">NUEVO</option>
+                        <option value="b" data-choice="b" data-key="1">VIEJO</option>
+
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">Estado formulario: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">ABIERTO</option>
+                        <option value="b" data-choice="b" data-key="1">CERRADO</option>
+
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">indicar si declara actividad: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">SI</option>
+                        <option value="b" data-choice="b" data-key="1">NO</option>
+
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                
+                    
+                    <label for="inputPassword4 " class="col-sm-4 col-form-label">Definir actividad:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-6">
+                    
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+            
+                    <label for="inputPassword4" class="col-sm-4 col-form-label">N° de CUACM:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+            
+                    <label for="inputPassword4" class="col-sm-4 col-form-label">Nombre de CUACM:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+               
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">Estándar al que pertenece: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">1</option>
+                        <option value="b" data-choice="b" data-key="1">2</option>
+                        <option value="b" data-choice="b" data-key="2">3</option>
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+        </div>  
+
+        <div class="form-inline col-md-12">
+            <button type="button" class="btn btn-primary ml-auto">Guardar y Salir</button>
+            <div>&nbsp;</div>
+            <button type="button" class="btn btn-primary ">Siguiente</button>
+        </div>
+        
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+            {% for seccion in form.secciones %}
+                
+                <div class="form-group col-md-12">
+                   
+                    {{ form_label(seccion.nombre) }}
+                    {{ form_widget(seccion.nombre, {'attr': {'class': form_errors(seccion.nombre) ? 'form-control is-invalid' : 'form-control'}}) }}
+                   
+                    <div class="invalid-feedback">
+                        {{ form_errors(seccion.nombre) }}
+                    </div>
+
+                    {% for tarea in seccion.tareas %}
+
+                        <div class="form-group col-md-12">
+                    
+                            {{ form_label(tarea.nombre) }}
+                            {{ form_widget(tarea.nombre, {'attr': {'class': form_errors(tarea.nombre) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    
+                            <div class="invalid-feedback">
+                                {{ form_errors(tarea.nombre) }}
+                            </div>
+                        </div>
+
+                    {% endfor %}
+  
+                </div>
+            {% endfor %}
+        {{form_end(form)}}
     </div>
 {% endblock %}

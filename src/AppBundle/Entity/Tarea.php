@@ -7,6 +7,7 @@
  */
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Tarea
@@ -33,6 +34,16 @@ class Tarea {
      */
     private $nombre;
     
+      
+    /**
+     * @var \AppBundle\Entity\Seccion
+     *
+     * @ORM\ManyToOne(targetEntity="Seccion",  inversedBy="tarea")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $idSeccion;
+
+
     /**
      * @var string
      *
@@ -41,6 +52,16 @@ class Tarea {
      */
     private $valor;
     
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo", type="string", length=100)
+     * @Assert\NotBlank
+     */
+    private $tipo;
+
+
     /**
      * @var string
      *
@@ -64,13 +85,53 @@ class Tarea {
      */
     private $autoredaccion;
     
-//    /**
-//     * @ORM\ManyToOne(targetEntity="ValorTarea", cascade={"persist"})
-//     * @ORM\JoinColumn(name="valorTarea_id",referencedColumnName="id")
-//     * @Assert\Type(type="AppBundle\Entity\ValorTarea")
-//     * @Assert\Valid
-//     */
-//    private $valorTarea;
-    
-    
+
+    /**
+     * Get the value of tipo
+     *
+     * @return  string
+     */ 
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * Set the value of tipo
+     *
+     * @param  string  $tipo
+     *
+     * @return  self
+     */ 
+    public function setTipo(string $tipo)
+    {
+        $this->tipo = $tipo;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of idSeccion
+     *
+     * @return  \AppBundle\Entity\Seccion
+     */ 
+    public function getIdSeccion()
+    {
+        return $this->idSeccion;
+    }
+
+    /**
+     * Set the value of idSeccion
+     *
+     * @param  \AppBundle\Entity\Seccion  $idSeccion
+     *
+     * @return  self
+     */ 
+    public function setIdSeccion(\AppBundle\Entity\Seccion $idSeccion)
+    {
+        $this->idSeccion = $idSeccion;
+
+        return $this;
+    }
 }

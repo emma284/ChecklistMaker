@@ -4,6 +4,8 @@ namespace AppBundle\Form;
 //Del tuto
 use Symfony\Component\Form\FormBuilderInterface;
 use AppBundle\Entity\Seccion;
+use AppBundle\Entity\Tarea;
+use AppBundle\Form\TareaType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\AbstractType;
 //No del tuto
@@ -20,8 +22,10 @@ class SeccionType extends AbstractType
     {
         $builder
             ->add('nombre', TextType::class, ['label' => 'Nombre de sección: '])
-            ->add('tareas', ChoiceType::class, ['label' => 'Tareas: '])
-                        
+            ->add('tareas',CollectionType::class, [
+                'entry_type' => TareaType::class,
+                'entry_options' => ['label' => 'tareas: '],
+                ])            
         ;
     }
 

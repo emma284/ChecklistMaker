@@ -46,6 +46,7 @@ use Symfony\Component\HttpFoundation\Request;
             //return $this->redirectToRoute('listar_formularios');
 
         }
+        
         return $this->render('plantilla/new.html.twig',[
             'form' => $form->createView(),
         ]);
