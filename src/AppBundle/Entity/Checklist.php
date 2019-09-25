@@ -95,14 +95,7 @@ class Checklist
      */
     private $fechaFinEvaluacion;
     
-        
-    /**
-     * @ORM\OneToMany(targetEntity="Seccion", cascade={"persist"})
-     * @ORM\JoinColumn(name="seccion_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Seccion")
-     * @Assert\Valid
-     */
-    private $secciones;
+
     
     /**
      * @var string
@@ -144,9 +137,7 @@ class Checklist
         return $this->fechaFinEvaluacion;
     }
 
-    function getSecciones() {
-        return $this->secciones;
-    }
+
 
     function setId($id) {
         $this->id = $id;
@@ -180,9 +171,7 @@ class Checklist
         $this->fechaFinEvaluacion = $fechaFinEvaluacion;
     }
 
-    function setSecciones($secciones) {
-        $this->secciones = $secciones;
-    }    
+ 
     
     
     public function __construct()

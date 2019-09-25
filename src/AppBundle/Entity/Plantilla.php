@@ -23,7 +23,6 @@ class Plantilla
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     
     /**
      * @var string
@@ -34,10 +33,9 @@ class Plantilla
      */
     private $nombre;
 
-    
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Seccion", mappedBy="plantilla")
-     */
+    * @ORM\OneToMany(targetEntity="AppBundle\Entity\Seccion", mappedBy="idPlantilla")
+    */
     protected $secciones;
     
     
@@ -88,7 +86,5 @@ class Plantilla
     {
         $this->secciones = new ArrayCollection();
     }
-    
-
 
 }

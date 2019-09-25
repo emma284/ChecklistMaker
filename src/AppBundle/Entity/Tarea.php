@@ -8,7 +8,7 @@
 
 namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Tarea
  *
@@ -38,8 +38,8 @@ class Tarea {
     /**
      * @var \AppBundle\Entity\Seccion
      *
-     * @ORM\ManyToOne(targetEntity="Seccion",  inversedBy="tarea")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="Seccion",  inversedBy="tareas")
+     *  @ORM\JoinColumn(name="seccion_id", referencedColumnName="id")
      */
     private $idSeccion;
 
@@ -80,7 +80,7 @@ class Tarea {
     /**
      * @var string
      *
-     * @ORM\Column(name="valor", type="string", length=100)
+     * @ORM\Column(name="autoredaccion", type="string", length=100)
      * @Assert\NotBlank
      */
     private $autoredaccion;

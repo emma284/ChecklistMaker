@@ -22,15 +22,6 @@ class FormularioA
      */
     private $id;
 
-    /**
-     * @ORM\OneToOne(targetEntity="Domicilio", cascade={"persist"})
-     * @ORM\JoinColumn(name="domicilio_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Domicilio")
-     * @Assert\Valid
-     */
-    private $domicilio;
-
-
 
     /**
      * @var string
@@ -65,25 +56,6 @@ class FormularioA
         return $this;
     }
 
-    /**
-     * Get the value of domicilio
-     */ 
-    public function getDomicilio()
-    {
-        return $this->domicilio;
-    }
-
-    /**
-     * Set the value of domicilio
-     *
-     * @return  self
-     */ 
-    public function setDomicilio($domicilio)
-    {
-        $this->domicilio = $domicilio;
-
-        return $this;
-    }
 
     /**
      * Get the value of id

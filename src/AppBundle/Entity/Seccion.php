@@ -36,15 +36,15 @@ class Seccion
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Tarea", mappedBy="seccion")
+     * @ORM\OneToMany(targetEntity="Tarea", mappedBy="idSeccion")
      */
     protected $tareas;
   
     /**
      * @var \AppBundle\Entity\Plantilla
      *
-     * @ORM\ManyToOne(targetEntity="Plantilla", inversedBy="seccion")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="Plantilla", inversedBy="secciones")
+     * @ORM\JoinColumn(name="plantilla_id", referencedColumnName="id")
      */
     private $idPlantilla;
     

@@ -20,7 +20,7 @@ class PlantillaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre', TextType::class, ['label' => 'Nombre del checklist: '])
+            //->add('nombre', TextType::class, ['label' => 'Nombre del checklist: '])
             ->add('secciones',CollectionType::class, [
                 'entry_type' => SeccionType::class,
                 'entry_options' => ['label' => 'Secciones: '],
