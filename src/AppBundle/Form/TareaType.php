@@ -13,10 +13,11 @@ class TareaType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+       
         $builder
-            ->add('nombre', TextType::class, ['label' => 'Nombre de la tarea: '])
+        ->add('nombre', TextType::class, ['label' => 'Nombre de la tarea: '])
                         
-        ;
+        ;        
     }
 
     public function configureOptions(OptionsResolver $resolver)

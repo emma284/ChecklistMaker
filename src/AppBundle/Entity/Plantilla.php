@@ -13,6 +13,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="Plantilla")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PlantillaRepository")
  */
+
 class Plantilla
 {
     /**
@@ -65,16 +66,17 @@ class Plantilla
         return $this->nombre;
     }
 
-    function getSecciones() {
-        return $this->secciones;
-    }
-
+   
     function setId($id) {
         $this->id = $id;
     }
 
     function setNombre($nombre) {
         $this->nombre = $nombre;
+    }
+
+    function getSecciones() {
+        return $this->secciones;
     }
 
     function setSecciones($secciones) {
@@ -89,6 +91,23 @@ class Plantilla
         $this->version = $version;
     }
     
+    public function addSecciones(Seccion $representante)
+    {
+        
+        $secciones->setIdPlantilla($this);
+
+        $this->secciones->add($secciones);
+        
+    }
+
+    public function removeRepresentante(Representante $representante)
+    {
+        $this->representantes->removeElement($representante);
+    }
+    
+    /**
+    * Constructor
+    */
     
     function getFechaBaja() {
         return $this->fechaBaja;

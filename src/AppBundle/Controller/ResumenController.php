@@ -85,6 +85,7 @@ class ResumenController extends Controller
         return $this->render('Resumen/ver.html.twig', array(
             'formulario' => $formulario));
     }
+    
     /**
      * @Route("/resumen/modificar/{id}", name="modificar-hoja")
      */

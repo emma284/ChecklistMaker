@@ -46,8 +46,27 @@ use Symfony\Component\HttpFoundation\Request;
             //return $this->redirectToRoute('listar_formularios');
 
         }
+        
         return $this->render('plantilla/new.html.twig',[
             'form' => $form->createView(),
         ]);
+
+
     }
+
+
+/**
+ * @Route("/plantilla/ver/", name="ver_plantilla")
+ */
+public function plantillaVerAction(Request $request)
+{
+    $entityManager = $this->getDoctrine()->getManager();
+
+
+    return $this->render('plantilla/ver.html.twig', array(
+        ));
+
+
+}
+
 }

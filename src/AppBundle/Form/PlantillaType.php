@@ -4,9 +4,9 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
-//use AppBundle\Entity\Seccion;
 use AppBundle\Form\SeccionType;
 use AppBundle\Entity\Plantilla;
+use AppBundle\Entity\Seccion;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 //use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -23,10 +23,11 @@ class PlantillaType extends AbstractType
             ->add('nombre', TextType::class, ['label' => 'Nombre del checklist: '])
             ->add('secciones',CollectionType::class, [
                 'entry_type' => SeccionType::class,
-                'entry_options' => ['label' => 'Agregue las secciones: '],
+                'entry_options' => ['label' => 'Secciones: '],
                 ])
             ->add('save', SubmitType::class, ['label' => 'Guardar'])
         ;
+    
     }
 
     public function configureOptions(OptionsResolver $resolver)
