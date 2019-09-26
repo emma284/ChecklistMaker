@@ -85,7 +85,11 @@ class Tarea {
      */
     private $autoredaccion;
     
-
+    /**
+     * @ORM\OneToMany(targetEntity="Respuesta", mappedBy="tarea")
+     */
+    private $respuestas;
+        
     /**
      * Get the value of tipo
      *
@@ -110,7 +114,6 @@ class Tarea {
         return $this;
     }
 
-
     /**
      * Get the value of idSeccion
      *
@@ -133,5 +136,10 @@ class Tarea {
         $this->idSeccion = $idSeccion;
 
         return $this;
+    }
+    //Constructor
+    public function __construct()
+    {
+        $this->respuestas = new ArrayCollection();
     }
 }

@@ -38,6 +38,10 @@ class Plantilla
     */
     protected $secciones;
     
+    /**
+     *  @ORM\OneToMany(targetEntity="AppBundle\Entity\Checklist", mappedBy="plantilla")
+     */
+    private $checklists;
     
     function getId() {
         return $this->id;

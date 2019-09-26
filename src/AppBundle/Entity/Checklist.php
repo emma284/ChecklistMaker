@@ -95,8 +95,17 @@ class Checklist
      */
     private $fechaFinEvaluacion;
     
-
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Plantilla", inversedBy="checklists")
+     * @ORM\JoinColumn(name="plantilla_id", referencedColumnName="id")
+     */
+    private $plantilla;
     
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Resumen", mappedBy="checklist")
+     */
+    private $resumen;
+
     /**
      * @var string
      *
@@ -197,4 +206,24 @@ class Checklist
 
 
 
+
+    /**
+     * Get the value of plantilla
+     */ 
+    public function getPlantilla()
+    {
+        return $this->plantilla;
+    }
+
+    /**
+     * Set the value of plantilla
+     *
+     * @return  self
+     */ 
+    public function setPlantilla($plantilla)
+    {
+        $this->plantilla = $plantilla;
+
+        return $this;
+    }
 }
