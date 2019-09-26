@@ -25,7 +25,6 @@ class PlantillaType extends AbstractType
                 'entry_type' => SeccionType::class,
                 'entry_options' => ['label' => 'Secciones: '],
                 ])
-            ->add('save', SubmitType::class, ['label' => 'Guardar'])
         ;
     
     }

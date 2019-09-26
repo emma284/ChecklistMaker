@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Plantilla;
 use AppBundle\Form\PlantillaType;
+use AppBundle\Entity\Seccion;
+use AppBundle\Form\SeccionType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -46,17 +48,53 @@ use Symfony\Component\HttpFoundation\Request;
             //return $this->redirectToRoute('listar_formularios');
 
         }
-        
-        return $this->render('plantilla/new.html.twig',[
-            'form' => $form->createView(),
+        $secciones = $entityManager
+            ->getRepository(Seccion::class)
+            ->findBy([
+            'idPlantilla' => $plantilla->getId()
         ]);
+
+        return $this->render('plantilla/new.html.twig', array(
+            'form' => $form->createView(),
+            'secciones' => $secciones
+        ));
+
+
+    }
+
+    /**
+    * @Route("/plantilla/ver/{id}", name="ver_plantilla")
+    */
+    public function plantillaVer(Request $request, $id)
+    {
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $plantilla = $entityManager
+                    ->getRepository(Plantilla::class)
+                    ->find($id);
+
+
+        if(!$plantilla) {
+            throw $this->createNotFoundException(
+                "No se ha encontrado la plantilla: " . $id
+            );
+        }
+
+        $secciones = $entityManager
+            ->getRepository(Seccion::class)
+            ->findBy(['idPlantilla' => $id]);
+
+        return $this->render('plantilla/ver.html.twig', array(
+            'form' => $plantilla,
+            'secciones' => $secciones));
 
 
     }
 
 
 /**
- * @Route("/plantilla/ver/", name="ver_plantilla")
+ * @Route("/plantilla/ver_2/", name="ver2_plantilla")
  */
 public function plantillaVerAction(Request $request)
 {
