@@ -15,8 +15,7 @@ class TareaType extends AbstractType
     {
        
         $builder
-        ->add('nombre', TextType::class, ['label' => 'Nombre de la tarea: '])
-                        
+        ->add('nombre', TextType::class)          
         ;        
     }
 

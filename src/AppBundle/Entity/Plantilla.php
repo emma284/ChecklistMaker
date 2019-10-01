@@ -69,18 +69,18 @@ class Plantilla
     }
 
     
-    public function addSecciones(Seccion $representante)
+    public function addSecciones(Seccion $seccion)
     {
         
         $secciones->setIdPlantilla($this);
 
-        $this->secciones->add($secciones);
+        $this->secciones->add($seccion);
         
     }
 
-    public function removeRepresentante(Representante $representante)
+    public function removeSecciones(Seccion $seccion)
     {
-        $this->representantes->removeElement($representante);
+        $this->secciones->removeElement($seccion);
     }
     
     /**

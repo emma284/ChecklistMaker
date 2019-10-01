@@ -17,14 +17,15 @@ use AppBundle\Entity\Seccion;
 use AppBundle\Form\SeccionType;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Description of PlantillaController
- *
- * @author Emma
- */
 
- class PlantillaController extends Controller
- {
+    /**
+     * Description of PlantillaController
+     *
+     * @author Emma
+     */
+
+    class PlantillaController extends Controller
+    {
     /**
      * @Route("/plantilla/new/", name="new_plantilla")
      */
@@ -93,18 +94,16 @@ use Symfony\Component\HttpFoundation\Request;
     }
 
 
-/**
- * @Route("/plantilla/ver_2/", name="ver2_plantilla")
- */
-public function plantillaVerAction(Request $request)
-{
-    $entityManager = $this->getDoctrine()->getManager();
+    /**
+     * @Route("/plantilla/ver_2/", name="ver2_plantilla")
+     */
+    public function plantillaVerAction(Request $request)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
 
 
-    return $this->render('plantilla/ver.html.twig', array(
-        ));
+        return $this->render('plantilla/ver.html.twig', array());
 
-
-}
+    }
 
 }

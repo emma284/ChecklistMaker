@@ -85,8 +85,14 @@ class Tarea {
      */
     private $autoredaccion;
     
+   // /**
+   //  * @ORM\OneToMany(targetEntity="Respuesta", mappedBy="tarea")
+    // */
+    
     /**
-     * @ORM\OneToMany(targetEntity="Respuesta", mappedBy="tarea")
+     * @var string
+     *
+     * @ORM\Column(name="respuesta", type="string", length=150)
      */
     private $respuestas;
         
@@ -137,9 +143,34 @@ class Tarea {
 
         return $this;
     }
+    
     //Constructor
-    public function __construct()
+ //   public function __construct()
+  //  {
+ //       $this->respuestas = new ArrayCollection();
+  //  }
+
+    /**
+     * Get the value of nombre
+     *
+     * @return  string
+     */ 
+    public function getNombre()
     {
-        $this->respuestas = new ArrayCollection();
+        return $this->nombre;
+    }
+
+    /**
+     * Set the value of nombre
+     *
+     * @param  string  $nombre
+     *
+     * @return  self
+     */ 
+    public function setNombre(string $nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
     }
 }
