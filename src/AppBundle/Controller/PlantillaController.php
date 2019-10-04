@@ -49,15 +49,10 @@ use Symfony\Component\HttpFoundation\Request;
             //return $this->redirectToRoute('listar_formularios');
 
         }
-        $secciones = $entityManager
-            ->getRepository(Seccion::class)
-            ->findBy([
-            'idPlantilla' => $plantilla->getId()
-        ]);
+
 
         return $this->render('plantilla/new.html.twig', array(
-            'form' => $form->createView(),
-            'secciones' => $secciones
+            'form' => $form->createView()
         ));
 
 
