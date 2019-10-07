@@ -14,5 +14,18 @@ namespace AppBundle\Entity\FormularioB;
  * @author Admin
  */
 class Localizacion {
-    //put your code here
+    
+    private $zonificacion;
+    
+    private $aguaDeRed;
+    
+    private $redCloacal;
+    
+    private $energiaElectrica;
+    
+    private $gas;
+    
+    
+    
+    
 }

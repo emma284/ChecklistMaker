@@ -14,5 +14,5 @@ namespace AppBundle\Entity\FormularioB;
  * @author Admin
  */
 class CategoriaFinal {
-    //put your code here
+    private $categoriaAsignada;
 }

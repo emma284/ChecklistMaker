@@ -14,5 +14,11 @@ namespace AppBundle\Entity\FormularioB;
  * @author Admin
  */
 class Dotacion {
-    //put your code here
+    
+    private $dotacionDePersonal;
+    
+    private $potenciaInstalada;
+    
+    private $superficieCubierta;
+    
 }
