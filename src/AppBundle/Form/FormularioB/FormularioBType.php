@@ -20,10 +20,10 @@ class FormularioBType extends AbstractType
         $builder
             ->add('estadoSoporteDigital', TextType::class, ['label' => 'Estado de soporte digital:'])
             ->add('ingresarCodigoExcel', TextType::class, ['label' => 'Ingresar código en excel:'])
-            ->add('$emisionDeResiduos', EmisionDeResiduosType::class)
+            ->add('emisionDeResiduos', EmisionDeResiduosType::class)
             ->add('riesgos', RiesgosType::class)
             ->add('dotacion', DotacionType::class)
-            ->add('localización', LocalizacionType::class)
+            ->add('localizacion', LocalizacionType::class)
             ->add('categoriaFinal', CategoriaFinalType::class)
         ;
     }

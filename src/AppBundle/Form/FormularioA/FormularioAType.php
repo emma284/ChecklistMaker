@@ -8,7 +8,7 @@ use AppBundle\Form\FormularioA\DomicilioRealType;
 use AppBundle\Form\FormularioA\ContratoSocialType;
 use AppBundle\Form\FormularioA\ActaSocietariaType;
 use AppBundle\Form\FormularioA\APIType;
-use AppBundle\Form\FormularioA\UsoConformeDeSueloType;
+use AppBundle\Form\FormularioA\UsoConformeSueloType;
 use AppBundle\Form\FormularioA\DNIType;
 use AppBundle\Form\FormularioA\AfipType;
 use AppBundle\Entity\FormularioA\FormularioA;
@@ -27,7 +27,7 @@ class FormularioAType extends AbstractType
             ->add('dni', DNIType::class)
             ->add('afip', AfipType::class)
             ->add('api', APIType::class)
-            ->add('usoConformeDeSuelo', UsoConformeDeSueloType::class)
+            ->add('usoConformeSuelo', UsoConformeSueloType::class)
         ;
     }
 

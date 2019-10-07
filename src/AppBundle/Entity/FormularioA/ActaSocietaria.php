@@ -195,4 +195,5 @@ class ActaSocietaria {
 
         return $this;
     }
+    
 }

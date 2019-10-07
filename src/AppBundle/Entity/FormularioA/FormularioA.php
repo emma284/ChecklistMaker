@@ -126,9 +126,6 @@ class FormularioA
         return $this->api;
     }
 
-    function getUsoConformeDeSuelo() {
-        return $this->usoConformeDeSuelo;
-    }
 
     function setId($id) {
         $this->id = $id;
@@ -162,16 +159,19 @@ class FormularioA
         $this->api = $api;
     }
 
-    function setUsoConformeDeSuelo($usoConformeDeSuelo) {
-        $this->usoConformeDeSuelo = $usoConformeDeSuelo;
-    }
-
     function getPlantilla() {
         return $this->plantilla;
     }
 
     function setPlantilla($plantilla) {
         $this->plantilla = $plantilla;
+    }
+    function getUsoConformeSuelo() {
+        return $this->usoConformeSuelo;
+    }
+
+    function setUsoConformeSuelo($usoConformeSuelo) {
+        $this->usoConformeSuelo = $usoConformeSuelo;
     }
 
 

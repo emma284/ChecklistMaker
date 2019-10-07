@@ -44,5 +44,47 @@ class Dni {
      * @var bool
      */
     private $verApoderado;
+    
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getDni() {
+        return $this->dni;
+    }
+
+    function getVerDni() {
+        return $this->verDni;
+    }
+
+    function getApoderado() {
+        return $this->apoderado;
+    }
+
+    function getVerApoderado() {
+        return $this->verApoderado;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setDni($dni) {
+        $this->dni = $dni;
+    }
+
+    function setVerDni($verDni) {
+        $this->verDni = $verDni;
+    }
+
+    function setApoderado($apoderado) {
+        $this->apoderado = $apoderado;
+    }
+
+    function setVerApoderado($verApoderado) {
+        $this->verApoderado = $verApoderado;
+    }
+
 
 }

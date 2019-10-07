@@ -258,4 +258,14 @@ class DomicilioLegal {
 
         return $this;
     }
+    
+    function getAcepEmail() {
+        return $this->acepEmail;
+    }
+
+    function setAcepEmail($acepEmail) {
+        $this->acepEmail = $acepEmail;
+    }
+
+
 }

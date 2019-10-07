@@ -28,7 +28,7 @@ class UsoConformeSuelo {
     /**
      * @var string
      */
-    private $usoConformeSuelo;
+    private $usoConformeSuelo2;
 
     /**
      * @var int
@@ -59,4 +59,72 @@ class UsoConformeSuelo {
      * @var bool
      */
     private $verLocalizacion;
+    
+    
+    function getId() {
+        return $this->id;
+    }
+
+    function getFojaN() {
+        return $this->fojaN;
+    }
+
+    function getPresentaHabilitacion() {
+        return $this->presentaHabilitacion;
+    }
+
+    function getFechaInicioHabilitacion(): \DateTime {
+        return $this->fechaInicioHabilitacion;
+    }
+
+    function getFechaVencimiento(): \DateTime {
+        return $this->fechaVencimiento;
+    }
+
+    function getVerActividad() {
+        return $this->verActividad;
+    }
+
+    function getVerLocalizacion() {
+        return $this->verLocalizacion;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+
+    function setFojaN($fojaN) {
+        $this->fojaN = $fojaN;
+    }
+
+    function setPresentaHabilitacion($presentaHabilitacion) {
+        $this->presentaHabilitacion = $presentaHabilitacion;
+    }
+
+    function setFechaInicioHabilitacion(\DateTime $fechaInicioHabilitacion) {
+        $this->fechaInicioHabilitacion = $fechaInicioHabilitacion;
+    }
+
+    function setFechaVencimiento(\DateTime $fechaVencimiento) {
+        $this->fechaVencimiento = $fechaVencimiento;
+    }
+
+    function setVerActividad($verActividad) {
+        $this->verActividad = $verActividad;
+    }
+
+    function setVerLocalizacion($verLocalizacion) {
+        $this->verLocalizacion = $verLocalizacion;
+    }
+    function getUsoConformeSuelo2() {
+        return $this->usoConformeSuelo2;
+    }
+
+    function setUsoConformeSuelo2($usoConformeSuelo) {
+        $this->usoConformeSuelo2 = $usoConformeSuelo;
+    }
+
+
+
 }
