@@ -31,12 +31,7 @@ class Resumen
    private $categorizacion;
 
 
-    /**
-     *
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Checklist", inversedBy="resumen")
-     * @ORM\JoinColumn(name="checklist_id", referencedColumnName="id")
-     */
-    private $checklist;
+    
 
 
     /**

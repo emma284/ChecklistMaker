@@ -8,17 +8,77 @@
 
 namespace AppBundle\Entity\FormularioB;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
- * Description of Dotacion
+ * Dotacion
  *
- * @author Admin
+ * @ORM\Table(name="Dotacion")
+ * 
+ * @ORM\Entity
  */
 class Dotacion {
     
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+    /**
+     *
+     * @var string 
+     */
     private $dotacionDePersonal;
     
+    
+    /**
+     *
+     * @var string 
+     */
     private $potenciaInstalada;
     
-    private $superficieCubierta;
     
+    /**
+     *
+     * @var string
+     */
+    private $superficieCubierta;
+
+    function getId() {
+        return $this->id;
+    }
+
+    function getDotacionDePersonal() {
+        return $this->dotacionDePersonal;
+    }
+
+    function getPotenciaInstalada() {
+        return $this->potenciaInstalada;
+    }
+
+    function getSuperficieCubierta() {
+        return $this->superficieCubierta;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setDotacionDePersonal($dotacionDePersonal) {
+        $this->dotacionDePersonal = $dotacionDePersonal;
+    }
+
+    function setPotenciaInstalada($potenciaInstalada) {
+        $this->potenciaInstalada = $potenciaInstalada;
+    }
+
+    function setSuperficieCubierta($superficieCubierta) {
+        $this->superficieCubierta = $superficieCubierta;
+    }
+
+
 }

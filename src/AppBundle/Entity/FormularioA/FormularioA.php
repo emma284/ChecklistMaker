@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AppBundle\Entity\FormularioA;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -8,8 +8,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * FormularioA
  *
- * @ORM\Table(name="formularioA")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\FormularioARepository")
+ * @ORM\Table(name="FormularioA")
+ * 
+ * @ORM\Entity
  */
 class FormularioA
 {
@@ -78,14 +79,19 @@ class FormularioA
      * @Assert\Valid
      */
     private $api;
-        /**
-     * @ORM\OneToOne(targetEntity="UsoConformeDeSuelo", cascade={"persist"})
-     * @ORM\JoinColumn(name="usoConformeDeSuelo_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\FormularioA\UsoConformeDeSuelo")
+    /**
+     * @ORM\OneToOne(targetEntity="UsoConformeSuelo", cascade={"persist"})
+     * @ORM\JoinColumn(name="usoConformeSuelo_id",referencedColumnName="id")
+     * @Assert\Type(type="AppBundle\Entity\FormularioA\UsoConformeSuelo")
      * @Assert\Valid
      */
-    private $usoConformeDeSuelo;
+    private $usoConformeSuelo;
     
+    /**
+     * 
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Plantilla", cascade={"persist"}, inversedBy="formularioA")
+     */
+    private $plantilla;
     
     //Getters and setters
     function getId() {
@@ -158,6 +164,14 @@ class FormularioA
 
     function setUsoConformeDeSuelo($usoConformeDeSuelo) {
         $this->usoConformeDeSuelo = $usoConformeDeSuelo;
+    }
+
+    function getPlantilla() {
+        return $this->plantilla;
+    }
+
+    function setPlantilla($plantilla) {
+        $this->plantilla = $plantilla;
     }
 
 

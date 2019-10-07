@@ -8,51 +8,139 @@
 
 namespace AppBundle\Entity\FormularioB;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
- * Description of EmisionDeResiduos
+ * EmisionDeResiduos
  *
- * @author Admin
+ * @ORM\Table(name="EmisionDeResiduos")
+ * 
+ * @ORM\Entity
  */
 class EmisionDeResiduos {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
     
+    /**
+     *
+     * @var bool
+     */
     private $residuosSolidosSemisolidos;
     
+    /**
+     *
+     * @var bool
+     */
     private $rsu;
     
+    /**
+     *
+     * @var bool
+     */
     private $rnp;
     
+    /**
+     *
+     * @var string
+     */
     private $tipoDeResiduo;
     
+    /**
+     *
+     * @var bool
+     */
     private $rp;
     
+    /**
+     *
+     * @var string
+     */
     private $definirCorrientesDeRP;
     
+    /**
+     *
+     * @var double
+     */
     private $valorResiduo;
     
+    /**
+     *
+     * @var bool
+     */
     private $efluentesYResiduosLiquidos;
     
+    /**
+     *
+     * @var bool
+     */
     private $aguaATemperaturaAmbiente;
     
+    /**
+     *
+     * @var bool
+     */
     private $efluentesSinRP;
     
+    /**
+     *
+     * @var bool
+     */
     private $efluentesConRP;
     
+    /**
+     *
+     * @var double
+     */
     private $valorEfluente;
     
+    /**
+     *
+     * @var bool
+     */
     private $emisionesGaseosas;
     
+    /**
+     *
+     * @var bool
+     */
     private $componentesNaturalesDelAire;
     
+    /**
+     *
+     * @var bool
+     */
     private $combustionDeCombustiblesLiquidos;
     
+    /**
+     *
+     * @var bool
+     */
     private $noContempladosBool;
     
+    /**
+     *
+     * @var string
+     */
     private $noContempledosListado;
     
+    /**
+     *
+     * @var double
+     */
     private $valorEmisiones;
     
 
 //Getters and setters
+    function getId() {
+        return $this->id;
+    }
+
     function getResiduosSolidosSemisolidos() {
         return $this->residuosSolidosSemisolidos;
     }
@@ -123,6 +211,10 @@ class EmisionDeResiduos {
 
     function getValorEmisiones() {
         return $this->valorEmisiones;
+    }
+
+    function setId($id) {
+        $this->id = $id;
     }
 
     function setResiduosSolidosSemisolidos($residuosSolidosSemisolidos) {
@@ -197,5 +289,5 @@ class EmisionDeResiduos {
         $this->valorEmisiones = $valorEmisiones;
     }
 
-
+    
 }

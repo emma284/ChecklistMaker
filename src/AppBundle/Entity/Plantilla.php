@@ -33,20 +33,14 @@ class Plantilla
      */
     private $nombre;
 
-    /**
-     *  @ORM\OneToMany(targetEntity="AppBundle\Entity\Checklist", mappedBy="plantilla")
-     */
-    private $checklists;
     
     /**
-     *
-     * @var type FormularioA
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\FormularioA\FormularioA", cascade={"persist"}, mappedBy="plantilla")
      */
     private $formularioA;
     
     /**
-     *
-     * @var type FormularioB
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\FormularioB\FormularioB", cascade={"persist"}, mappedBy="plantilla")
      */
     private $formularioB;
     
@@ -60,18 +54,6 @@ class Plantilla
         return $this->nombre;
     }
 
-    function getChecklists() {
-        return $this->checklists;
-    }
-
-    function getFormularioA(): type {
-        return $this->formularioA;
-    }
-
-    function getFormularioB(): type {
-        return $this->formularioB;
-    }
-
     function setId($id) {
         $this->id = $id;
     }
@@ -80,15 +62,19 @@ class Plantilla
         $this->nombre = $nombre;
     }
 
-    function setChecklists($checklists) {
-        $this->checklists = $checklists;
+    function getFormularioA() {
+        return $this->formularioA;
     }
 
-    function setFormularioA(type $formularioA) {
+    function getFormularioB() {
+        return $this->formularioB;
+    }
+
+    function setFormularioA($formularioA) {
         $this->formularioA = $formularioA;
     }
 
-    function setFormularioB(type $formularioB) {
+    function setFormularioB($formularioB) {
         $this->formularioB = $formularioB;
     }
 
