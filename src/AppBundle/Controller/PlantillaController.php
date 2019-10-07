@@ -8,24 +8,15 @@
 
 namespace AppBundle\Controller;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Plantilla;
 use AppBundle\Form\PlantillaType;
 use AppBundle\Entity\Seccion;
-use AppBundle\Form\SeccionType;
 use Symfony\Component\HttpFoundation\Request;
 
-
-    /**
-     * Description of PlantillaController
-     *
-     * @author Emma
-     */
-
-    class PlantillaController extends Controller
-    {
+class PlantillaController extends Controller
+{
     /**
      * @Route("/plantilla/new/", name="new_plantilla")
      */
@@ -42,10 +33,10 @@ use Symfony\Component\HttpFoundation\Request;
         if($form->isSubmitted() && $form->isValid()){
 
             $plantilla = $form->getData();
-            
+
             $entityManager->persist($plantilla);
             $entityManager->flush();
-            
+
             //return $this->redirectToRoute('listar_formularios');
 
         }

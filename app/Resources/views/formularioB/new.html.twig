@@ -1,0 +1,639 @@
+{% extends '@STGTheme/Default/base.html.twig' %}
+{# {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }} #}
+
+{% block content %}
+
+    <div class="card-body">
+        
+        <div class="form-inline col-md-12">
+
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">Razón Social</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div>  
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">Expediente N°</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">FECHA INICIO EXPTE</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4" class="col-sm-4 col-form-label">EVALUADOR</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">VERSIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div>  
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">INICIO EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">FIN EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            <div class="form-group row">
+                <label for="inputPassword4"class="col-sm-4 col-form-label">DÍAS DE EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+            </div> 
+            
+        </div>
+
+        <div class="card-header">SUB-RUTINA</div>
+     
+        <div clase="form-inline col-md-12">
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Investigar empresa: </label>
+                <select class="form-control col-md-2">
+                    <option value=""  selected="selected" ></option>
+                    <option value="a" data-choice="a" data-key="0">NO HECHO</option>
+                    <option value="b" data-choice="b" data-key="1">HECHO</option>
+
+                </select>
+                <div class="col-md-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si la empresa existe: </label>
+                <select class="form-control col-sm-2">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+        
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si respondió en plazo: </label>
+                <select class="form-control col-sm-2 ">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si se realizó: </label>
+                <select class="form-control col-sm-2">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                
+                <label for="I_INV" class="col-sm-4 col-form-label">Se desestima por otros motivos: </label>
+                <select class="form-control col-sm-2 ">
+                    
+                    <option value=""  selected="selected"></option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
+
+                </select>
+                <div class="col-sm-2 col-form-label">
+                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-header">ESTANDAR</div>
+        
+        <div clase="form-inline col-md-12">
+        
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">Forma de presentación: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">NUEVO</option>
+                        <option value="b" data-choice="b" data-key="1">VIEJO</option>
+
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">Estado formulario: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">ABIERTO</option>
+                        <option value="b" data-choice="b" data-key="1">CERRADO</option>
+
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">indicar si declara actividad: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">SI</option>
+                        <option value="b" data-choice="b" data-key="1">NO</option>
+
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                
+                    
+                    <label for="inputPassword4 " class="col-sm-4 col-form-label">Definir actividad:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-6">
+                    
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+            
+                    <label for="inputPassword4" class="col-sm-4 col-form-label">N° de CUACM:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+            
+                    <label for="inputPassword4" class="col-sm-4 col-form-label">Nombre de CUACM:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+               
+                <div class="form-group row">
+                    
+                    <label for="I_INV" class="col-sm-4 col-form-label">Estándar al que pertenece: </label>
+                    <select class="form-control col-sm-2">
+                        
+                        <option value=""  selected="selected"></option>
+                        <option value="a" data-choice="a" data-key="0">1</option>
+                        <option value="b" data-choice="b" data-key="1">2</option>
+                        <option value="b" data-choice="b" data-key="2">3</option>
+                    </select>
+                    <div class="col-sm-2 col-form-label">
+                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
+                    </div>
+                </div>
+
+        </div>  
+
+        <div class="form-inline col-md-12">
+            <button type="button" class="btn btn-primary ml-auto">Guardar y Salir</button>
+            <div>&nbsp;</div>
+            <button type="button" class="btn btn-primary ">Siguiente</button>
+        </div>
+        
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+                <div class="card-header">DOMICILIO LEGAL</div>
+
+                <div clase="form-inline col-md-12">
+
+                    <div class="form-group row">
+
+                        {{ form_label(form.domicilioLegal.calle) }}
+                        {{ form_widget(form.domicilioLegal.calle, {'attr': {'class': form_errors(form.domicilioLegal.calle) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioLegal.calle) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioLegal.provincia) }}
+                        {{ form_widget(form.domicilioLegal.provincia, {'attr': {'class': form_errors(form.domicilioLegal.provincia) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioLegal.provincia) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioLegal.departamento) }}
+                        {{ form_widget(form.domicilioLegal.departamento, {'attr': {'class': form_errors(form.domicilioLegal.departamento) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioLegal.departamento) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioLegal.localidad) }}
+                        {{ form_widget(form.domicilioLegal.localidad, {'attr': {'class': form_errors(form.domicilioLegal.localidad) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioLegal.localidad) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioLegal.cp) }}
+                        {{ form_widget(form.domicilioLegal.cp, {'attr': {'class': form_errors(form.domicilioLegal.cp) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioLegal.cp) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioLegal.email) }}
+                        {{ form_widget(form.domicilioLegal.email, {'attr': {'class': form_errors(form.domicilioLegal.email) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioLegal.email) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioLegal.acepEmail) }}
+                        {{ form_widget(form.domicilioLegal.acepEmail, {'attr': {'class': form_errors(form.domicilioLegal.acepEmail) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioLegal.acepEmail) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">DOMICILIO REAL</div>
+
+                <div clase="form-inline col-md-12">
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioReal.calle) }}
+                        {{ form_widget(form.domicilioReal.calle, {'attr': {'class': form_errors(form.domicilioReal.calle) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioReal.calle) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.domicilioReal.localidad) }}
+                        {{ form_widget(form.domicilioReal.localidad, {'attr': {'class': form_errors(form.domicilioReal.localidad) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.domicilioReal.localidad) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">CONTRATO SOCIAL</div>
+
+                <div clase="form-inline col-md-12">
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.contratoSocial.fojaN) }}
+                        {{ form_widget(form.contratoSocial.fojaN, {'attr': {'class': form_errors(form.contratoSocial.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.contratoSocial.fojaN) }}
+                        </div>
+                    </div>
+                    
+                    <div clase="form-group row">
+
+                        {{ form_label(form.contratoSocial.poseeContrato) }}
+                        {{ form_widget(form.contratoSocial.poseeContrato, {'attr': {'class': form_errors(form.contratoSocial.poseeContrato) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.contratoSocial.poseeContrato) }}
+                        </div>
+                    </div>
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.contratoSocial.unipersonal) }}
+                        {{ form_widget(form.contratoSocial.unipersonal, {'attr': {'class': form_errors(form.contratoSocial.unipersonal) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.contratoSocial.unipersonal) }}
+                        </div>
+                    </div>                
+                    <div clase="form-group row">
+
+                        {{ form_label(form.contratoSocial.titulares) }}
+                        {{ form_widget(form.contratoSocial.titulares, {'attr': {'class': form_errors(form.contratoSocial.titulares) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.contratoSocial.titulares) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.contratoSocial.vencido) }}
+                        {{ form_widget(form.contratoSocial.vencido, {'attr': {'class': form_errors(form.contratoSocial.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.contratoSocial.vencido) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.contratoSocial.verObjSoc) }}
+                        {{ form_widget(form.contratoSocial.verObjSoc, {'attr': {'class': form_errors(form.contratoSocial.verObjSoc) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.contratoSocial.verObjSoc) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">ACTA SOCIETARIA</div>
+
+                <div clase="form-inline col-md-12">
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.actaSocietaria.fojaN) }}
+                        {{ form_widget(form.actaSocietaria.fojaN, {'attr': {'class': form_errors(form.actaSocietaria.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.actaSocietaria.fojaN) }}
+                        </div>
+                    </div>
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.actaSocietaria.actaSocietaria) }}
+                        {{ form_widget(form.actaSocietaria.actaSocietaria, {'attr': {'class': form_errors(form.actaSocietaria.actaSocietaria) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.actaSocietaria.actaSocietaria) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.actaSocietaria.titulares) }}
+                        {{ form_widget(form.actaSocietaria.titulares, {'attr': {'class': form_errors(form.actaSocietaria.titulares) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.actaSocietaria.titulares) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.actaSocietaria.vencido) }}
+                        {{ form_widget(form.actaSocietaria.vencido, {'attr': {'class': form_errors(form.actaSocietaria.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.actaSocietaria.vencido) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.actaSocietaria.verObjSoc) }}
+                        {{ form_widget(form.actaSocietaria.verObjSoc, {'attr': {'class': form_errors(form.actaSocietaria.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.actaSocietaria.verObjSoc) }}
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="card-header">DNI</div>
+
+                <div clase="form-inline col-md-12">
+                    
+                    <div clase="form-group row">
+
+                        {{ form_label(form.dni.dni) }}
+                        {{ form_widget(form.dni.dni, {'attr': {'class': form_errors(form.dni.dni) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.dni.dni) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.dni.verDni) }}
+                        {{ form_widget(form.dni.verDni, {'attr': {'class': form_errors(form.dni.verDni) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.dni.verDni) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.dni.apoderado) }}
+                        {{ form_widget(form.dni.apoderado, {'attr': {'class': form_errors(form.dni.apoderado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.dni.apoderado) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.dni.verApoderado) }}
+                        {{ form_widget(form.dni.verApoderado, {'attr': {'class': form_errors(form.dni.verApoderado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.dni.verApoderado) }}
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="card-header">AFIP</div>
+
+                <div clase="form-inline col-md-12">
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.afip.constancia) }}
+                        {{ form_widget(form.afip.constancia, {'attr': {'class': form_errors(form.afip.constancia) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.afip.constancia) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.afip.fojaN) }}
+                        {{ form_widget(form.afip.fojaN, {'attr': {'class': form_errors(form.afip.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.afip.fojaN) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+                        {{ form_label(form.afip.verFechIni) }}
+                        {{ form_widget(form.afip.verFechIni, {'attr': {'class': form_errors(form.afip.verFechIni) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.afip.verFechIni) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+                        {{ form_label(form.afip.verRazonSocial) }}
+                        {{ form_widget(form.afip.verRazonSocial, {'attr': {'class': form_errors(form.afip.verRazonSocial) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.afip.verRazonSocial) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+                        {{ form_label(form.afip.verCUIT) }}
+                        {{ form_widget(form.afip.verCUIT, {'attr': {'class': form_errors(form.afip.verCUIT) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.afip.verCUIT) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+                        {{ form_label(form.afip.verAct) }}
+                        {{ form_widget(form.afip.verAct, {'attr': {'class': form_errors(form.afip.verAct) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.afip.verAct) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">API</div>
+
+                <div clase="form-inline col-md-12">
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.preImpInmobiliario) }}
+                        {{ form_widget(form.api.preImpInmobiliario, {'attr': {'class': form_errors(form.api.preImpInmobiliario) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.preImpInmobiliario) }}
+                        </div>
+                    </div>
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.fojaN) }}
+                        {{ form_widget(form.api.fojaN, {'attr': {'class': form_errors(form.api.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.fojaN) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.formPartida) }}
+                        {{ form_widget(form.api.formPartida, {'attr': {'class': form_errors(form.api.formPartida) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.formPartida) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.verNumPartida) }}
+                        {{ form_widget(form.api.verNumPartida, {'attr': {'class': form_errors(form.api.verNumPartida) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.verNumPartida) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.verPartidaCatastro) }}
+                        {{ form_widget(form.api.verPartidaCatastro, {'attr': {'class': form_errors(form.api.verPartidaCatastro) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.verPartidaCatastro) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.verTitularBoleta) }}
+                        {{ form_widget(form.api.verTitularBoleta, {'attr': {'class': form_errors(form.api.verTitularBoleta) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.verTitularBoleta) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.verIndTitular) }}
+                        {{ form_widget(form.api.verIndTitular, {'attr': {'class': form_errors(form.api.verIndTitular) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.verIndTitular) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.api.AcreDocUsoInmueble) }}
+                        {{ form_widget(form.api.AcreDocUsoInmueble, {'attr': {'class': form_errors(form.api.AcreDocUsoInmueble) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.api.AcreDocUsoInmueble) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">USO CONFORME DE SUELO</div>
+
+                <div clase="form-inline col-md-12">
+
+                    <div clase="form-group row">
+
+                        {{ form_label(form.usoConformeDeSuelo.usoConformeSuelo) }}
+                        {{ form_widget(form.usoConformeDeSuelo.usoConformeSuelo, {'attr': {'class': form_errors(form.usoConformeDeSuelo.usoConformeSuelo) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.usoConformeDeSuelo.usoConformeSuelo) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.usoConformeDeSuelo.fojaN) }}
+                        {{ form_widget(form.usoConformeDeSuelo.fojaN, {'attr': {'class': form_errors(form.usoConformeDeSuelo.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.usoConformeDeSuelo.fojaN) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.usoConformeDeSuelo.presentaHabilitacion) }}
+                        {{ form_widget(form.usoConformeDeSuelo.presentaHabilitacion, {'attr': {'class': form_errors(form.usoConformeDeSuelo.presentaHabilitacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.usoConformeDeSuelo.presentaHabilitacion) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.usoConformeDeSuelo.fechaInicioHabilitacion) }}
+                        {{ form_widget(form.usoConformeDeSuelo.fechaInicioHabilitacion, {'attr': {'class': form_errors(form.usoConformeDeSuelo.fechaInicioHabilitacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.usoConformeDeSuelo.fechaInicioHabilitacion) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.usoConformeDeSuelo.fechaVencimiento) }}
+                        {{ form_widget(form.usoConformeDeSuelo.fechaVencimiento, {'attr': {'class': form_errors(form.usoConformeDeSuelo.fechaVencimiento) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.usoConformeDeSuelo.fechaVencimiento) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.usoConformeDeSuelo.verActividad) }}
+                        {{ form_widget(form.usoConformeDeSuelo.verActividad, {'attr': {'class': form_errors(form.usoConformeDeSuelo.verActividad) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.usoConformeDeSuelo.verActividad) }}
+                        </div>
+                    </div>
+                    <div clase="form-group row">
+
+                        {{ form_label(form.usoConformeDeSuelo.verLocalizacion) }}
+                        {{ form_widget(form.usoConformeDeSuelo.verLocalizacion, {'attr': {'class': form_errors(form.usoConformeDeSuelo.verLocalizacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.usoConformeDeSuelo.verLocalizacion) }}
+                        </div>
+                    </div>
+                </div>
+        {{form_end(form)}}
+    </div>
+{% endblock %}
