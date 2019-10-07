@@ -1,0 +1,25 @@
+{% extends '@STGTheme/Default/base.html.twig' %}
+{# {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }} #}
+
+{% block body %}
+
+    {{ form_start(form) }}
+
+        <div class="col-sm-8 col-sm-offset-2" id="exp_list" data-prototype="{{ form_widget(form.nombre)|e('html_attr') }}">
+            {% for row in tareas %}
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <strong>{{ row.nombre }}</strong>
+                    </div>
+                    <div class="panel-body">
+                        {{ form_row(row) }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    {{ form_end(form) }}
+
+{% endblock %}
