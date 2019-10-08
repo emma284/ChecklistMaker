@@ -7,15 +7,14 @@
 
     <div class="card-body">
         
-        <div class="form-inline col-md-12">
+        <div class="form-group col-md-12">
 
             <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-4 col-form-label">Razón Social</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
-            </div>  
-            <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-4 col-form-label">Expediente N°</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+                <label for="inputPassword4" class="col-sm-3 col-form-label">Razón Social</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+            
+                <label for="inputPassword4" class="col-sm-3 col-form-label">Expediente N°</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
             </div> 
             <div class="form-group row">
                 <label for="inputPassword4" class="col-sm-4 col-form-label">FECHA INICIO EXPTE</label>
@@ -44,10 +43,11 @@
             </div> 
             
         </div>
-
+                        
+        
         <div class="card-header">SUB-RUTINA</div>
      
-        <div clase="form-inline col-md-12">
+        <div class="form-inline col-md-12">
 
             <div class="form-group row">
                 
@@ -126,7 +126,7 @@
 
         <div class="card-header">ESTANDAR</div>
         
-        <div clase="form-inline col-md-12">
+        <div class="form-inline col-md-12">
         
                 <div class="form-group row">
                     
@@ -224,12 +224,12 @@
             <div>&nbsp;</div>
             <button type="button" class="btn btn-primary ">Siguiente</button>
         </div>
-        
+        <div class="card-header"><h1>Formulario A</h1></div>
         {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
                 <div class="card-header">DOMICILIO LEGAL</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
 
                     <div class="form-group row">
 
@@ -239,7 +239,7 @@
                             {{ form_errors(form.formularioA.domicilioLegal.calle) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioLegal.provincia) }}
                         {{ form_widget(form.formularioA.domicilioLegal.provincia, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.provincia) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -247,7 +247,7 @@
                             {{ form_errors(form.formularioA.domicilioLegal.provincia) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioLegal.departamento) }}
                         {{ form_widget(form.formularioA.domicilioLegal.departamento, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.departamento) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -255,7 +255,7 @@
                             {{ form_errors(form.formularioA.domicilioLegal.departamento) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioLegal.localidad) }}
                         {{ form_widget(form.formularioA.domicilioLegal.localidad, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.localidad) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -263,7 +263,7 @@
                             {{ form_errors(form.formularioA.domicilioLegal.localidad) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioLegal.cp) }}
                         {{ form_widget(form.formularioA.domicilioLegal.cp, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.cp) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -271,7 +271,7 @@
                             {{ form_errors(form.formularioA.domicilioLegal.cp) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioLegal.email) }}
                         {{ form_widget(form.formularioA.domicilioLegal.email, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.email) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -279,7 +279,7 @@
                             {{ form_errors(form.formularioA.domicilioLegal.email) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioLegal.acepEmail) }}
                         {{ form_widget(form.formularioA.domicilioLegal.acepEmail, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.acepEmail) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -291,9 +291,9 @@
 
                 <div class="card-header">DOMICILIO REAL</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioReal.calle) }}
                         {{ form_widget(form.formularioA.domicilioReal.calle, {'attr': {'class': form_errors(form.formularioA.domicilioReal.calle) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -301,7 +301,7 @@
                             {{ form_errors(form.formularioA.domicilioReal.calle) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.domicilioReal.localidad) }}
                         {{ form_widget(form.formularioA.domicilioReal.localidad, {'attr': {'class': form_errors(form.formularioA.domicilioReal.localidad) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -313,9 +313,9 @@
 
                 <div class="card-header">CONTRATO SOCIAL</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.contratoSocial.fojaN) }}
                         {{ form_widget(form.formularioA.contratoSocial.fojaN, {'attr': {'class': form_errors(form.formularioA.contratoSocial.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -324,7 +324,7 @@
                         </div>
                     </div>
                     
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.contratoSocial.poseeContrato) }}
                         {{ form_widget(form.formularioA.contratoSocial.poseeContrato, {'attr': {'class': form_errors(form.formularioA.contratoSocial.poseeContrato) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -333,7 +333,7 @@
                         </div>
                     </div>
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.contratoSocial.unipersonal) }}
                         {{ form_widget(form.formularioA.contratoSocial.unipersonal, {'attr': {'class': form_errors(form.formularioA.contratoSocial.unipersonal) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -341,7 +341,7 @@
                             {{ form_errors(form.formularioA.contratoSocial.unipersonal) }}
                         </div>
                     </div>                
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.contratoSocial.titulares) }}
                         {{ form_widget(form.formularioA.contratoSocial.titulares, {'attr': {'class': form_errors(form.formularioA.contratoSocial.titulares) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -349,7 +349,7 @@
                             {{ form_errors(form.formularioA.contratoSocial.titulares) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.contratoSocial.vencido) }}
                         {{ form_widget(form.formularioA.contratoSocial.vencido, {'attr': {'class': form_errors(form.formularioA.contratoSocial.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -357,7 +357,7 @@
                             {{ form_errors(form.formularioA.contratoSocial.vencido) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.contratoSocial.verObjSoc) }}
                         {{ form_widget(form.formularioA.contratoSocial.verObjSoc, {'attr': {'class': form_errors(form.formularioA.contratoSocial.verObjSoc) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -369,9 +369,9 @@
 
                 <div class="card-header">ACTA SOCIETARIA</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.actaSocietaria.fojaN) }}
                         {{ form_widget(form.formularioA.actaSocietaria.fojaN, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -380,7 +380,7 @@
                         </div>
                     </div>
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.actaSocietaria.actaSocietaria) }}
                         {{ form_widget(form.formularioA.actaSocietaria.actaSocietaria, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.actaSocietaria) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -388,7 +388,7 @@
                             {{ form_errors(form.formularioA.actaSocietaria.actaSocietaria) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.actaSocietaria.titulares) }}
                         {{ form_widget(form.formularioA.actaSocietaria.titulares, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.titulares) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -396,7 +396,7 @@
                             {{ form_errors(form.formularioA.actaSocietaria.titulares) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.actaSocietaria.vencido) }}
                         {{ form_widget(form.formularioA.actaSocietaria.vencido, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -404,7 +404,7 @@
                             {{ form_errors(form.formularioA.actaSocietaria.vencido) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.actaSocietaria.verObjSoc) }}
                         {{ form_widget(form.formularioA.actaSocietaria.verObjSoc, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -416,9 +416,9 @@
 
                  <div class="card-header">DNI</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
                     
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.dni.dni) }}
                         {{ form_widget(form.formularioA.dni.dni, {'attr': {'class': form_errors(form.formularioA.dni.dni) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -426,7 +426,7 @@
                             {{ form_errors(form.formularioA.dni.dni) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.dni.verDni) }}
                         {{ form_widget(form.formularioA.dni.verDni, {'attr': {'class': form_errors(form.formularioA.dni.verDni) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -434,7 +434,7 @@
                             {{ form_errors(form.formularioA.dni.verDni) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.dni.apoderado) }}
                         {{ form_widget(form.formularioA.dni.apoderado, {'attr': {'class': form_errors(form.formularioA.dni.apoderado) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -442,7 +442,7 @@
                             {{ form_errors(form.formularioA.dni.apoderado) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.dni.verApoderado) }}
                         {{ form_widget(form.formularioA.dni.verApoderado, {'attr': {'class': form_errors(form.formularioA.dni.verApoderado) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -454,9 +454,9 @@
 
                  <div class="card-header">AFIP</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.afip.constancia) }}
                         {{ form_widget(form.formularioA.afip.constancia, {'attr': {'class': form_errors(form.formularioA.afip.constancia) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -464,7 +464,7 @@
                             {{ form_errors(form.formularioA.afip.constancia) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.afip.fojaN) }}
                         {{ form_widget(form.formularioA.afip.fojaN, {'attr': {'class': form_errors(form.formularioA.afip.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -472,28 +472,28 @@
                             {{ form_errors(form.formularioA.afip.fojaN) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
                         {{ form_label(form.formularioA.afip.verFechIni) }}
                         {{ form_widget(form.formularioA.afip.verFechIni, {'attr': {'class': form_errors(form.formularioA.afip.verFechIni) ? 'form-control is-invalid' : 'form-control'}}) }}
                         <div class="invalid-feedback">
                             {{ form_errors(form.formularioA.afip.verFechIni) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
                         {{ form_label(form.formularioA.afip.verRazonSocial) }}
                         {{ form_widget(form.formularioA.afip.verRazonSocial, {'attr': {'class': form_errors(form.formularioA.afip.verRazonSocial) ? 'form-control is-invalid' : 'form-control'}}) }}
                         <div class="invalid-feedback">
                             {{ form_errors(form.formularioA.afip.verRazonSocial) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
                         {{ form_label(form.formularioA.afip.verCUIT) }}
                         {{ form_widget(form.formularioA.afip.verCUIT, {'attr': {'class': form_errors(form.formularioA.afip.verCUIT) ? 'form-control is-invalid' : 'form-control'}}) }}
                         <div class="invalid-feedback">
                             {{ form_errors(form.formularioA.afip.verCUIT) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
                         {{ form_label(form.formularioA.afip.verAct) }}
                         {{ form_widget(form.formularioA.afip.verAct, {'attr': {'class': form_errors(form.formularioA.afip.verAct) ? 'form-control is-invalid' : 'form-control'}}) }}
                         <div class="invalid-feedback">
@@ -504,9 +504,9 @@
 
                 <div class="card-header">API</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.preImpInmobiliario) }}
                         {{ form_widget(form.formularioA.api.preImpInmobiliario, {'attr': {'class': form_errors(form.formularioA.api.preImpInmobiliario) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -515,7 +515,7 @@
                         </div>
                     </div>
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.fojaN) }}
                         {{ form_widget(form.formularioA.api.fojaN, {'attr': {'class': form_errors(form.formularioA.api.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -523,7 +523,7 @@
                             {{ form_errors(form.formularioA.api.fojaN) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.formPartida) }}
                         {{ form_widget(form.formularioA.api.formPartida, {'attr': {'class': form_errors(form.formularioA.api.formPartida) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -531,7 +531,7 @@
                             {{ form_errors(form.formularioA.api.formPartida) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.verNumPartida) }}
                         {{ form_widget(form.formularioA.api.verNumPartida, {'attr': {'class': form_errors(form.formularioA.api.verNumPartida) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -539,7 +539,7 @@
                             {{ form_errors(form.formularioA.api.verNumPartida) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.verPartidaCatastro) }}
                         {{ form_widget(form.formularioA.api.verPartidaCatastro, {'attr': {'class': form_errors(form.formularioA.api.verPartidaCatastro) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -547,7 +547,7 @@
                             {{ form_errors(form.formularioA.api.verPartidaCatastro) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.verTitularBoleta) }}
                         {{ form_widget(form.formularioA.api.verTitularBoleta, {'attr': {'class': form_errors(form.formularioA.api.verTitularBoleta) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -555,7 +555,7 @@
                             {{ form_errors(form.formularioA.api.verTitularBoleta) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.verIndTitular) }}
                         {{ form_widget(form.formularioA.api.verIndTitular, {'attr': {'class': form_errors(form.formularioA.api.verIndTitular) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -563,7 +563,7 @@
                             {{ form_errors(form.formularioA.api.verIndTitular) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.api.AcreDocUsoInmueble) }}
                         {{ form_widget(form.formularioA.api.AcreDocUsoInmueble, {'attr': {'class': form_errors(form.formularioA.api.AcreDocUsoInmueble) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -575,9 +575,9 @@
 
                 <div class="card-header">USO CONFORME DE SUELO</div>
 
-                <div clase="form-inline col-md-12">
+                <div class="form-inline col-md-12">
 
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.usoConformeSuelo.usoConformeSuelo2) }}
                         {{ form_widget(form.formularioA.usoConformeSuelo.usoConformeSuelo2, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.usoConformeSuelo2) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -585,7 +585,7 @@
                             {{ form_errors(form.formularioA.usoConformeSuelo.usoConformeSuelo2) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.usoConformeSuelo.fojaN) }}
                         {{ form_widget(form.formularioA.usoConformeSuelo.fojaN, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -593,7 +593,7 @@
                             {{ form_errors(form.formularioA.usoConformeSuelo.fojaN) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.usoConformeSuelo.presentaHabilitacion) }}
                         {{ form_widget(form.formularioA.usoConformeSuelo.presentaHabilitacion, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.presentaHabilitacion) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -601,7 +601,7 @@
                             {{ form_errors(form.formularioA.usoConformeSuelo.presentaHabilitacion) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion) }}
                         {{ form_widget(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -609,7 +609,7 @@
                             {{ form_errors(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.usoConformeSuelo.fechaVencimiento) }}
                         {{ form_widget(form.formularioA.usoConformeSuelo.fechaVencimiento, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.fechaVencimiento) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -617,7 +617,7 @@
                             {{ form_errors(form.formularioA.usoConformeSuelo.fechaVencimiento) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.usoConformeSuelo.verActividad) }}
                         {{ form_widget(form.formularioA.usoConformeSuelo.verActividad, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.verActividad) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -625,7 +625,7 @@
                             {{ form_errors(form.formularioA.usoConformeSuelo.verActividad) }}
                         </div>
                     </div>
-                    <div clase="form-group row">
+                    <div class="form-group row">
 
                         {{ form_label(form.formularioA.usoConformeSuelo.verLocalizacion) }}
                         {{ form_widget(form.formularioA.usoConformeSuelo.verLocalizacion, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.verLocalizacion) ? 'form-control is-invalid' : 'form-control'}}) }}
@@ -634,6 +634,9 @@
                         </div>
                     </div>
                 </div>
+                        
+                        
+                <div class="card-header"><h1>Formulario B</h1></div>
         {{form_end(form)}}
     </div>
 {% endblock %}
