@@ -39,5 +39,13 @@ class DefaultController extends Controller
         ));
     }
 
+    /**
+     * @Route("/login/",name="login")
+     */
+    public function login(){
+
+        return $this->render('Checklist/login.html.twig', array(
+        ));
+    }
 
 }
