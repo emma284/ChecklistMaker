@@ -15,29 +15,29 @@ class LocalizacionType extends AbstractType
     {
         $builder
             ->add('zonificacion', ChoiceType::class, ['label' => 'Zonificación:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Parque industrial' => 'Parque industrial',
                     'Industrial y rural' => 'Industrial y rural',
                     'Otros' => 'Otros',
                     'Urbana' => 'Urbana',
                     ],])
             ->add('aguaDeRed', ChoiceType::class, ['label' => 'Agua de red:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('redCloacal', ChoiceType::class, ['label' => 'Red cloacal:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('energiaElectrica', ChoiceType::class, ['label' => 'Energía electríca:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('gas', ChoiceType::class, ['label' => 'Gas:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],

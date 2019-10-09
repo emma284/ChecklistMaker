@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Repository/FormularioA/UsoConformeSueloRepository.php</file>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/app/Resources/views/plantilla/new.html.twig</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/FormularioA/UsoConformeSuelo.php</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/FormularioA/FormularioAType.php</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/FormularioA/UsoConformeSueloType.php</file>
-            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/FormularioA/FormularioA.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/FormularioB/DotacionType.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/FormularioB/CategoriaFinalType.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/PlantillaType.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/FormularioB/FormularioBType.php</file>
         </group>
     </open-files>
 </project-private>

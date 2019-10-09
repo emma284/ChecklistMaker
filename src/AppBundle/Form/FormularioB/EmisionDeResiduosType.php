@@ -18,24 +18,24 @@ class EmisionDeResiduosType extends AbstractType
     {
         $builder
             ->add('residuosSolidosSemisolidos', ChoiceType::class, ['label' => 'Residuos solidos y/o semisolidos:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('rsu', ChoiceType::class, ['label' => 'RSU:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('rnp', ChoiceType::class, ['label' => 'RNP:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('tipoDeResiduo', TextType::class, ['label' => 'Tipo de residuo:',
                     ])//ver de hacer choice con los códigos
             ->add('rp', ChoiceType::class, ['label' => 'RP:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
@@ -44,44 +44,44 @@ class EmisionDeResiduosType extends AbstractType
             ->add('valorResiduo', NumberType::class, ['label' => 'Valor:',
                     ])
             ->add('efluentesYResiduosLiquidos', ChoiceType::class, ['label' => 'Efluentes y/o residuos líquidos:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('aguaATemperaturaAmbiente', ChoiceType::class, ['label' => 'Agua a temperatura ambiente:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('efluentesSinRP', ChoiceType::class, ['label' => 'Efluentes sin RP:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('efluentesConRP', ChoiceType::class, ['label' => 'Efluentes con RP:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('valorEfluente', TextType::class, ['label' => 'Valor:',
                     ])
             ->add('emisionesGaseosas', ChoiceType::class, ['label' => 'Emisiones gaseosas:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('componentesNaturalesDelAire', ChoiceType::class, ['label' => 'Componentes naturales del aire:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('combustionDeCombustiblesLiquidos', ChoiceType::class, ['label' => 'Combustión de combustibles líquidos:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('noContempladosBool', ChoiceType::class, ['label' => 'Los no contemplados anteriormente:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])

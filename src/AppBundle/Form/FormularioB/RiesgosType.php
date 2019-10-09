@@ -17,37 +17,37 @@ class RiesgosType extends AbstractType
     {
         $builder
             ->add('riesgosPresuntos', ChoiceType::class, ['label' => 'Riesgos presuntos:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('acustico', ChoiceType::class, ['label' => 'Acústico:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('aparatosSometidosAPresion', ChoiceType::class, ['label' => 'Aparatos sometidos a presión:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('sustanciasQuimicas', ChoiceType::class, ['label' => 'Sustancias químicas:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('explosion', ChoiceType::class, ['label' => 'Explosión:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('incendio', ChoiceType::class, ['label' => 'Incendio:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
             ->add('otrosBool', ChoiceType::class, ['label' => 'Otros:',
-                'choices' => [
+                'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])

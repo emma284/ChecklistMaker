@@ -15,7 +15,7 @@ class DotacionType extends AbstractType
     {
         $builder
             ->add('dotacionDePersonal', ChoiceType::class, ['label' => 'Dotación de Personal:',
-                'choices' => [
+                'choices' => [ '' => null,
                     '<15' => '<15',
                     '16-50' => '16-50',
                     '51-150' => '51-150',
@@ -23,14 +23,14 @@ class DotacionType extends AbstractType
                     '>500' => '>500',
                     ],])
             ->add('potenciaInstalada', ChoiceType::class, ['label' => 'Potencia instalada:',
-                'choices' => [
+                'choices' => [ '' => null,
                     '<25' => '<25',
                     '26-100' => '26-100',
                     '101-500' => '101-500',
                     '>500' => '>500',
                     ],])
             ->add('superficieCubierta', ChoiceType::class, ['label' => 'Superficie cubierta/superficie total:',
-                'choices' => [
+                'choices' => [ '' => null,
                     '<0.20' => '<0.20',
                     '0.21-0.50' => '0.21-0.50',
                     '0.51-0.80' => '0.51-0.80',

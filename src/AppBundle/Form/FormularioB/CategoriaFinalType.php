@@ -15,7 +15,7 @@ class CategoriaFinalType extends AbstractType
     {
         $builder
             ->add('categoriaAsignada', ChoiceType::class, ['label' => 'Categoría asignada: ',
-                'choices' => [
+                'choices' => [ '' => null,
                     '1' => '1',
                     '2' => '2',
                     '3' => '3',
