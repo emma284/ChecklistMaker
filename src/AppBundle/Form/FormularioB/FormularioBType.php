@@ -9,7 +9,7 @@ use AppBundle\Form\FormularioB\CategoriaFinalType;
 use AppBundle\Form\FormularioB\DotacionType;
 use AppBundle\Form\FormularioB\LocalizacionType;
 use AppBundle\Form\FormularioB\RiesgosType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 
@@ -18,8 +18,18 @@ class FormularioBType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('estadoSoporteDigital', TextType::class, ['label' => 'Estado de soporte digital:'])
-            ->add('ingresarCodigoExcel', TextType::class, ['label' => 'Ingresar código en excel:'])
+            ->add('estadoSoporteDigital', ChoiceType::class, ['label' => 'Estado de soporte digital:',
+                'choices' => [ '' => null,
+                    'COMPLETO' => 'COMPLETO',
+                    'INCOMPLETO' => 'INCOMPLETO',
+                    'EN BLANCO' => 'EN BLANCO',
+                    'NO PRESENTA' => 'NO PRESENTA',
+                    ],])
+            ->add('ingresarCodigoExcel', ChoiceType::class, ['label' => 'Ingresar código en excel:',
+                'choices' => [ '' => null,
+                    'HECHO' => 'HECHO',
+                    'NO HECHO' => 'NO HECHO',
+                    ],])
             ->add('emisionDeResiduos', EmisionDeResiduosType::class)
             ->add('riesgos', RiesgosType::class)
             ->add('dotacion', DotacionType::class)

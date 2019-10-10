@@ -7,6 +7,7 @@ use AppBundle\Entity\FormularioB\EmisionDeResiduos;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 
@@ -80,12 +81,12 @@ class EmisionDeResiduosType extends AbstractType
                     'Si' => true,
                     'No' => false,
                     ],])
-            ->add('noContempladosBool', ChoiceType::class, ['label' => 'Los no contemplados anteriormente:',
+            ->add('noContempladosBool', ChoiceType::class, ['label' => '¿No contemplados anteriormente?',
                 'choices' => [ '' => null,
                     'Si' => true,
                     'No' => false,
                     ],])
-            ->add('noContempladosListado', TextType::class, ['label' => 'Indique cuales:',
+            ->add('noContempladosListado', TextareaType::class, ['label' => 'Indique cuales:',
                     ])
             ->add('valorEmisiones', NumberType::class, ['label' => 'Valor:',
                     ]);
