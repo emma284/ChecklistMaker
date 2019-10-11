@@ -1,0 +1,50 @@
+{% extends '@STGTheme/Default/base.html.twig' %}
+{# {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }} #}
+
+{% block content %}
+
+    
+    <div class="card bg-light mb-12">
+        <h1>MIS EVALUACIONES</h1>
+        
+        <div class="card-body">
+
+            <table class="table table-striped">
+
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Número de Expediente</th>
+                        <th scope="col">Razón Social</th>
+                        <th scope="col">Fecha Inicio Expediente</th>
+                        <th scope="col">Evaluador</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for plantilla in plantillas %}
+                        <tr>
+                            <td>{{ plantilla.numeroExpediente }}</td>
+                            <td>{{ plantilla.razonSocial }}</td>
+                            <td>{{ plantilla.fechaInicioExp }}</td>
+                            <td>{{ plantilla.evaluador }}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" onclick="window.location.href = '{{ path('ver-hoja') }}'">Ver</button>
+                                <button type="button" class="btn btn-primary" onclick="window.location.href = '{{ path('modificar-hoja') }}'">Modificar</button>
+                                <button type="button" class="btn btn-primary">Eliminar</button>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <th scope="row" colspan="5">No tienes checklist.</th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+        
+    </div>
+{% endblock %}

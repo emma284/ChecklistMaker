@@ -37,6 +37,8 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
         - '@LexikFormFilter/Form/form_div_layout.html.twig'
+    globals:
+        Img: 'Imagenes'
 
 # Doctrine Configuration
 doctrine:

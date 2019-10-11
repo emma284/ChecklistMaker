@@ -1,0 +1,23 @@
+{% extends '@STGTheme/Default/base.html.twig' %}
+{# {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }} #}
+
+{% block content %}
+
+<div class="card-body">
+
+    <h1 class="display-6 text-center">Mis Acciones</h1>
+
+    <div class="form-group text-center ">
+        <button type="button" class="btn btn-primary col-md-4" onclick="window.location.href = '{{ path('resumen_evaluacion') }}'">Resumen</button>
+    </div>
+    <div class="form-group text-center">
+        <button type="button" class="btn btn-primary col-md-4"  onclick="window.location.href = '{{ path('listado_plantilla') }}'">Mis Checklist</button>
+    </div>
+    <div class="form-group  text-center">
+        <button type="button" class="btn btn-primary col-md-4" onclick="window.location.href = '{{ path('new_plantilla') }}'">Generar Checklist</button>
+    </div>
+</div>
+
+{% endblock %}

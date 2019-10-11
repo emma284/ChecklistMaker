@@ -79,6 +79,20 @@ class PlantillaController extends Controller
 
     }
 
+    /**
+    * @Route("/plantilla/listado/", name="listado_plantilla")
+    */
+    public function buscar(Request $request){
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $plantillas = $entityManager
+                    ->getRepository(Plantilla::class)
+                    ->findAll();
+        
+        return $this->render('plantilla/listado.html.twig', array(
+            'plantillas' => $plantillas));
+    }
 
     /**
      * @Route("/plantilla/ver_2/", name="ver2_plantilla")

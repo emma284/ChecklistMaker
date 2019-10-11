@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\FiltroResumen;
 use AppBundle\Form\FiltroResumenType;
+use AppBundle\Entity\Usuario;
+use AppBundle\Form\UsuarioType;
 
 class DefaultController extends Controller
 {
@@ -42,9 +44,39 @@ class DefaultController extends Controller
     /**
      * @Route("/login/",name="login")
      */
-    public function login(){
+    public function login(Request $request){
+
+        $usuario = new Usuario();
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(UsuarioType::class, $usuario);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $usuario = $form->getData();
+
+            $entityManager->persist($usuario);
+            $entityManager->flush();
+
+            //return $this->redirectToRoute('listar_formularios');
+
+        }
 
         return $this->render('Checklist/login.html.twig', array(
+        ));
+    }
+
+
+
+    /**
+     * @Route("/accion-user/",name="accion")
+     */
+    public function acciones(){
+
+        return $this->render('Checklist/AccionUser.html.twig', array(
         ));
     }
 
