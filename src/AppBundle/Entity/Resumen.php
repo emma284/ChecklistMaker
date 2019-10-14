@@ -22,21 +22,16 @@ class Resumen
      */
     private $id;
 
-    /**
-     * @ORM\OneToOne(targetEntity="Categorizacion", cascade={"persist"})
-     * @ORM\JoinColumn(name="categorizacion_id",referencedColumnName="id")
-     * @Assert\Type(type="AppBundle\Entity\Categorizacion")
-     * @Assert\Valid
-     */
-    private $categorizacion;
+//    /**
+ //    * @ORM\OneToOne(targetEntity="Categorizacion", cascade={"persist"})
+//     * @ORM\JoinColumn(name="categorizacion_id",referencedColumnName="id")
+//     * @Assert\Type(type="AppBundle\Entity\Categorizacion")
+//     * @Assert\Valid
+//     */
+   private $categorizacion;
 
 
-    /**
-     *
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Checklist", inversedBy="resumen")
-     * @ORM\JoinColumn(name="checklist_id", referencedColumnName="id")
-     */
-    private $checklist;
+    
 
 
     /**

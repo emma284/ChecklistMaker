@@ -1,0 +1,45 @@
+{% extends '@STGTheme/Default/base.html.twig' %}
+{#{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_widget(form) }}
+{{ form_end(form) }} #}
+
+   {#  <link rel="stylesheet" type="text/css" href="{{ asset('css/root.css') }}"/>#}
+   
+    {% block content %}
+        <div class="container">
+        
+            <div class="row">
+                
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+                    <div class="card card-signin my-5">
+                        
+                        <div class="card-body">
+
+                            <h1 class="card-title text-center">Inicio de sesión</h1>
+
+                            <form class="form-signin">
+
+                                <div class="form-group">
+                                    
+                                    <input type="email" class="form-control" id="usuario-login" placeholder="Usuario" required autofocus>
+
+                                </div>  
+                                <div class="form-group">
+                            
+                                    <input type="password" class="form-control" id="pass-login" placeholder="Contraseña" required >
+
+
+                                </div> 
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-lg btn-primary btn-block text-uppercase" onclick="window.location.href = '{{ path('accion') }}'">Entrar</button>
+                                </div> 
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endblock %}

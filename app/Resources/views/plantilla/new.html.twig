@@ -1,3 +1,4 @@
+
 {% extends '@STGTheme/Default/base.html.twig' %}
 {# {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 {{ form_widget(form) }}
@@ -6,66 +7,59 @@
 {% block content %}
 
     <div class="card-body">
-        
-        <div class="form-inline col-md-12">
+        <div class="card-header"><h1>CHECKLIST DE CATEGORIZACIÓN AMBIENTAL</h1></div>
+        <div class="form-group col-md-12">
 
             <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-4 col-form-label">Razón Social</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
-            </div>  
-            <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-4 col-form-label">Expediente N°</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+                <label for="inputPassword4" class="col-sm-3">RAZÓN SOCIAL</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+            
+                <label for="inputPassword4" class="col-sm-3">EXPEDIENTE N°</label>
+                <input type="text" class="form-control col-sm-3" id="expedienteN-plantilla">
             </div> 
             <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-4 col-form-label">FECHA INICIO EXPTE</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
-            </div> 
-            <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-4 col-form-label">EVALUADOR</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+                <label for="inputPassword4" class="col-sm-3">FECHA INICIO EXPEDIENTE</label>
+                <input type="text" class="form-control col-sm-3" id="fechaInicioExpediente-plantilla">
+            
+                <label for="inputPassword4" class="col-sm-3">EVALUADOR</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
             </div> 
             
             <div class="form-group row">
-                <label for="inputPassword4"class="col-sm-4 col-form-label">VERSIÓN</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
-            </div>  
-            <div class="form-group row">
-                <label for="inputPassword4"class="col-sm-4 col-form-label">INICIO EVALUACIÓN</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+                <label for="inputPassword4"class="col-sm-3">VERSIÓN</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+            
+                <label for="inputPassword4"class="col-sm-3">INICIO EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
             </div> 
             <div class="form-group row">
-                <label for="inputPassword4"class="col-sm-4 col-form-label">FIN EVALUACIÓN</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
-            </div> 
-            <div class="form-group row">
-                <label for="inputPassword4"class="col-sm-4 col-form-label">DÍAS DE EVALUACIÓN</label>
-                <input type="text" class="form-control col-sm-4" id="razonSocial-plantilla">
+                <label for="inputPassword4"class="col-sm-3">FIN EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+            
+                <label for="inputPassword4"class="col-sm-3">DÍAS DE EVALUACIÓN</label>
+                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
             </div> 
             
         </div>
-
+                        
+        
         <div class="card-header">SUB-RUTINA</div>
      
-        <div clase="form-inline col-md-12">
+        <div class="form-group col-md-12">
 
             <div class="form-group row">
                 
-                <label for="I_INV" class="col-sm-4 col-form-label">Investigar empresa: </label>
-                <select class="form-control col-md-2">
+                <label for="I_INV" class="col-sm-3">Investigar empresa: </label>
+                <select class="form-control col-sm-2">
                     <option value=""  selected="selected" ></option>
                     <option value="a" data-choice="a" data-key="0">NO HECHO</option>
                     <option value="b" data-choice="b" data-key="1">HECHO</option>
 
                 </select>
-                <div class="col-md-2 col-form-label">
-                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                </div>
             </div>
-
+        
             <div class="form-group row">
-                
-                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si la empresa existe: </label>
+                <label for="I_INV" class="col-sm-3">Indicar si la empresa existe: </label>
                 <select class="form-control col-sm-2">
                     
                     <option value=""  selected="selected"></option>
@@ -73,14 +67,12 @@
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-2 col-form-label">
-                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                </div>
+               
             </div>
         
             <div class="form-group row">
                 
-                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si respondió en plazo: </label>
+                <label for="I_INV" class="col-sm-3">Indicar si respondió en plazo: </label>
                 <select class="form-control col-sm-2 ">
                     
                     <option value=""  selected="selected"></option>
@@ -88,14 +80,10 @@
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-2 col-form-label">
-                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                </div>
             </div>
-
+        
             <div class="form-group row">
-                
-                <label for="I_INV" class="col-sm-4 col-form-label">Indicar si se realizó: </label>
+                <label for="I_INV" class="col-sm-3">Indicar si se relocalizó: </label>
                 <select class="form-control col-sm-2">
                     
                     <option value=""  selected="selected"></option>
@@ -103,14 +91,11 @@
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-2 col-form-label">
-                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                </div>
             </div>
 
             <div class="form-group row">
                 
-                <label for="I_INV" class="col-sm-4 col-form-label">Se desestima por otros motivos: </label>
+                <label for="I_INV" class="col-sm-3">Se desestima por otros motivos: </label>
                 <select class="form-control col-sm-2 ">
                     
                     <option value=""  selected="selected"></option>
@@ -118,19 +103,16 @@
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-2 col-form-label">
-                    <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                </div>
             </div>
         </div>
 
         <div class="card-header">ESTANDAR</div>
         
-        <div clase="form-inline col-md-12">
+        <div class="form-group col-md-12">
         
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4 col-form-label">Forma de presentación: </label>
+                    <label for="I_INV" class="col-sm-4">Forma de presentación: </label>
                     <select class="form-control col-sm-2">
                         
                         <option value=""  selected="selected"></option>
@@ -138,14 +120,11 @@
                         <option value="b" data-choice="b" data-key="1">VIEJO</option>
 
                     </select>
-                    <div class="col-sm-2 col-form-label">
-                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                    </div>
                 </div>
 
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4 col-form-label">Estado formulario: </label>
+                    <label for="I_INV" class="col-sm-4">Estado formulario: </label>
                     <select class="form-control col-sm-2">
                         
                         <option value=""  selected="selected"></option>
@@ -153,14 +132,11 @@
                         <option value="b" data-choice="b" data-key="1">CERRADO</option>
 
                     </select>
-                    <div class="col-sm-2 col-form-label">
-                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                    </div>
                 </div>
 
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4 col-form-label">indicar si declara actividad: </label>
+                    <label for="I_INV" class="col-sm-4">indicar si declara actividad: </label>
                     <select class="form-control col-sm-2">
                         
                         <option value=""  selected="selected"></option>
@@ -168,43 +144,34 @@
                         <option value="b" data-choice="b" data-key="1">NO</option>
 
                     </select>
-                    <div class="col-sm-2 col-form-label">
-                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                    </div>
                 </div>
 
                 <div class="form-group row">
                 
                     
-                    <label for="inputPassword4 " class="col-sm-4 col-form-label">Definir actividad:</label>
+                    <label for="inputPassword4 " class="col-sm-4">Definir actividad:</label>
                     <input type="text" id="razonSocial-plantilla" class="form-control col-sm-6">
                     
-                    <div class="col-sm-2 col-form-label">
-                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                    </div>
+                    
                 </div>
 
                 <div class="form-group row">
             
-                    <label for="inputPassword4" class="col-sm-4 col-form-label">N° de CUACM:</label>
+                    <label for="inputPassword4" class="col-sm-4">N° de CUACM:</label>
                     <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
-                    <div class="col-sm-2 col-form-label">
-                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                    </div>
+                    
                 </div>
 
                 <div class="form-group row">
             
-                    <label for="inputPassword4" class="col-sm-4 col-form-label">Nombre de CUACM:</label>
+                    <label for="inputPassword4" class="col-sm-4">Nombre de CUACM:</label>
                     <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
-                    <div class="col-sm-2 col-form-label">
-                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                    </div>
+                    
                 </div>
                
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4 col-form-label">Estándar al que pertenece: </label>
+                    <label for="I_INV" class="col-sm-4">Estándar al que pertenece: </label>
                     <select class="form-control col-sm-2">
                         
                         <option value=""  selected="selected"></option>
@@ -212,9 +179,6 @@
                         <option value="b" data-choice="b" data-key="1">2</option>
                         <option value="b" data-choice="b" data-key="2">3</option>
                     </select>
-                    <div class="col-sm-2 col-form-label">
-                        <input type="checkbox" name="checkbox" id="checkbox_id"/>
-                    </div>
                 </div>
 
         </div>  
@@ -225,35 +189,878 @@
             <button type="button" class="btn btn-primary ">Siguiente</button>
         </div>
         
+        {#Si se quiere que todos los campos queden uno debajo de otro se debe quitar el row en las sentencias <div class="form-group row col-md-12">#}
+        
         {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div class="card-header"><h1>Formulario A</h1></div>
+                <div class="card-header">DOMICILIO LEGAL</div>
 
-            {% for seccion in secciones %}
-                
-                <div class="form-group col-md-12">
-                   
-                    {{ form_label(seccion.nombre) }}
-                    {{ form_widget(seccion.nombre, {'attr': {'class': form_errors(seccion.nombre) ? 'form-control is-invalid' : 'form-control'}}) }}
-                   
-                    <div class="invalid-feedback">
-                        {{ form_errors(seccion.nombre) }}
-                    </div>
-
-                    {% for tarea in seccion.tareas %}
-                        
-                        <div class="form-group col-md-12">
-                    
-                            {{ form_label(tarea.nombre) }}
-                            {{ form_widget(tarea.nombre, {'attr': {'class': form_errors(tarea.nombre) ? 'form-control is-invalid' : 'form-control'}}) }}
-                    
+                    <div class="form-group row col-md-12">
+                        <div class="col-sm-4">
+                            {{ form_label(form.formularioA.domicilioLegal.calle) }}
+                            {{ form_widget(form.formularioA.domicilioLegal.calle, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.calle) ? 'form-control is-invalid' : 'form-control'}}) }}
                             <div class="invalid-feedback">
-                                {{ form_errors(tarea.nombre) }}
+                                {{ form_errors(form.formularioA.domicilioLegal.calle) }}
                             </div>
                         </div>
+                        <div class="col-sm-4">
+                            {{ form_label(form.formularioA.domicilioLegal.provincia) }}
+                            {{ form_widget(form.formularioA.domicilioLegal.provincia, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.provincia) ? 'form-control is-invalid' : 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.formularioA.domicilioLegal.provincia) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            {{ form_label(form.formularioA.domicilioLegal.departamento) }}
+                            {{ form_widget(form.formularioA.domicilioLegal.departamento, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.departamento) ? 'form-control is-invalid' : 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.formularioA.domicilioLegal.departamento) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            {{ form_label(form.formularioA.domicilioLegal.localidad) }}
+                            {{ form_widget(form.formularioA.domicilioLegal.localidad, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.localidad) ? 'form-control is-invalid' : 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.formularioA.domicilioLegal.localidad) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            {{ form_label(form.formularioA.domicilioLegal.cp) }}
+                            {{ form_widget(form.formularioA.domicilioLegal.cp, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.cp) ? 'form-control is-invalid' : 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.formularioA.domicilioLegal.cp) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            {{ form_label(form.formularioA.domicilioLegal.email) }}
+                            {{ form_widget(form.formularioA.domicilioLegal.email, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.email) ? 'form-control is-invalid' : 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.formularioA.domicilioLegal.email) }}
+                            </div>
+                        </div>
+                        <div class="form-inline col-sm-6">
+                            {{ form_label(form.formularioA.domicilioLegal.acepEmail) }}
+                            {{ form_widget(form.formularioA.domicilioLegal.acepEmail, {'attr': {'class': form_errors(form.formularioA.domicilioLegal.acepEmail) ? 'form-control is-invalid' : 'form-control'}}) }}
+                            <div class="invalid-feedback">
+                                {{ form_errors(form.formularioA.domicilioLegal.acepEmail) }}
+                            </div>
+                        </div>
+                        
+                    </div>
+                            
 
-                    {% endfor %}
-  
+                <div class="card-header">DOMICILIO REAL</div>
+
+                <div class="form-group row col-md-12">
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.domicilioReal.calle) }}
+                        {{ form_widget(form.formularioA.domicilioReal.calle, {'attr': {'class': form_errors(form.formularioA.domicilioReal.calle) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.domicilioReal.calle) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_label(form.formularioA.domicilioReal.localidad) }}
+                        {{ form_widget(form.formularioA.domicilioReal.localidad, {'attr': {'class': form_errors(form.formularioA.domicilioReal.localidad) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.domicilioReal.localidad) }}
+                        </div>
+                    </div>
+                
                 </div>
-            {% endfor %}
+                        
+
+                <div class="card-header">CONTRATO SOCIAL</div>
+
+                <div class="form-group row col-md-12">
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.contratoSocial.fojaN) }}
+                        {{ form_widget(form.formularioA.contratoSocial.fojaN, {'attr': {'class': form_errors(form.formularioA.contratoSocial.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.contratoSocial.fojaN) }}
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.contratoSocial.poseeContrato) }}
+                        {{ form_widget(form.formularioA.contratoSocial.poseeContrato, {'attr': {'class': form_errors(form.formularioA.contratoSocial.poseeContrato) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.contratoSocial.poseeContrato) }}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.contratoSocial.unipersonal) }}
+                        {{ form_widget(form.formularioA.contratoSocial.unipersonal, {'attr': {'class': form_errors(form.formularioA.contratoSocial.unipersonal) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.contratoSocial.unipersonal) }}
+                        </div>
+                    </div>                
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.contratoSocial.titulares) }}
+                        {{ form_widget(form.formularioA.contratoSocial.titulares, {'attr': {'class': form_errors(form.formularioA.contratoSocial.titulares) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.contratoSocial.titulares) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.contratoSocial.vencido) }}
+                        {{ form_widget(form.formularioA.contratoSocial.vencido, {'attr': {'class': form_errors(form.formularioA.contratoSocial.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.contratoSocial.vencido) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.contratoSocial.verObjSoc) }}
+                        {{ form_widget(form.formularioA.contratoSocial.verObjSoc, {'attr': {'class': form_errors(form.formularioA.contratoSocial.verObjSoc) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.contratoSocial.verObjSoc) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">ACTA SOCIETARIA</div>
+
+                <div class="form-group row col-md-12">
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.actaSocietaria.fojaN) }}
+                        {{ form_widget(form.formularioA.actaSocietaria.fojaN, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.actaSocietaria.fojaN) }}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.actaSocietaria.actaSocietaria) }}
+                        {{ form_widget(form.formularioA.actaSocietaria.actaSocietaria, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.actaSocietaria) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.actaSocietaria.actaSocietaria) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.actaSocietaria.titulares) }}
+                        {{ form_widget(form.formularioA.actaSocietaria.titulares, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.titulares) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.actaSocietaria.titulares) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.actaSocietaria.vencido) }}
+                        {{ form_widget(form.formularioA.actaSocietaria.vencido, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.actaSocietaria.vencido) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.actaSocietaria.verObjSoc) }}
+                        {{ form_widget(form.formularioA.actaSocietaria.verObjSoc, {'attr': {'class': form_errors(form.formularioA.actaSocietaria.vencido) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.actaSocietaria.verObjSoc) }}
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="card-header">DNI</div>
+
+                <div class="form-group row col-md-12">
+                    
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.dni.dni) }}
+                        {{ form_widget(form.formularioA.dni.dni, {'attr': {'class': form_errors(form.formularioA.dni.dni) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.dni.dni) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.dni.verDni) }}
+                        {{ form_widget(form.formularioA.dni.verDni, {'attr': {'class': form_errors(form.formularioA.dni.verDni) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.dni.verDni) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.dni.apoderado) }}
+                        {{ form_widget(form.formularioA.dni.apoderado, {'attr': {'class': form_errors(form.formularioA.dni.apoderado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.dni.apoderado) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.dni.verApoderado) }}
+                        {{ form_widget(form.formularioA.dni.verApoderado, {'attr': {'class': form_errors(form.formularioA.dni.verApoderado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.dni.verApoderado) }}
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="card-header">AFIP</div>
+
+                <div class="form-group row col-md-12">
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.afip.constancia) }}
+                        {{ form_widget(form.formularioA.afip.constancia, {'attr': {'class': form_errors(form.formularioA.afip.constancia) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.afip.constancia) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.afip.fojaN) }}
+                        {{ form_widget(form.formularioA.afip.fojaN, {'attr': {'class': form_errors(form.formularioA.afip.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.afip.fojaN) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_label(form.formularioA.afip.verFechIni) }}
+                        {{ form_widget(form.formularioA.afip.verFechIni, {'attr': {'class': form_errors(form.formularioA.afip.verFechIni) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.afip.verFechIni) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_label(form.formularioA.afip.verRazonSocial) }}
+                        {{ form_widget(form.formularioA.afip.verRazonSocial, {'attr': {'class': form_errors(form.formularioA.afip.verRazonSocial) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.afip.verRazonSocial) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_label(form.formularioA.afip.verCUIT) }}
+                        {{ form_widget(form.formularioA.afip.verCUIT, {'attr': {'class': form_errors(form.formularioA.afip.verCUIT) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.afip.verCUIT) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_label(form.formularioA.afip.verAct) }}
+                        {{ form_widget(form.formularioA.afip.verAct, {'attr': {'class': form_errors(form.formularioA.afip.verAct) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.afip.verAct) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">API</div>
+
+                <div class="form-group row col-md-12">
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.preImpInmobiliario) }}
+                        {{ form_widget(form.formularioA.api.preImpInmobiliario, {'attr': {'class': form_errors(form.formularioA.api.preImpInmobiliario) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.preImpInmobiliario) }}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.fojaN) }}
+                        {{ form_widget(form.formularioA.api.fojaN, {'attr': {'class': form_errors(form.formularioA.api.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.fojaN) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.formPartida) }}
+                        {{ form_widget(form.formularioA.api.formPartida, {'attr': {'class': form_errors(form.formularioA.api.formPartida) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.formPartida) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.verNumPartida) }}
+                        {{ form_widget(form.formularioA.api.verNumPartida, {'attr': {'class': form_errors(form.formularioA.api.verNumPartida) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.verNumPartida) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.verPartidaCatastro) }}
+                        {{ form_widget(form.formularioA.api.verPartidaCatastro, {'attr': {'class': form_errors(form.formularioA.api.verPartidaCatastro) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.verPartidaCatastro) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.verTitularBoleta) }}
+                        {{ form_widget(form.formularioA.api.verTitularBoleta, {'attr': {'class': form_errors(form.formularioA.api.verTitularBoleta) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.verTitularBoleta) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.verIndTitular) }}
+                        {{ form_widget(form.formularioA.api.verIndTitular, {'attr': {'class': form_errors(form.formularioA.api.verIndTitular) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.verIndTitular) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.api.AcreDocUsoInmueble) }}
+                        {{ form_widget(form.formularioA.api.AcreDocUsoInmueble, {'attr': {'class': form_errors(form.formularioA.api.AcreDocUsoInmueble) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.api.AcreDocUsoInmueble) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-header">USO CONFORME DE SUELO</div>
+
+                <div class="form-group row col-md-12">
+
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.usoConformeSuelo.usoConformeSuelo2) }}
+                        {{ form_widget(form.formularioA.usoConformeSuelo.usoConformeSuelo2, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.usoConformeSuelo2) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.usoConformeSuelo.usoConformeSuelo2) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.usoConformeSuelo.fojaN) }}
+                        {{ form_widget(form.formularioA.usoConformeSuelo.fojaN, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.fojaN) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.usoConformeSuelo.fojaN) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.usoConformeSuelo.presentaHabilitacion) }}
+                        {{ form_widget(form.formularioA.usoConformeSuelo.presentaHabilitacion, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.presentaHabilitacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.usoConformeSuelo.presentaHabilitacion) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion) }}
+                        {{ form_widget(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.usoConformeSuelo.fechaInicioHabilitacion) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.usoConformeSuelo.fechaVencimiento) }}
+                        {{ form_widget(form.formularioA.usoConformeSuelo.fechaVencimiento, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.fechaVencimiento) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.usoConformeSuelo.fechaVencimiento) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.usoConformeSuelo.verActividad) }}
+                        {{ form_widget(form.formularioA.usoConformeSuelo.verActividad, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.verActividad) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.usoConformeSuelo.verActividad) }}
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+
+                        {{ form_label(form.formularioA.usoConformeSuelo.verLocalizacion) }}
+                        {{ form_widget(form.formularioA.usoConformeSuelo.verLocalizacion, {'attr': {'class': form_errors(form.formularioA.usoConformeSuelo.verLocalizacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                        <div class="invalid-feedback">
+                            {{ form_errors(form.formularioA.usoConformeSuelo.verLocalizacion) }}
+                        </div>
+                    </div>
+                </div>
+        
+                        
+        <div class="card-header"><h1>Formulario B</h1></div>   
+        
+        <div class="form-group row col-md-12">
+            <div class="col-sm-3">
+                {{ form_label(form.formularioB.estadoSoporteDigital) }}
+            </div>
+            <div class="col-sm-1">
+                {{ form_widget(form.formularioB.estadoSoporteDigital, {'attr': {'class': form_errors(form.formularioB.estadoSoporteDigital) ? 'form-control is-invalid' : 'form-control'}}) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.formularioB.estadoSoporteDigital) }}
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-danger">ADJUNTA OBSERVACIÓN</button>
+            </div> 
+        </div> 
+        <div class="form-group row col-md-12"> 
+            <div class="col-sm-3">
+                {{ form_label(form.formularioB.ingresarCodigoExcel) }}
+            </div>
+            <div class="col-sm-1">
+                {{ form_widget(form.formularioB.ingresarCodigoExcel, {'attr': {'class': form_errors(form.formularioB.ingresarCodigoExcel) ? 'form-control is-invalid' : 'form-control'}}) }}
+                <div class="invalid-feedback">
+                    {{ form_errors(form.formularioB.ingresarCodigoExcel) }}
+                </div>
+            </div>
+         </div>
+                
+        {#Seccion de emisión de residuos#}
+        <div class="card-header">Emisión de residuos</div> 
+        
+        <div class="form-group row col-md-12">
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.residuosSolidosSemisolidos) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.residuosSolidosSemisolidos, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.residuosSolidosSemisolidos) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.residuosSolidosSemisolidos) }}
+                    </div>
+                </div>
+            </div> 
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.rsu) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.rsu, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.rsu) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.rsu) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.rnp) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.rnp, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.rnp) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.rnp) }}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger">SOLICITAR LIBRO RUBRICADO</button>
+                </div> 
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.tipoDeResiduo) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.tipoDeResiduo, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.tipoDeResiduo) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.tipoDeResiduo) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.rp) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.rp, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.rp) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.rp) }}
+                    </div>
+                </div>  
+            </div> 
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.definirCorrientesDeRP) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.definirCorrientesDeRP, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.definirCorrientesDeRP) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.definirCorrientesDeRP) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.valorResiduo) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.valorResiduo, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.valorResiduo) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.valorResiduo) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.efluentesYResiduosLiquidos) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.efluentesYResiduosLiquidos, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.efluentesYResiduosLiquidos) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.efluentesYResiduosLiquidos) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.aguaATemperaturaAmbiente) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.aguaATemperaturaAmbiente, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.aguaATemperaturaAmbiente) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.aguaATemperaturaAmbiente) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.efluentesSinRP) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.efluentesSinRP, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.efluentesSinRP) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.efluentesSinRP) }}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger">SOLICITAR PERMISO DE VUELCO</button>
+                </div> 
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="form-inline col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.efluentesConRP) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.efluentesConRP, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.efluentesConRP) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.efluentesConRP) }}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger">SOLICITAR PERMISO DE VUELCO</button>
+                </div> 
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.valorEfluente) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.valorEfluente, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.valorEfluente) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.valorEfluente) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.emisionesGaseosas) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.emisionesGaseosas, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.emisionesGaseosas) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.emisionesGaseosas) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.componentesNaturalesDelAire) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.componentesNaturalesDelAire, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.componentesNaturalesDelAire) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.componentesNaturalesDelAire) }}
+                    </div>
+                </div>
+            </div> 
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.combustionDeCombustiblesLiquidos) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.combustionDeCombustiblesLiquidos, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.combustionDeCombustiblesLiquidos) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.combustionDeCombustiblesLiquidos) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.noContempladosBool) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.noContempladosBool, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.noContempladosBool) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.noContempladosBool) }}
+                    </div>
+                </div>
+                <div class="col-sm-8">{#arreglar distribución#}
+                    {{ form_label(form.formularioB.emisionDeResiduos.noContempladosListado) }}
+                    {{ form_widget(form.formularioB.emisionDeResiduos.noContempladosListado, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.noContempladosListado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.noContempladosListado) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.emisionDeResiduos.valorEmisiones) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.emisionDeResiduos.valorEmisiones, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.valorEmisiones) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.emisionDeResiduos.valorEmisiones) }}
+                    </div>
+                </div>
+            </div>
+         </div>  
+                
+        {#Seccion de riesgos#}        
+        <div class="card-header">Riesgos</div>   
+        
+        <div class="form-group row col-md-12">
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.riesgosPresuntos) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.riesgosPresuntos, {'attr': {'class': form_errors(form.formularioB.riesgos.riesgosPresuntos) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.riesgosPresuntos) }}
+                    </div>
+                </div>  
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.acustico) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.acustico, {'attr': {'class': form_errors(form.formularioB.riesgos.acustico) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.acustico) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.aparatosSometidosAPresion) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.aparatosSometidosAPresion, {'attr': {'class': form_errors(form.formularioB.riesgos.aparatosSometidosAPresion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.aparatosSometidosAPresion) }}
+                    </div>
+                </div> 
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger">SOLICITAR INSCRIPCIÓN A EPE</button>
+                </div> 
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.sustanciasQuimicas) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.sustanciasQuimicas, {'attr': {'class': form_errors(form.formularioB.riesgos.sustanciasQuimicas) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.sustanciasQuimicas) }}
+                    </div>
+                </div>  
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.explosion) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.explosion, {'attr': {'class': form_errors(form.formularioB.riesgos.explosion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.explosion) }}
+                    </div>
+                </div>  
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.incendio) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.incendio, {'attr': {'class': form_errors(form.formularioB.riesgos.incendio) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.incendio) }}
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger">SOLICITAR ESTUDIO DE CARGA DE FUEGO</button>
+                </div> 
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.otrosBool) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.otrosBool, {'attr': {'class': form_errors(form.formularioB.riesgos.otrosBool) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.otrosBool) }}
+                    </div>
+                </div>  
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.riesgos.otrosListado) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.riesgos.otrosListado, {'attr': {'class': form_errors(form.formularioB.riesgos.otrosListado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.riesgos.otrosListado) }}
+                    </div>
+                </div> 
+            </div> 
+        </div>
+        
+        
+        {#Seccion de dotacion#}        
+        <div class="card-header">Dotación</div>   
+        <div class="form-group row col-md-12">
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.dotacion.dotacionDePersonal) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.dotacion.dotacionDePersonal, {'attr': {'class': form_errors(form.formularioB.dotacion.dotacionDePersonal) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.dotacion.dotacionDePersonal) }}
+                    </div>
+                </div>  
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.dotacion.potenciaInstalada) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.dotacion.potenciaInstalada, {'attr': {'class': form_errors(form.formularioB.dotacion.potenciaInstalada) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.dotacion.potenciaInstalada) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.dotacion.superficieCubierta) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.dotacion.superficieCubierta, {'attr': {'class': form_errors(form.formularioB.dotacion.superficieCubierta) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.dotacion.superficieCubierta) }}
+                    </div>
+                </div>  
+            </div> 
+        </div>
+                
+        {#Seccion de localización#}        
+        <div class="card-header">Localización</div>   
+        <div class="form-group row col-md-12">
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.localizacion.zonificacion) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.localizacion.zonificacion, {'attr': {'class': form_errors(form.formularioB.localizacion.zonificacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.localizacion.zonificacion) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.localizacion.aguaDeRed) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.localizacion.aguaDeRed, {'attr': {'class': form_errors(form.formularioB.localizacion.aguaDeRed) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.localizacion.aguaDeRed) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.localizacion.redCloacal) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.localizacion.redCloacal, {'attr': {'class': form_errors(form.formularioB.localizacion.redCloacal) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.localizacion.redCloacal) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.localizacion.energiaElectrica) }}
+                    </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.localizacion.energiaElectrica, {'attr': {'class': form_errors(form.formularioB.localizacion.energiaElectrica) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.localizacion.energiaElectrica) }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.localizacion.gas) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.formularioB.localizacion.gas, {'attr': {'class': form_errors(form.formularioB.localizacion.gas) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.localizacion.gas) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        {#Seccion de categoría final#}        
+        <div class="card-header">Categoría final</div>   
+        <div class="form-group row col-md-12">
+            <div class="form-group row col-md-12"> 
+                <div class="col-sm-3">
+                    {{ form_label(form.formularioB.categoriaFinal.categoriaAsignada) }}
+                </div>
+                <div class="col-sm-1">
+                    
+                    {{ form_widget(form.formularioB.categoriaFinal.categoriaAsignada, {'attr': {'class': form_errors(form.formularioB.categoriaFinal.categoriaAsignada) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.categoriaFinal.categoriaAsignada) }}
+                    </div>
+                </div>
+                    
+            </div>
+                    
+        </div>
         {{form_end(form)}}
     </div>
+
+{% endblock %}
+
+
+{% block javascript %}
+    {{ parent() }}
+    <script> 
+        //insert script here
+        
+        
+    </script> 
 {% endblock %}

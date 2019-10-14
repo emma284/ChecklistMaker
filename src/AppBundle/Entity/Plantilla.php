@@ -33,16 +33,19 @@ class Plantilla
      */
     private $nombre;
 
-    /**
-    * @ORM\OneToMany(targetEntity="AppBundle\Entity\Seccion", mappedBy="idPlantilla")
-    */
-    protected $secciones;
     
     /**
-     *  @ORM\OneToMany(targetEntity="AppBundle\Entity\Checklist", mappedBy="plantilla")
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\FormularioA\FormularioA", cascade={"persist"}, mappedBy="plantilla")
      */
-    private $checklists;
+    private $formularioA;
     
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\FormularioB\FormularioB", cascade={"persist"}, mappedBy="plantilla")
+     */
+    private $formularioB;
+    
+    
+    //Getters and setter
     function getId() {
         return $this->id;
     }
@@ -51,7 +54,6 @@ class Plantilla
         return $this->nombre;
     }
 
-   
     function setId($id) {
         $this->id = $id;
     }
@@ -60,35 +62,21 @@ class Plantilla
         $this->nombre = $nombre;
     }
 
-    function getSecciones() {
-        return $this->secciones;
+    function getFormularioA() {
+        return $this->formularioA;
     }
 
-    function setSecciones($secciones) {
-        $this->secciones = $secciones;
+    function getFormularioB() {
+        return $this->formularioB;
     }
 
-    
-    public function addSecciones(Seccion $representante)
-    {
-        
-        $secciones->setIdPlantilla($this);
-
-        $this->secciones->add($secciones);
-        
+    function setFormularioA($formularioA) {
+        $this->formularioA = $formularioA;
     }
 
-    public function removeRepresentante(Representante $representante)
-    {
-        $this->representantes->removeElement($representante);
+    function setFormularioB($formularioB) {
+        $this->formularioB = $formularioB;
     }
-    
-    /**
-    * Constructor
-    */
-    public function __construct()
-    {
-        $this->secciones = new ArrayCollection();
-    }
+
 
 }

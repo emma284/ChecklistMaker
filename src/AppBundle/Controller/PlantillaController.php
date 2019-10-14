@@ -8,23 +8,15 @@
 
 namespace AppBundle\Controller;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Plantilla;
 use AppBundle\Form\PlantillaType;
 use AppBundle\Entity\Seccion;
-use AppBundle\Form\SeccionType;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * Description of PlantillaController
- *
- * @author Emma
- */
-
- class PlantillaController extends Controller
- {
+class PlantillaController extends Controller
+{
     /**
      * @Route("/plantilla/new/", name="new_plantilla")
      */
@@ -41,22 +33,17 @@ use Symfony\Component\HttpFoundation\Request;
         if($form->isSubmitted() && $form->isValid()){
 
             $plantilla = $form->getData();
-            
+
             $entityManager->persist($plantilla);
             $entityManager->flush();
-            
+
             //return $this->redirectToRoute('listar_formularios');
 
         }
-        $secciones = $entityManager
-            ->getRepository(Seccion::class)
-            ->findBy([
-            'idPlantilla' => $plantilla->getId()
-        ]);
+
 
         return $this->render('plantilla/new.html.twig', array(
-            'form' => $form->createView(),
-            'secciones' => $secciones
+            'form' => $form->createView()
         ));
 
 
@@ -92,19 +79,31 @@ use Symfony\Component\HttpFoundation\Request;
 
     }
 
+    /**
+    * @Route("/plantilla/listado/", name="listado_plantilla")
+    */
+    public function buscar(Request $request){
 
-/**
- * @Route("/plantilla/ver_2/", name="ver2_plantilla")
- */
-public function plantillaVerAction(Request $request)
-{
-    $entityManager = $this->getDoctrine()->getManager();
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $plantillas = $entityManager
+                    ->getRepository(Plantilla::class)
+                    ->findAll();
+        
+        return $this->render('plantilla/listado.html.twig', array(
+            'plantillas' => $plantillas));
+    }
+
+    /**
+     * @Route("/plantilla/ver_2/", name="ver2_plantilla")
+     */
+    public function plantillaVerAction(Request $request)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
 
 
-    return $this->render('plantilla/ver.html.twig', array(
-        ));
+        return $this->render('plantilla/ver.html.twig', array());
 
-
-}
+    }
 
 }
