@@ -3,7 +3,7 @@
 {# {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 {{ form_widget(form) }}
 {{ form_end(form) }} #}
-
+   
 {% block content %}
 
     <div class="card-body">
@@ -49,7 +49,7 @@
 
             <div class="form-group row">
                 
-                <label for="I_INV" class="col-sm-3">Investigar empresa: </label>
+                <label for="I_INV" class="col-sm-2">Investigar empresa: </label>
                 <select class="form-control col-sm-2">
                     <option value=""  selected="selected" ></option>
                     <option value="a" data-choice="a" data-key="0">NO HECHO</option>
@@ -60,49 +60,69 @@
         
             <div class="form-group row">
                 <label for="I_INV" class="col-sm-3">Indicar si la empresa existe: </label>
-                <select class="form-control col-sm-2">
+                <select id='indicar' class="form-control col-sm-1">
                     
                     <option value=""  selected="selected"></option>
-                    <option value="a" data-choice="a" data-key="0">SI</option>
-                    <option value="b" data-choice="b" data-key="1">NO</option>
+                    <option id='indicarSi' value="a" data-choice="a" data-key="0">SI</option>
+                    <option id='indicarNo' value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-               
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info btn-block" disabled>CONTINUAR EVALUACIÓN</button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger btn-block" disabled>ENVIAR NOTIFICACIÓN</button>
+                </div>
             </div>
         
             <div class="form-group row">
                 
                 <label for="I_INV" class="col-sm-3">Indicar si respondió en plazo: </label>
-                <select class="form-control col-sm-2 ">
+                <select class="form-control col-sm-1 ">
                     
                     <option value=""  selected="selected"></option>
                     <option value="a" data-choice="a" data-key="0">SI</option>
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info btn-block" disabled>ACCIONAR SEGÚN EL CASO</button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger btn-block" disabled>DESESTIMAR</button>
+                </div>
             </div>
         
             <div class="form-group row">
                 <label for="I_INV" class="col-sm-3">Indicar si se relocalizó: </label>
-                <select class="form-control col-sm-2">
+                <select class="form-control col-sm-1">
                     
                     <option value=""  selected="selected"></option>
                     <option value="a" data-choice="a" data-key="0">SI</option>
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger btn-block" disabled>ENVIAR NOTIFICACIÓN Y DESESTIMAR</button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info btn-block" disabled>CONTINUAR EVALUACIÓN</button>
+                </div>
             </div>
 
             <div class="form-group row">
                 
                 <label for="I_INV" class="col-sm-3">Se desestima por otros motivos: </label>
-                <select class="form-control col-sm-2 ">
+                <select class="form-control col-sm-1 ">
                     
                     <option value=""  selected="selected"></option>
                     <option value="a" data-choice="a" data-key="0">SI</option>
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-danger btn-block" disabled>DESESTIMAR</button>
+                </div>
             </div>
         </div>
 
@@ -609,7 +629,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <button type="button" class="btn btn-danger">ADJUNTA OBSERVACIÓN</button>
+                <button type="button" class="btn btn-danger btn-block" disabled>ADJUNTA OBSERVACIÓN</button>
             </div> 
         </div> 
         <div class="form-group row col-md-12"> 
@@ -661,7 +681,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger">SOLICITAR LIBRO RUBRICADO</button>
+                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR LIBRO RUBRICADO</button>
                 </div> 
             </div>
             <div class="form-group row col-md-12">
@@ -741,7 +761,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger">SOLICITAR PERMISO DE VUELCO</button>
+                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR PERMISO DE VUELCO</button>
                 </div> 
             </div>
             <div class="form-group row col-md-12"> 
@@ -755,7 +775,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger">SOLICITAR PERMISO DE VUELCO</button>
+                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR PERMISO DE VUELCO</button>
                 </div> 
             </div>
             <div class="form-group row col-md-12">
@@ -870,7 +890,7 @@
                     </div>
                 </div> 
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger">SOLICITAR INSCRIPCIÓN A EPE</button>
+                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR INSCRIPCIÓN A EPE</button>
                 </div> 
             </div>
             <div class="form-group row col-md-12"> 
@@ -906,7 +926,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger">SOLICITAR ESTUDIO DE CARGA DE FUEGO</button>
+                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR ESTUDIO DE CARGA DE FUEGO</button>
                 </div> 
             </div>
             <div class="form-group row col-md-12"> 
@@ -1058,9 +1078,14 @@
 
 {% block javascript %}
     {{ parent() }}
+    {#seguir aca#}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"</script>
     <script> 
-        //insert script here
-        
-        
+        $('.indicarSi, .indicarNo').hide();
+        $('#indicar').change(function () {
+            var selected = $('#indicar option:selected').text();
+            $('.indicarSi').toggle(selected == "SI");
+            $('.indicarNo').toggle(selected == "NO");
+        });
     </script> 
 {% endblock %}
