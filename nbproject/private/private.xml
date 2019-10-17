@@ -5,7 +5,10 @@
         <group>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/app/Resources/views/plantilla/new.html.twig</file>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/Plantilla.php</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Form/FormularioB/FormularioBType.php</file>
             <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/app/Resources/STGThemeBundle/views/Default/base.html.twig</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/web/bundles/stgtheme/css/custom.css</file>
+            <file>file:/E:/Users/MODERNIZACION02/Documents/NetBeansProjects/ChecklistMaker/src/AppBundle/Entity/FormularioB/FormularioB.php</file>
         </group>
     </open-files>
 </project-private>

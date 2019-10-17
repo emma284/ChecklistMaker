@@ -5,7 +5,11 @@
 {{ form_end(form) }} #}
    
 {% block content %}
-
+    <style>
+    .form-control {
+      padding: 2px 6px;
+    }
+    </style>
     <div class="card-body">
         <div class="card-header"><h1>CHECKLIST DE CATEGORIZACIÓN AMBIENTAL</h1></div>
         <div class="form-group col-md-12">
@@ -60,17 +64,17 @@
         
             <div class="form-group row">
                 <label for="I_INV" class="col-sm-3">Indicar si la empresa existe: </label>
-                <select id='indicar' class="form-control col-sm-1">
+                <select id='indicarSiExisteEmpresa' class="form-control col-sm-1">
                     
                     <option value=""  selected="selected"></option>
-                    <option id='indicarSi' value="a" data-choice="a" data-key="0">SI</option>
-                    <option id='indicarNo' value="b" data-choice="b" data-key="1">NO</option>
+                    <option value="a" data-choice="a" data-key="0">SI</option>
+                    <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-4">
+                <div id='advertenciaSiExisteEmpresa' class="col-sm-4">
                     <button type="button" class="btn btn-info btn-block" disabled>CONTINUAR EVALUACIÓN</button>
                 </div>
-                <div class="col-sm-4">
+                <div id='advertenciaNoExisteEmpresa' class="col-sm-4">
                     <button type="button" class="btn btn-danger btn-block" disabled>ENVIAR NOTIFICACIÓN</button>
                 </div>
             </div>
@@ -78,34 +82,34 @@
             <div class="form-group row">
                 
                 <label for="I_INV" class="col-sm-3">Indicar si respondió en plazo: </label>
-                <select class="form-control col-sm-1 ">
+                <select id='indicarSiRespondioEnPlazo' class="form-control col-sm-1 ">
                     
                     <option value=""  selected="selected"></option>
                     <option value="a" data-choice="a" data-key="0">SI</option>
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-4">
+                <div id='advertenciaSiRespondio' class="col-sm-4">
                     <button type="button" class="btn btn-info btn-block" disabled>ACCIONAR SEGÚN EL CASO</button>
                 </div>
-                <div class="col-sm-4">
+                <div id='advertenciaNoRespondio' class="col-sm-4">
                     <button type="button" class="btn btn-danger btn-block" disabled>DESESTIMAR</button>
                 </div>
             </div>
         
             <div class="form-group row">
                 <label for="I_INV" class="col-sm-3">Indicar si se relocalizó: </label>
-                <select class="form-control col-sm-1">
+                <select id='indicarSiSeRelocalizo' class="form-control col-sm-1">
                     
                     <option value=""  selected="selected"></option>
                     <option value="a" data-choice="a" data-key="0">SI</option>
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-4">
+                <div id='advertenciaSiSeRelocalizo' class="col-sm-4">
                     <button type="button" class="btn btn-danger btn-block" disabled>ENVIAR NOTIFICACIÓN Y DESESTIMAR</button>
                 </div>
-                <div class="col-sm-4">
+                <div id='advertenciaNoSeRelocalizo' class="col-sm-4">
                     <button type="button" class="btn btn-info btn-block" disabled>CONTINUAR EVALUACIÓN</button>
                 </div>
             </div>
@@ -113,14 +117,14 @@
             <div class="form-group row">
                 
                 <label for="I_INV" class="col-sm-3">Se desestima por otros motivos: </label>
-                <select class="form-control col-sm-1 ">
+                <select id='indicarSiSeDesestima' class="form-control col-sm-1 ">
                     
                     <option value=""  selected="selected"></option>
                     <option value="a" data-choice="a" data-key="0">SI</option>
                     <option value="b" data-choice="b" data-key="1">NO</option>
 
                 </select>
-                <div class="col-sm-4">
+                <div id='advertenciaSiSeDesestima' class="col-sm-4">
                     <button type="button" class="btn btn-danger btn-block" disabled>DESESTIMAR</button>
                 </div>
             </div>
@@ -132,8 +136,8 @@
         
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4">Forma de presentación: </label>
-                    <select class="form-control col-sm-2">
+                    <label for="I_INV" class="col-sm-3">Forma de presentación: </label>
+                    <select class="form-control col-sm-1">
                         
                         <option value=""  selected="selected"></option>
                         <option value="a" data-choice="a" data-key="0">NUEVO</option>
@@ -144,8 +148,8 @@
 
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4">Estado formulario: </label>
-                    <select class="form-control col-sm-2">
+                    <label for="I_INV" class="col-sm-3">Estado formulario: </label>
+                    <select class="form-control col-sm-1">
                         
                         <option value=""  selected="selected"></option>
                         <option value="a" data-choice="a" data-key="0">ABIERTO</option>
@@ -156,8 +160,8 @@
 
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4">indicar si declara actividad: </label>
-                    <select class="form-control col-sm-2">
+                    <label for="I_INV" class="col-sm-3">indicar si declara actividad: </label>
+                    <select class="form-control col-sm-1">
                         
                         <option value=""  selected="selected"></option>
                         <option value="a" data-choice="a" data-key="0">SI</option>
@@ -169,7 +173,7 @@
                 <div class="form-group row">
                 
                     
-                    <label for="inputPassword4 " class="col-sm-4">Definir actividad:</label>
+                    <label for="inputPassword4 " class="col-sm-3">Definir actividad:</label>
                     <input type="text" id="razonSocial-plantilla" class="form-control col-sm-6">
                     
                     
@@ -177,22 +181,22 @@
 
                 <div class="form-group row">
             
-                    <label for="inputPassword4" class="col-sm-4">N° de CUACM:</label>
-                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
+                    <label for="inputPassword4" class="col-sm-3">N° de CUACM:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-1">
                     
                 </div>
 
                 <div class="form-group row">
             
-                    <label for="inputPassword4" class="col-sm-4">Nombre de CUACM:</label>
-                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-2">
+                    <label for="inputPassword4" class="col-sm-3">Nombre de CUACM:</label>
+                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-1">
                     
                 </div>
                
                 <div class="form-group row">
                     
-                    <label for="I_INV" class="col-sm-4">Estándar al que pertenece: </label>
-                    <select class="form-control col-sm-2">
+                    <label for="I_INV" class="col-sm-3">Estándar al que pertenece: </label>
+                    <select class="form-control col-sm-1">
                         
                         <option value=""  selected="selected"></option>
                         <option value="a" data-choice="a" data-key="0">1</option>
@@ -619,18 +623,24 @@
         <div class="card-header"><h1>Formulario B</h1></div>   
         
         <div class="form-group row col-md-12">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 {{ form_label(form.formularioB.estadoSoporteDigital) }}
             </div>
-            <div class="col-sm-1">
+            <div class="col-sm-2">
                 {{ form_widget(form.formularioB.estadoSoporteDigital, {'attr': {'class': form_errors(form.formularioB.estadoSoporteDigital) ? 'form-control is-invalid' : 'form-control'}}) }}
                 <div class="invalid-feedback">
                     {{ form_errors(form.formularioB.estadoSoporteDigital) }}
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div id='advertenciaSoporteDigital' class="col-sm-4">
                 <button type="button" class="btn btn-danger btn-block" disabled>ADJUNTA OBSERVACIÓN</button>
             </div> 
+            <div id='observacionSoporteDigital' class="col-sm-4">
+                    {{ form_widget(form.formularioB.observacionSoporteDigital, {'attr': {'class': form_errors(form.formularioB.observacionSoporteDigital) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.formularioB.observacionSoporteDigital) }}
+                    </div>
+                </div>
         </div> 
         <div class="form-group row col-md-12"> 
             <div class="col-sm-3">
@@ -1078,14 +1088,99 @@
 
 {% block javascript %}
     {{ parent() }}
-    {#seguir aca#}
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"</script>
     <script> 
-        $('.indicarSi, .indicarNo').hide();
-        $('#indicar').change(function () {
-            var selected = $('#indicar option:selected').text();
-            $('.indicarSi').toggle(selected == "SI");
-            $('.indicarNo').toggle(selected == "NO");
+        jQuery(document).ready(function(){
+            {#Cambiar las advertencias dependiendo de la selección#}
+            {#existe empresa?#}
+            switch($('#indicarSiExisteEmpresa option:selected').text()){
+                case "SI":
+                    $('#advertenciaSiExisteEmpresa').show();
+                    $('#advertenciaNoExisteEmpresa').hide();
+                    break;
+                case "NO":
+                    $('#advertenciaSiExisteEmpresa').hide();
+                    $('#advertenciaNoExisteEmpresa').show();
+                    break;
+                default:
+                    $('#advertenciaSiExisteEmpresa').hide();
+                    $('#advertenciaNoExisteEmpresa').hide();
+                    break;
+            }
+            {#respondió en plazo?#}
+            switch($('#indicarSiRespondioEnPlazo option:selected').text()){
+                case "SI":
+                    $('#advertenciaSiRespondio').show();
+                    $('#advertenciaNoRespondio').hide();
+                    break;
+                case "NO":
+                    $('#advertenciaSiRespondio').hide();
+                    $('#advertenciaNoRespondio').show();
+                    break;
+                default:
+                    $('#advertenciaSiRespondio').hide();
+                    $('#advertenciaNoRespondio').hide();
+                    break;
+            }
+            {#se relocalizó?#}
+            switch($('#indicarSiSeRelocalizo option:selected').text()){
+                case "SI":
+                    $('#advertenciaSiSeRelocalizo').show();
+                    $('#advertenciaNoSeRelocalizo').hide();
+                    break;
+                case "NO":
+                    $('#advertenciaSiSeRelocalizo').hide();
+                    $('#advertenciaNoSeRelocalizo').show();
+                    break;
+                default:
+                    $('#advertenciaSiSeRelocalizo').hide();
+                    $('#advertenciaNoSeRelocalizo').hide();
+                    break;
+            }
+            {#se desestima por otros motivos?#}
+            switch($('#indicarSiSeDesestima option:selected').text()){
+                case "SI":
+                    $('#advertenciaSiSeDesestima').show();
+                    break;
+                default:
+                    $('#advertenciaSiSeDesestima').hide();
+                    break;
+            }
+            {#estado soporte digital#}
+            switch($('#plantilla_formularioB_estadoSoporteDigital option:selected').text()){
+                case "INCOMPLETO":
+                case "EN BLANCO":
+                    $('#advertenciaSoporteDigital').show();
+                    $('#observacionSoporteDigital').show();
+                    break;
+                default:
+                    $('#advertenciaSoporteDigital').hide();
+                    $('#observacionSoporteDigital').hide();
+                    break;
+            }
+            
+        });
+        $('#indicarSiExisteEmpresa').change(function () {
+            var selected = $('#indicarSiExisteEmpresa option:selected').text();
+            $('#advertenciaSiExisteEmpresa').toggle(selected == "SI");
+            $('#advertenciaNoExisteEmpresa').toggle(selected == "NO");
+        });
+        $('#indicarSiRespondioEnPlazo').change(function () {
+            var selected = $('#indicarSiRespondioEnPlazo option:selected').text();
+            $('#advertenciaSiRespondio').toggle(selected == "SI");
+            $('#advertenciaNoRespondio').toggle(selected == "NO");
+        });
+        $('#indicarSiSeRelocalizo').change(function () {
+            var selected = $('#indicarSiSeRelocalizo option:selected').text();
+            $('#advertenciaSiSeRelocalizo').toggle(selected == "SI");
+            $('#advertenciaNoSeRelocalizo').toggle(selected == "NO");
+        });
+        $('#indicarSiSeDesestima').change(function () {          
+            var selected = $('#indicarSiSeDesestima option:selected').text();
+            $('#advertenciaSiSeDesestima').toggle(selected == "SI");
+        });
+        $('#plantilla_formularioB_estadoSoporteDigital').change(function () {
+            var selected = $('#plantilla_formularioB_estadoSoporteDigital option:selected').text();
+            $('#advertenciaSoporteDigital, #observacionSoporteDigital').toggle(selected == "INCOMPLETO" || selected == "EN BLANCO");
         });
     </script> 
 {% endblock %}

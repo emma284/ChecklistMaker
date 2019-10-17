@@ -29,6 +29,10 @@ class FormularioB
     private $estadoSoporteDigital;
     
     /**
+     * @ORM\Column(name="observacionSoporteDigital", type="string")
+     */
+    private $observacionSoporteDigital;
+    /**
      *
      * @ORM\Column(name="codigoExcel", type="string")
      */

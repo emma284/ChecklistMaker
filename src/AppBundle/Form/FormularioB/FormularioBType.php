@@ -11,6 +11,7 @@ use AppBundle\Form\FormularioB\LocalizacionType;
 use AppBundle\Form\FormularioB\RiesgosType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 
 class FormularioBType extends AbstractType
@@ -25,6 +26,7 @@ class FormularioBType extends AbstractType
                     'EN BLANCO' => 'EN BLANCO',
                     'NO PRESENTA' => 'NO PRESENTA',
                     ],])
+            ->add('observacionSoporteDigital', TextareaType::class)
             ->add('ingresarCodigoExcel', ChoiceType::class, ['label' => 'Ingresar código en excel:',
                 'choices' => [ '' => null,
                     'HECHO' => 'HECHO',
