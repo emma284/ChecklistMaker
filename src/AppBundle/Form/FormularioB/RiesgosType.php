@@ -18,38 +18,38 @@ class RiesgosType extends AbstractType
         $builder
             ->add('riesgosPresuntos', ChoiceType::class, ['label' => 'Riesgos presuntos:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('acustico', ChoiceType::class, ['label' => 'Acústico:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('aparatosSometidosAPresion', ChoiceType::class, ['label' => 'Aparatos sometidos a presión:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('sustanciasQuimicas', ChoiceType::class, ['label' => 'Sustancias químicas:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('explosion', ChoiceType::class, ['label' => 'Explosión:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('incendio', ChoiceType::class, ['label' => 'Incendio:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('otrosBool', ChoiceType::class, ['label' => 'Otros:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('otrosListado', TextType::class, ['label' => 'Indicar cuales:',
                 ]);

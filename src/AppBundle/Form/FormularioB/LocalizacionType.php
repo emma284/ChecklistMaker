@@ -23,23 +23,23 @@ class LocalizacionType extends AbstractType
                     ],])
             ->add('aguaDeRed', ChoiceType::class, ['label' => 'Agua de red:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('redCloacal', ChoiceType::class, ['label' => 'Red cloacal:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('energiaElectrica', ChoiceType::class, ['label' => 'Energía electríca:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('gas', ChoiceType::class, ['label' => 'Gas:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],
                 ]);
     }

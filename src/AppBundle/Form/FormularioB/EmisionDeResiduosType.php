@@ -20,25 +20,25 @@ class EmisionDeResiduosType extends AbstractType
         $builder
             ->add('residuosSolidosSemisolidos', ChoiceType::class, ['label' => 'Residuos solidos y/o semisolidos:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('rsu', ChoiceType::class, ['label' => 'RSU:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('rnp', ChoiceType::class, ['label' => 'RNP:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('tipoDeResiduo', TextType::class, ['label' => 'Tipo de residuo:',
                     ])//ver de hacer choice con los códigos
             ->add('rp', ChoiceType::class, ['label' => 'RP:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('definirCorrientesDeRP', TextType::class, ['label' => 'Definir corrientes de RP:',
                     ])//ver de hacer choice con los códigos  
@@ -46,45 +46,45 @@ class EmisionDeResiduosType extends AbstractType
                     ])
             ->add('efluentesYResiduosLiquidos', ChoiceType::class, ['label' => 'Efluentes y/o residuos líquidos:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('aguaATemperaturaAmbiente', ChoiceType::class, ['label' => 'Agua a temperatura ambiente:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('efluentesSinRP', ChoiceType::class, ['label' => 'Efluentes sin RP:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('efluentesConRP', ChoiceType::class, ['label' => 'Efluentes con RP:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('valorEfluente', TextType::class, ['label' => 'Valor:',
                     ])
             ->add('emisionesGaseosas', ChoiceType::class, ['label' => 'Emisiones gaseosas:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('componentesNaturalesDelAire', ChoiceType::class, ['label' => 'Componentes naturales del aire:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('combustionDeCombustiblesLiquidos', ChoiceType::class, ['label' => 'Combustión de combustibles líquidos:',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('noContempladosBool', ChoiceType::class, ['label' => '¿No contemplados anteriormente?',
                 'choices' => [ '' => null,
-                    'Si' => true,
-                    'No' => false,
+                    'SI' => true,
+                    'NO' => false,
                     ],])
             ->add('noContempladosListado', TextareaType::class, ['label' => 'Indique cuales:',
                     ])

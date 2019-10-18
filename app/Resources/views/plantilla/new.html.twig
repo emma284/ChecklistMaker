@@ -5,11 +5,7 @@
 {{ form_end(form) }} #}
    
 {% block content %}
-    <style>
-    .form-control {
-      padding: 2px 6px;
-    }
-    </style>
+    
     <div class="card-body">
         <div class="card-header"><h1>CHECKLIST DE CATEGORIZACIÓN AMBIENTAL</h1></div>
         <div class="form-group col-md-12">
@@ -690,9 +686,11 @@
                         {{ form_errors(form.formularioB.emisionDeResiduos.rnp) }}
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR LIBRO RUBRICADO</button>
-                </div> 
+                <div id='advertenciaRNP' class="col-sm-4">
+                    <button type="button" class="btn btn-info btn-block" data-toggle="popover" title="Observación" data-content="En caso de corresponder, se solicita que rubrique el libro de gestión de residuos industriales no peligrosos o de actividades de servicios.">
+                        SOLICITAR LIBRO RUBRICADO
+                    </button>
+                </div>
             </div>
             <div class="form-group row col-md-12">
                 <div class="col-sm-3">
@@ -770,8 +768,10 @@
                         {{ form_errors(form.formularioB.emisionDeResiduos.efluentesSinRP) }}
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR PERMISO DE VUELCO</button>
+                <div id='advertenciaEfluentesSinRP' class="col-sm-4">
+                    <button type="button" class="btn btn-danger btn-block" data-toggle="popover" title="Observación" data-content="En caso de corresponder, se solicita presentar inscripción en EPE de aparatos sometidos a presión.">
+                        SOLICITAR PERMISO DE VUELCO
+                    </button>
                 </div> 
             </div>
             <div class="form-group row col-md-12"> 
@@ -784,8 +784,10 @@
                         {{ form_errors(form.formularioB.emisionDeResiduos.efluentesConRP) }}
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR PERMISO DE VUELCO</button>
+                <div id='advertenciaEfluentesConRP' class="col-sm-4">
+                    <button type="button" class="btn btn-danger btn-block" data-toggle="popover" title="Observación" data-content="En caso de corresponder, se solicita presentar inscripción en EPE de aparatos sometidos a presión.">
+                        SOLICITAR PERMISO DE VUELCO
+                    </button>
                 </div> 
             </div>
             <div class="form-group row col-md-12">
@@ -836,14 +838,16 @@
                 <div class="col-sm-3">
                     {{ form_label(form.formularioB.emisionDeResiduos.noContempladosBool) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-1 block">
                     {{ form_widget(form.formularioB.emisionDeResiduos.noContempladosBool, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.noContempladosBool) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.emisionDeResiduos.noContempladosBool) }}
                     </div>
                 </div>
-                <div class="col-sm-8">{#arreglar distribución#}
+                <div id='residuosNoContempladosListado' class="col-sm-2">{#arreglar distribución#}
                     {{ form_label(form.formularioB.emisionDeResiduos.noContempladosListado) }}
+                </div>
+                <div class="col-sm-6 block">
                     {{ form_widget(form.formularioB.emisionDeResiduos.noContempladosListado, {'attr': {'class': form_errors(form.formularioB.emisionDeResiduos.noContempladosListado) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.emisionDeResiduos.noContempladosListado) }}
@@ -899,8 +903,10 @@
                         {{ form_errors(form.formularioB.riesgos.aparatosSometidosAPresion) }}
                     </div>
                 </div> 
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR INSCRIPCIÓN A EPE</button>
+                <div id='advertenciaAparatosSometidosAPresion' class="col-sm-4">
+                    <button type="button" class="btn btn-danger btn-block" data-toggle="popover" title="Observación" data-content="En caso de corresponder, se solicita presentar inscripción en EPE de aparatos sometidos a presión.">
+                        SOLICITAR INSCRIPCIÓN A EPE
+                    </button>
                 </div> 
             </div>
             <div class="form-group row col-md-12"> 
@@ -936,7 +942,9 @@
                     </div>
                 </div>
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-danger btn-block" disabled>SOLICITAR ESTUDIO DE CARGA DE FUEGO</button>
+                    <button id='advertenciaIncendio' type="button" class="btn btn-danger btn-block"  data-toggle="popover" title="Observación" data-content="En caso de corresponder, se solicita estudio de carga de fuego y medidas de contingencia.">
+                            SOLICITAR ESTUDIO DE CARGA DE FUEGO
+                    </button>
                 </div> 
             </div>
             <div class="form-group row col-md-12"> 
@@ -968,10 +976,10 @@
         <div class="card-header">Dotación</div>   
         <div class="form-group row col-md-12">
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.dotacion.dotacionDePersonal) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.dotacion.dotacionDePersonal, {'attr': {'class': form_errors(form.formularioB.dotacion.dotacionDePersonal) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.dotacion.dotacionDePersonal) }}
@@ -979,10 +987,10 @@
                 </div>  
             </div>
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.dotacion.potenciaInstalada) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.dotacion.potenciaInstalada, {'attr': {'class': form_errors(form.formularioB.dotacion.potenciaInstalada) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.dotacion.potenciaInstalada) }}
@@ -990,10 +998,10 @@
                 </div>
             </div>
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.dotacion.superficieCubierta) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.dotacion.superficieCubierta, {'attr': {'class': form_errors(form.formularioB.dotacion.superficieCubierta) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.dotacion.superficieCubierta) }}
@@ -1006,10 +1014,10 @@
         <div class="card-header">Localización</div>   
         <div class="form-group row col-md-12">
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.localizacion.zonificacion) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.localizacion.zonificacion, {'attr': {'class': form_errors(form.formularioB.localizacion.zonificacion) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.localizacion.zonificacion) }}
@@ -1017,10 +1025,10 @@
                 </div>
             </div>
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.localizacion.aguaDeRed) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.localizacion.aguaDeRed, {'attr': {'class': form_errors(form.formularioB.localizacion.aguaDeRed) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.localizacion.aguaDeRed) }}
@@ -1028,10 +1036,10 @@
                 </div>
             </div>
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.localizacion.redCloacal) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.localizacion.redCloacal, {'attr': {'class': form_errors(form.formularioB.localizacion.redCloacal) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.localizacion.redCloacal) }}
@@ -1039,10 +1047,10 @@
                 </div>
             </div>
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.localizacion.energiaElectrica) }}
                     </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.localizacion.energiaElectrica, {'attr': {'class': form_errors(form.formularioB.localizacion.energiaElectrica) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.localizacion.energiaElectrica) }}
@@ -1050,10 +1058,10 @@
                 </div>
             </div>
             <div class="form-group row col-md-12"> 
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     {{ form_label(form.formularioB.localizacion.gas) }}
                 </div>
-                <div class="col-sm-1">
+                <div class="col-sm-2">
                     {{ form_widget(form.formularioB.localizacion.gas, {'attr': {'class': form_errors(form.formularioB.localizacion.gas) ? 'form-control is-invalid' : 'form-control'}}) }}
                     <div class="invalid-feedback">
                         {{ form_errors(form.formularioB.localizacion.gas) }}
@@ -1157,8 +1165,66 @@
                     $('#observacionSoporteDigital').hide();
                     break;
             }
+            {#rnp#}
+             switch($('#plantilla_formularioB_emisionDeResiduos_rnp option:selected').text()){
+                case "SI":
+                    $('#advertenciaRNP').show();
+                    break;
+                default:
+                    $('#advertenciaRNP').hide();
+                    break;
+            }
+            {#efluentes sin RP#}
+            switch($('#plantilla_formularioB_emisionDeResiduos_efluentesSinRP option:selected').text()){
+                case "SI":
+                    $('#advertenciaEfluentesSinRP').show();                    
+                    break;
+                default:
+                    $('#advertenciaEfluentesSinRP').hide();
+                    break;
+            }
+            {#efluentes con RP#}
+            switch($('#plantilla_formularioB_emisionDeResiduos_efluentesConRP option:selected').text()){
+                case "SI":
+                    $('#advertenciaEfluentesConRP').show();
+                    break;
+                default:
+                    $('#advertenciaEfluentesConRP').hide();
+                    break;
+            }
+            {#residuos no contemplados#}
+            switch($('#plantilla_formularioB_emisionDeResiduos_noContempladosBool option:selected').text()){
+                case "SI":
+                    $('#plantilla_formularioB_emisionDeResiduos_noContempladosListado').show();
+                    $('#residuosNoContempladosListado').show();
+                    break;
+                default:
+                    $('#plantilla_formularioB_emisionDeResiduos_noContempladosListado').hide();
+                    $('#residuosNoContempladosListado').hide();
+                    break;
+            }
+            {#aparatos sometidos a presion#}
+            switch($('#plantilla_formularioB_riesgos_aparatosSometidosAPresion option:selected').text()){
+                case "SI":
+                    $('#advertenciaAparatosSometidosAPresion').show();
+                    break;
+                default:
+                    $('#advertenciaAparatosSometidosAPresion').hide();
+                    break;
+            }
+            {#incendio#}
+            switch($('#plantilla_formularioB_riesgos_aparatosSometidosAPresion option:selected').text()){
+                case "SI":
+                    $('#advertenciaIncendio').show();
+                    break;
+                default:
+                    $('#advertenciaIncendio').hide();
+                    break;
+            }
+            
             
         });
+        //Eventos change de los desplegables que activan botones
         $('#indicarSiExisteEmpresa').change(function () {
             var selected = $('#indicarSiExisteEmpresa option:selected').text();
             $('#advertenciaSiExisteEmpresa').toggle(selected == "SI");
@@ -1182,5 +1248,35 @@
             var selected = $('#plantilla_formularioB_estadoSoporteDigital option:selected').text();
             $('#advertenciaSoporteDigital, #observacionSoporteDigital').toggle(selected == "INCOMPLETO" || selected == "EN BLANCO");
         });
+        $('#plantilla_formularioB_emisionDeResiduos_rnp').change(function () {
+            var selected = $('#plantilla_formularioB_emisionDeResiduos_rnp option:selected').text();
+            $('#advertenciaRNP').toggle(selected == "SI");
+        });
+        $('#plantilla_formularioB_emisionDeResiduos_efluentesSinRP').change(function () {
+            var selected = $('#plantilla_formularioB_emisionDeResiduos_efluentesSinRP option:selected').text();
+            $('#advertenciaEfluentesSinRP').toggle(selected == "SI");
+        });
+        $('#plantilla_formularioB_emisionDeResiduos_efluentesConRP').change(function () {
+            var selected = $('#plantilla_formularioB_emisionDeResiduos_efluentesConRP option:selected').text();
+            $('#advertenciaEfluentesConRP').toggle(selected == "SI");
+        });
+        $('#plantilla_formularioB_emisionDeResiduos_noContempladosBool').change(function () {
+            var selected = $('#plantilla_formularioB_emisionDeResiduos_noContempladosBool option:selected').text();
+            $('#plantilla_formularioB_emisionDeResiduos_noContempladosListado').toggle(selected == "SI");
+            $('#residuosNoContempladosListado').toggle(selected == "SI");
+        });
+        $('#plantilla_formularioB_riesgos_aparatosSometidosAPresion').change(function () {
+            var selected = $('#plantilla_formularioB_riesgos_aparatosSometidosAPresion option:selected').text();
+            $('#advertenciaAparatosSometidosAPresion').toggle(selected == "SI");
+        });
+        $('#plantilla_formularioB_riesgos_incendio').change(function () {
+            var selected = $('#plantilla_formularioB_riesgos_incendio option:selected').text();
+            $('#advertenciaIncendio').toggle(selected == "SI");
+        });
+        
+        {#habilitar la ejecución de popover#}
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
     </script> 
 {% endblock %}
