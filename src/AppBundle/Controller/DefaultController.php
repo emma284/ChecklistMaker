@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\FiltroResumen;
 use AppBundle\Form\FiltroResumenType;
@@ -76,6 +77,15 @@ class DefaultController extends Controller
      */
     public function acciones(){
 
+        return $this->render('Checklist/AccionUser.html.twig', array(
+        ));
+    }
+
+    /**
+     * @Route("/admin")
+     */
+    public function adminAction()
+    {
         return $this->render('Checklist/AccionUser.html.twig', array(
         ));
     }
