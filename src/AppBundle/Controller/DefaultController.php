@@ -86,8 +86,9 @@ class DefaultController extends Controller
      */
     public function adminAction()
     {
-        return $this->render('Checklist/AccionUser.html.twig', array(
+        return $this->render('resumen/listado.html.twig', array(
         ));
     }
 
+    
 }

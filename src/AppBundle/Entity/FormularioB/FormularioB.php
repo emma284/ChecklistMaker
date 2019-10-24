@@ -60,7 +60,7 @@ class FormularioB
      * @ORM\OneToOne(targetEntity="Localizacion", cascade={"persist"})
      * @ORM\JoinColumn(name="localizacion_id",referencedColumnName="id")
      */
-    private $localización;
+    private $localizacion;
     
     /**
      * @ORM\OneToOne(targetEntity="CategoriaFinal", cascade={"persist"})
@@ -149,4 +149,44 @@ class FormularioB
     }
 
 
+
+    /**
+     * Get the value of observacionSoporteDigital
+     */ 
+    public function getObservacionSoporteDigital()
+    {
+        return $this->observacionSoporteDigital;
+    }
+
+    /**
+     * Set the value of observacionSoporteDigital
+     *
+     * @return  self
+     */ 
+    public function setObservacionSoporteDigital($observacionSoporteDigital)
+    {
+        $this->observacionSoporteDigital = $observacionSoporteDigital;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of localizacion
+     */ 
+    public function getLocalizacion()
+    {
+        return $this->localizacion;
+    }
+
+    /**
+     * Set the value of localizacion
+     *
+     * @return  self
+     */ 
+    public function setLocalizacion($localizacion)
+    {
+        $this->localizacion = $localizacion;
+
+        return $this;
+    }
 }

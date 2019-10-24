@@ -3,21 +3,19 @@
 {{ form_widget(form) }}
 {{ form_end(form) }} #}
 
+{% block breadcrumbItems %}
+
+    <li class="breadcrumb-item" onclick="window.location.href = '{{ path('resumen_evaluacion') }}'"><a href="#">Resumen</a></li>
+    <li class="breadcrumb-item" onclick="window.location.href = '{{ path('listado_plantilla') }}'"><a href="#">Mis Checklist</a></li>
+    <li class="breadcrumb-item" onclick="window.location.href = '{{ path('new_plantilla') }}'"><a href="#">Generar Checklist</a></li>
+
+{% endblock %}
+
+
 {% block content %}
 
 <div class="card-body">
 
-    <h1 class="display-6 text-center">Mis Acciones</h1>
-
-    <div class="form-group text-center ">
-        <button type="button" class="btn btn-primary col-md-4" onclick="window.location.href = '{{ path('resumen_evaluacion') }}'">Resumen</button>
-    </div>
-    <div class="form-group text-center">
-        <button type="button" class="btn btn-primary col-md-4"  onclick="window.location.href = '{{ path('listado_plantilla') }}'">Mis Checklist</button>
-    </div>
-    <div class="form-group  text-center">
-        <button type="button" class="btn btn-primary col-md-4" onclick="window.location.href = '{{ path('new_plantilla') }}'">Generar Checklist</button>
-    </div>
 </div>
 
 {% endblock %}

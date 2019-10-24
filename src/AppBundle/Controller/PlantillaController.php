@@ -106,4 +106,39 @@ class PlantillaController extends Controller
 
     }
 
+
+
+    /**
+     * @Route("/plantilla/new-prueba/", name="new_plantilla-prueba")
+     */
+    public function plantillaNewActionPrueba(Request $request)
+    {
+        $plantilla= new Plantilla();
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(PlantillaType::class, $plantilla);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $plantilla = $form->getData();
+
+            $entityManager->persist($plantilla);
+            $entityManager->flush();
+
+            //return $this->redirectToRoute('listar_formularios');
+
+        }
+
+
+        return $this->render('plantilla/new-prueba.html.twig', array(
+            'form' => $form->createView()
+        ));
+
+
+    }
+
+
 }

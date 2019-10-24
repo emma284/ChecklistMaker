@@ -10,8 +10,8 @@ namespace AppBundle\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Entity\FormularioA;
-use AppBundle\Form\FormularioAType;
+use AppBundle\Entity\FormularioA\FormularioA;
+use AppBundle\Form\FormularioA\FormularioAType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -23,7 +23,7 @@ use Symfony\Component\HttpFoundation\Request;
  class FormularioAController extends Controller
  {
     /**
-     * @Route("/formulario/nuevo/", name="formulario_nuevo")
+     * @Route("/formularioA/new/", name="formularioA_new")
      */
     public function formularioANuevoAction(Request $request)
     {
@@ -45,7 +45,7 @@ use Symfony\Component\HttpFoundation\Request;
             return $this->redirectToRoute('listar_formularios');
 
         }
-        return $this->render('formularioA/new.html.twig',[
+        return $this->render('plantilla/new-formularioA.html.twig',[
             'form' => $form->createView(),
         ]);
     }

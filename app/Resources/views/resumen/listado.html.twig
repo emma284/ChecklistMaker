@@ -3,6 +3,14 @@
 {{ form_widget(form) }}
 {{ form_end(form) }} #}
 
+{% block breadcrumbItems %}
+
+    <li class="breadcrumb-item" onclick="window.location.href = '{{ path('resumen_evaluacion') }}'"><a href="#">Resumen</a></li>
+    <li class="breadcrumb-item" onclick="window.location.href = '{{ path('listado_plantilla') }}'"><a href="#">Mis Checklist</a></li>
+    <li class="breadcrumb-item" onclick="window.location.href = '{{ path('new_plantilla') }}'"><a href="#">Generar Checklist</a></li>
+
+{% endblock %}
+
 {% block content %}
 
     
