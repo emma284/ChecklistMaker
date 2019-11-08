@@ -3,6 +3,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use AppBundle\Form\FormularioB\FormularioBType;
 use AppBundle\Form\FormularioA\FormularioAType;
 use AppBundle\Entity\Plantilla;
@@ -14,8 +15,12 @@ class PlantillaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('formularioA', FormularioAType::class)
-            ->add('formularioB', FormularioBType::class)
+            ->add('caratula', CaratulaType::class)
+            ->add('subRutina', SubRutinaType::class)
+            ->add('estandar', EstandarType::class)
+            ->add('save', SubmitType::class, ['label' => 'Guardar'])
+        //    ->add('formularioA', FormularioAType::class)
+        //    ->add('formularioB', FormularioBType::class)
         ;
     }
 

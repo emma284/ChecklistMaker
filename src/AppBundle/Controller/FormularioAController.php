@@ -42,7 +42,7 @@ use Symfony\Component\HttpFoundation\Request;
             $entityManager->persist($formularioA);
             $entityManager->flush();
             
-            return $this->redirectToRoute('listar_formularios');
+           // return $this->redirectToRoute('plantilla/listado.html.twig');
 
         }
         return $this->render('plantilla/new-formularioA.html.twig',[
@@ -98,4 +98,5 @@ use Symfony\Component\HttpFoundation\Request;
         return $this->render('formularioA/modificar.html.twig', array(
             'formulario' => $formulario));
     }
+
 }

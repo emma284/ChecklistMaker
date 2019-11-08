@@ -548,10 +548,9 @@
             </div>
         </div>
         <div class="form-inline col-md-12">
-        
-            <button type="button" class="btn btn-primary ml-auto" >Guardar</button>
+            {{ form_widget(form.save) }}
             <div>&nbsp;</div>
-            <button type="button" class="btn btn-primary " onclick="window.location.href = '{{ path('formularioB_new') }}'">Siguiente</button>
+            <button type="button" class="btn btn-primary ml-auto" onclick="window.location.href = '{{ path('formularioB_new') }}'">Siguiente</button>
         </div>
     {{ form_end(form) }}
 {% endblock %}

@@ -15,66 +15,113 @@
 {% block content %}
     
     <div class="card-body">
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    
         <div class="card-header"><h1>CHECKLIST DE CATEGORIZACIÓN AMBIENTAL</h1></div>
         <div class="form-group col-md-12">
 
             <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-3">RAZÓN SOCIAL</label>
-                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.razonSocial) }}
+                    {{ form_widget(form.caratula.razonSocial, {'attr': {'class': form_errors(form.caratula.razonSocial) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.razonSocial) }}
+                    </div>
+                </div>
             
-                <label for="inputPassword4" class="col-sm-3">EXPEDIENTE N°</label>
-                <input type="text" class="form-control col-sm-3" id="expedienteN-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.expediente) }}
+                    {{ form_widget(form.caratula.expediente, {'attr': {'class': form_errors(form.caratula.expediente) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.expediente) }}
+                    </div>
+                </div>
             </div> 
             <div class="form-group row">
-                <label for="inputPassword4" class="col-sm-3">FECHA INICIO EXPEDIENTE</label>
-                <input type="text" class="form-control col-sm-3" id="fechaInicioExpediente-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.fechaIniExp) }}
+                    {{ form_widget(form.caratula.fechaIniExp, {'attr': {'class': form_errors(form.caratula.fechaIniExp) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.fechaIniExp) }}
+                    </div>
+                </div>
             
-                <label for="inputPassword4" class="col-sm-3">EVALUADOR</label>
-                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.evaluador) }}
+                    {{ form_widget(form.caratula.evaluador, {'attr': {'class': form_errors(form.caratula.evaluador) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.evaluador) }}
+                    </div>
+                </div>
             </div> 
             
             <div class="form-group row">
-                <label for="inputPassword4"class="col-sm-3">VERSIÓN</label>
-                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.version) }}
+                    {{ form_widget(form.caratula.version, {'attr': {'class': form_errors(form.caratula.version) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.version) }}
+                    </div>
+                </div>
             
-                <label for="inputPassword4"class="col-sm-3">INICIO EVALUACIÓN</label>
-                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.finEval) }}
+                    {{ form_widget(form.caratula.finEval, {'attr': {'class': form_errors(form.caratula.finEval) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.finEval) }}
+                    </div>
+                </div>
             </div> 
             <div class="form-group row">
-                <label for="inputPassword4"class="col-sm-3">FIN EVALUACIÓN</label>
-                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.iniEvaluacion) }}
+                    {{ form_widget(form.caratula.iniEvaluacion, {'attr': {'class': form_errors(form.caratula.iniEvaluacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.iniEvaluacion) }}
+                    </div>
+                </div>
             
-                <label for="inputPassword4"class="col-sm-3">DÍAS DE EVALUACIÓN</label>
-                <input type="text" class="form-control col-sm-3" id="razonSocial-plantilla">
+                <div class="col-sm-4">
+                    {{ form_label(form.caratula.diasEvaluacion) }}
+                    {{ form_widget(form.caratula.diasEvaluacion, {'attr': {'class': form_errors(form.caratula.diasEvaluacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.caratula.diasEvaluacion) }}
+                    </div>
+                </div>
             </div> 
             
         </div>
                         
         
-        <div class="card-header">SUB-RUTINA</div>
+        <div align="center" class="card-header"><h2>SubRutina</h2></div>
+
      
         <div class="form-group col-md-12">
 
             <div class="form-group row">
-                
-                <label for="I_INV" class="col-sm-2">Investigar empresa: </label>
-                <select class="form-control col-sm-2">
-                    <option value=""  selected="selected" ></option>
-                    <option value="a" data-choice="a" data-key="0">NO HECHO</option>
-                    <option value="b" data-choice="b" data-key="1">HECHO</option>
-
-                </select>
+                <div class="col-sm-2">
+                    {{ form_label(form.subRutina.investigar) }} 
+                </div>
+                <div class="col-sm-2">
+                    {{ form_widget(form.subRutina.investigar, {'attr': {'class': form_errors(form.subRutina.investigar) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.subRutina.investigar) }}
+                    </div>
+                </div>
             </div>
         
             <div class="form-group row">
-                <label for="I_INV" class="col-sm-3">Indicar si la empresa existe: </label>
-                <select id='indicarSiExisteEmpresa' class="form-control col-sm-1">
-                    
-                    <option value=""  selected="selected"></option>
-                    <option value="a" data-choice="a" data-key="0">SI</option>
-                    <option value="b" data-choice="b" data-key="1">NO</option>
+            
+                <div class="col-sm-3">
+                    {{ form_label(form.subRutina.existe) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.subRutina.existe, {'attr': {'class': form_errors(form.subRutina.existe) ? 'form-control is-invalid' : 'form-control'}}) }}
+                </div>
+                <div class="invalid-feedback">
+                    {{ form_errors(form.subRutina.existe) }}
+                </div>
 
-                </select>
                 <div id='advertenciaSiExisteEmpresa' class="col-sm-4">
                     <button type="button" class="btn btn-info btn-block" disabled>CONTINUAR EVALUACIÓN</button>
                 </div>
@@ -85,14 +132,16 @@
         
             <div class="form-group row">
                 
-                <label for="I_INV" class="col-sm-3">Indicar si respondió en plazo: </label>
-                <select id='indicarSiRespondioEnPlazo' class="form-control col-sm-1 ">
-                    
-                    <option value=""  selected="selected"></option>
-                    <option value="a" data-choice="a" data-key="0">SI</option>
-                    <option value="b" data-choice="b" data-key="1">NO</option>
+                <div class="col-sm-3">
+                    {{ form_label(form.subRutina.estaEnPlazos) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.subRutina.estaEnPlazos, {'attr': {'class': form_errors(form.subRutina.estaEnPlazos) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.subRutina.estaEnPlazos) }}
+                    </div>
+                </div>
 
-                </select>
                 <div id='advertenciaSiRespondio' class="col-sm-4">
                     <button type="button" class="btn btn-info btn-block" disabled>ACCIONAR SEGÚN EL CASO</button>
                 </div>
@@ -102,14 +151,15 @@
             </div>
         
             <div class="form-group row">
-                <label for="I_INV" class="col-sm-3">Indicar si se relocalizó: </label>
-                <select id='indicarSiSeRelocalizo' class="form-control col-sm-1">
-                    
-                    <option value=""  selected="selected"></option>
-                    <option value="a" data-choice="a" data-key="0">SI</option>
-                    <option value="b" data-choice="b" data-key="1">NO</option>
-
-                </select>
+                <div class="col-sm-3">
+                    {{ form_label(form.subRutina.relocalizo) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.subRutina.relocalizo, {'attr': {'class': form_errors(form.subRutina.relocalizo) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.subRutina.relocalizo) }}
+                    </div>
+                </div>
                 <div id='advertenciaSiSeRelocalizo' class="col-sm-4">
                     <button type="button" class="btn btn-danger btn-block" disabled>ENVIAR NOTIFICACIÓN Y DESESTIMAR</button>
                 </div>
@@ -120,103 +170,131 @@
 
             <div class="form-group row">
                 
-                <label for="I_INV" class="col-sm-3">Se desestima por otros motivos: </label>
-                <select id='indicarSiSeDesestima' class="form-control col-sm-1 ">
-                    
-                    <option value=""  selected="selected"></option>
-                    <option value="a" data-choice="a" data-key="0">SI</option>
-                    <option value="b" data-choice="b" data-key="1">NO</option>
-
-                </select>
+                <div class="col-sm-3">
+                    {{ form_label(form.subRutina.desestima) }}
+                </div>
+                <div class="col-sm-1">
+                    {{ form_widget(form.subRutina.desestima, {'attr': {'class': form_errors(form.subRutina.relocalizo) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.subRutina.desestima) }}
+                    </div>
+                </div>
                 <div id='advertenciaSiSeDesestima' class="col-sm-4">
                     <button type="button" class="btn btn-danger btn-block" disabled>DESESTIMAR</button>
                 </div>
             </div>
         </div>
 
-        <div class="card-header">ESTANDAR</div>
+        <div align="center" class="card-header"><h2>Estandar</h2></div>
         
-        <div class="form-group col-md-12">
+        <div class="form-group  col-md-12">
+            
+            <div class="form-group  row">
+                    
+                <div class="col-sm-3">
+                    {{ form_label(form.estandar.presentacion) }}
+                </div>
+                <div class="col-sm-2">
+                    {{ form_widget(form.estandar.presentacion, {'attr': {'class': form_errors(form.estandar.presentacion) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.estandar.presentacion) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group  row">
+
+                <div class="col-sm-3">
+                    {{ form_label(form.estandar.estado) }}
+                </div>
+                <div class="col-sm-2">
+                    {{ form_widget(form.estandar.estado, {'attr': {'class': form_errors(form.estandar.estado) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.estandar.estado) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group  row">
+
+                <div class="col-sm-3">
+                    {{ form_label(form.estandar.declaraActividad) }}
+                </div>
+                <div class="col-sm-1">
+
+                    {{ form_widget(form.estandar.declaraActividad, {'attr': {'class': form_errors(form.estandar.declaraActividad) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.estandar.declaraActividad) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group  row">
+                <div class="col-sm-3">
+                    {{ form_label(form.estandar.cuacm) }}
+                </div>
+                <div class="col-sm-6">
+                    {{ form_widget(form.estandar.cuacm, {'attr': {'class': form_errors(form.estandar.cuacm) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.estandar.cuacm) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group  row">
+
+                <div class="col-sm-3">
+                    {{ form_label(form.estandar.numeroCuacm) }}
+                </div>
+                <div class="col-sm-3">
+                    {{ form_widget(form.estandar.numeroCuacm, {'attr': {'class': form_errors(form.estandar.numeroCuacm) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.estandar.numeroCuacm) }}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group  row">
+
+                <div class="col-sm-3">
+                    {{ form_label(form.estandar.nombreCuacm) }}
+                </div>
+                <div class="col-sm-3">
+
+                    {{ form_widget(form.estandar.nombreCuacm, {'attr': {'class': form_errors(form.estandar.nombreCuacm) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.estandar.nombreCuacm) }}
+                    </div>
+                </div>
+            </div>
+
         
-                <div class="form-group row">
-                    
-                    <label for="I_INV" class="col-sm-3">Forma de presentación: </label>
-                    <select class="form-control col-sm-1">
-                        
-                        <option value=""  selected="selected"></option>
-                        <option value="a" data-choice="a" data-key="0">NUEVO</option>
-                        <option value="b" data-choice="b" data-key="1">VIEJO</option>
 
-                    </select>
-                </div>
-
-                <div class="form-group row">
-                    
-                    <label for="I_INV" class="col-sm-3">Estado formulario: </label>
-                    <select class="form-control col-sm-1">
-                        
-                        <option value=""  selected="selected"></option>
-                        <option value="a" data-choice="a" data-key="0">ABIERTO</option>
-                        <option value="b" data-choice="b" data-key="1">CERRADO</option>
-
-                    </select>
-                </div>
-
-                <div class="form-group row">
-                    
-                    <label for="I_INV" class="col-sm-3">indicar si declara actividad: </label>
-                    <select class="form-control col-sm-1">
-                        
-                        <option value=""  selected="selected"></option>
-                        <option value="a" data-choice="a" data-key="0">SI</option>
-                        <option value="b" data-choice="b" data-key="1">NO</option>
-
-                    </select>
-                </div>
-
-                <div class="form-group row">
-                
-                    
-                    <label for="inputPassword4 " class="col-sm-3">Definir actividad:</label>
-                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-6">
-                    
-                    
-                </div>
-
-                <div class="form-group row">
+            <div class="form-group  row">
             
-                    <label for="inputPassword4" class="col-sm-3">N° de CUACM:</label>
-                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-1">
-                    
+                <div class="col-sm-3">
+                    {{ form_label(form.estandar.estandar) }}
                 </div>
+                <div class="col-sm-1">
 
-                <div class="form-group row">
-            
-                    <label for="inputPassword4" class="col-sm-3">Nombre de CUACM:</label>
-                    <input type="text" id="razonSocial-plantilla" class="form-control col-sm-1">
-                    
+                    {{ form_widget(form.estandar.estandar, {'attr': {'class': form_errors(form.estandar.estandar) ? 'form-control is-invalid' : 'form-control'}}) }}
+                    <div class="invalid-feedback">
+                        {{ form_errors(form.estandar.estandar) }}
+                    </div>
                 </div>
-               
-                <div class="form-group row">
-                    
-                    <label for="I_INV" class="col-sm-3">Estándar al que pertenece: </label>
-                    <select class="form-control col-sm-1">
-                        
-                        <option value=""  selected="selected"></option>
-                        <option value="a" data-choice="a" data-key="0">1</option>
-                        <option value="b" data-choice="b" data-key="1">2</option>
-                        <option value="b" data-choice="b" data-key="2">3</option>
-                    </select>
-                </div>
+            </div>
 
         </div>  
 
         <div class="form-inline col-md-12">
         
-            <button type="button" class="btn btn-primary ml-auto" >Guardar</button>
+            <div>
+                {{ form_widget(form.save) }}
+            </div>
             <div>&nbsp;</div>
             <button type="button" class="btn btn-primary " onclick="window.location.href = '{{ path('formularioA_new') }}'">Siguiente</button>
         </div>
-
+    {{form_end(form)}}
     </div>
 {% endblock %}

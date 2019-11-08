@@ -32,8 +32,22 @@ class Plantilla
      * @Assert\Length(min = 1, max = 3000, minMessage = "El nombre no puede dejarse en blanco.", maxMessage = "El nombre es demasiado largo.")
      */
     private $nombre;
-
     
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Caratula", cascade={"persist"}, mappedBy="caratula")
+     */
+    private $caratula;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\SubRutina", cascade={"persist"}, mappedBy="subRutina")
+     */
+    private $subRutina;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Estandar", cascade={"persist"}, mappedBy="estandar")
+     */
+    private $estandar;
+
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\FormularioA\FormularioA", cascade={"persist"}, mappedBy="plantilla")
      */
@@ -79,4 +93,64 @@ class Plantilla
     }
 
 
+
+    /**
+     * Get the value of caratula
+     */ 
+    public function getCaratula()
+    {
+        return $this->caratula;
+    }
+
+    /**
+     * Set the value of caratula
+     *
+     * @return  self
+     */ 
+    public function setCaratula($caratula)
+    {
+        $this->caratula = $caratula;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of subRutina
+     */ 
+    public function getSubRutina()
+    {
+        return $this->subRutina;
+    }
+
+    /**
+     * Set the value of subRutina
+     *
+     * @return  self
+     */ 
+    public function setSubRutina($subRutina)
+    {
+        $this->subRutina = $subRutina;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of estandar
+     */ 
+    public function getEstandar()
+    {
+        return $this->estandar;
+    }
+
+    /**
+     * Set the value of estandar
+     *
+     * @return  self
+     */ 
+    public function setEstandar($estandar)
+    {
+        $this->estandar = $estandar;
+
+        return $this;
+    }
 }

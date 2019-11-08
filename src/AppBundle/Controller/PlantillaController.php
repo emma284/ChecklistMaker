@@ -105,9 +105,6 @@ class PlantillaController extends Controller
         return $this->render('plantilla/ver.html.twig', array());
 
     }
-
-
-
     /**
      * @Route("/plantilla/new-prueba/", name="new_plantilla-prueba")
      */
@@ -128,17 +125,33 @@ class PlantillaController extends Controller
             $entityManager->persist($plantilla);
             $entityManager->flush();
 
-            //return $this->redirectToRoute('listar_formularios');
+            return $this->redirectToRoute('resumen_evaluacion');
 
         }
-
-
         return $this->render('plantilla/new-prueba.html.twig', array(
             'form' => $form->createView()
         ));
 
-
     }
 
+    /**
+     * @Route("/plantilla/save_standar/{form}", name="guardar-plantilla")
+    */
+    public function guardarChecklist(Request $request,$form){
+
+
+        if($form->isValid()){
+
+            $plantilla = new Plantilla();
+            $plantilla = $form->getData();
+
+            $entityManager->persist($plantilla);
+            $entityManager->flush();
+
+            //return $this->redirectToRoute('listar_formularios');
+
+        }
+
+    }
 
 }

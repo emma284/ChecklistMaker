@@ -12,6 +12,8 @@ use AppBundle\Form\FormularioB\RiesgosType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 
 class FormularioBType extends AbstractType
@@ -37,6 +39,8 @@ class FormularioBType extends AbstractType
             ->add('dotacion', DotacionType::class)
             ->add('localizacion', LocalizacionType::class)
             ->add('categoriaFinal', CategoriaFinalType::class)
+            ->add('save', SubmitType::class, ['label' => 'Guardar'])
+
         ;
     }
 

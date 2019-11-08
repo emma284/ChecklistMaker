@@ -35,7 +35,7 @@ class FormularioA
        
     /**
      * @ORM\OneToOne(targetEntity="DomicilioReal", cascade={"persist"})
-     * @ORM\JoinColumn(name="DomicilioReal_id",referencedColumnName="id")
+     * @ORM\JoinColumn(name="domicilioReal_id",referencedColumnName="id")
      * @Assert\Type(type="AppBundle\Entity\FormularioA\DomicilioReal")
      * @Assert\Valid
      */

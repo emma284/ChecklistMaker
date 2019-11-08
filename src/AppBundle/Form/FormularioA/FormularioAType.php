@@ -13,13 +13,14 @@ use AppBundle\Form\FormularioA\DNIType;
 use AppBundle\Form\FormularioA\AfipType;
 use AppBundle\Entity\FormularioA\FormularioA;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 
 class FormularioAType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add('nombre', TextType::class, ['label' => 'Nombre del checklist: '])
             ->add('domicilioLegal', DomicilioLegalType::class)
             ->add('domicilioReal', DomicilioRealType::class)
             ->add('contratoSocial', ContratoSocialType::class)
@@ -28,6 +29,7 @@ class FormularioAType extends AbstractType
             ->add('afip', AfipType::class)
             ->add('api', APIType::class)
             ->add('usoConformeSuelo', UsoConformeSueloType::class)
+            ->add('save', SubmitType::class, ['label' => 'Guardar'])
         ;
     }
 
